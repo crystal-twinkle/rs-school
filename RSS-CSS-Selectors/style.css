@@ -60,7 +60,7 @@ footer .year {
 .container__action {
   display: flex;
   border: 5px solid #000000;
-
+  background-color: #575757;
 }
 
 .action__editor {
