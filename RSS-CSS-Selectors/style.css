@@ -1,0 +1,83 @@
+body {
+  color: #fff;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.container {
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  border: 10px solid #000000;
+  background-color: #dea479;
+}
+
+.container__game {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.game-field {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+footer .year {
+  font-weight: 900;
+  color: #e83939;
+}
+
+.github-link {
+  font-family: 'Arial', sans-serif;
+  color: #7e1d1d;
+  font-weight: 700;
+  text-decoration: underline solid 3px #f89a84;
+  text-underline-offset: 0.4rem;
+}
+
+.rsSchool-logo {
+  background-image: url('picture/logo_rs_text.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 80px;
+  height: 40px;
+}
+
+.container__level {
+  padding: 5px;
+  background-color: #383333;
+}
+
+.container__action {
+  display: flex;
+  border: 5px solid #000000;
+
+}
+
+.action__editor {
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+
+.action__viewer {
+  background-color: #575757;
+  padding: 10px;
+}
+
+.table {
+  background-color: #a83e3e;
+  width: 50%;
+  height: 100px;
+  align-self: center;
+  margin-bottom: 20px;
+}
