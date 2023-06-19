@@ -13,7 +13,7 @@ body {
 .container__game {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 75%;
 }
 
 .game__header {
@@ -72,7 +72,7 @@ footer .year {
 .container__level {
   padding: 5px;
   background-color: #383333;
-  width: 30%;
+  width: 25%;
 }
 
 .container__action {
@@ -132,3 +132,45 @@ footer .year {
   align-self: center;
   margin-bottom: 20px;
 }
+
+.level__header {
+  display: flex;
+  align-items: center;
+}
+
+.level__title {
+  margin-right: 20px;
+}
+
+.level__knob-wrap {
+  display: flex;
+  column-gap: 7px;
+  margin-left: auto;
+}
+
+.knob {
+  border-radius: 100%;
+  text-decoration: none;
+  color: #3f6729;
+  cursor: pointer;
+  font-size: 45px;
+}
+
+.knob:hover {
+  color: #64a83e;
+}
+
+.hamburger {
+  width: 25px;
+  height: 22px;
+  margin-left: 15px;
+}
+
+.hamburger__line {
+  display: block;
+  background-color: #3f6729;
+  width: 100%;
+  height: 3px;
+  margin-top: 5px;
+}
+
