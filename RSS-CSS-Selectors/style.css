@@ -7,7 +7,6 @@ body {
 .container {
   justify-content: space-between;
   display: flex;
-  flex-wrap: wrap;
   border: 10px solid #000000;
   background-color: #dea479;
 }
@@ -15,12 +14,15 @@ body {
 .container__game {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  align-items: center;
+  margin: auto;
 }
 
 .game-field {
   display: flex;
   flex-direction: column;
+  width: 300px;
+  margin: auto;
 }
 
 footer {
@@ -55,29 +57,62 @@ footer .year {
 .container__level {
   padding: 5px;
   background-color: #383333;
+  width: 400px;
 }
 
 .container__action {
   display: flex;
+  flex-direction: column;
   border: 5px solid #000000;
-  background-color: #575757;
+  border-radius: 5px;
+  background-color: #5e5e5e;
+  margin-bottom: 10px;
+  width: 500px;
+  position: relative;
+}
+
+.action__header {
+  display: flex;
+  background-color: #00000026;
+  border: solid 1px #98909070;
+}
+
+.action__title {
+  width: 50%;
+  margin-left: 10px;
+}
+
+.action__border {
+  background-color: black;
+  position: absolute;
+  left: calc(50% - 8px);
+  width: 8px;
+  top: 0;
+  bottom: 0;
+}
+
+.action-wrap {
+  display: flex;
 }
 
 .action__editor {
   background-color: white;
   color: black;
   padding: 10px;
+  width: 50%;
 }
 
 .action__viewer {
   background-color: #575757;
-  padding: 10px;
+  padding: 0 10px;
+  width: 50%;
+  border-right: solid 1px #98909070;
 }
 
 .table {
   background-color: #a83e3e;
-  width: 50%;
-  height: 100px;
+  width: 250px;
+  height: 150px;
   align-self: center;
   margin-bottom: 20px;
 }
