@@ -81,7 +81,7 @@ footer .year {
   border: 5px solid #000000;
   border-radius: 5px;
   background-color: #5e5e5e;
-  margin: auto;
+  margin: 0 auto 20px;
   width: 500px;
   position: relative;
 }
