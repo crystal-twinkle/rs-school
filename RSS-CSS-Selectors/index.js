@@ -20,10 +20,10 @@ btnRight.addEventListener('click', () => {
 
 function generateLevel() {
   const level = document.getElementById('level-now');
-  const levelTitle = document.getElementById('level-title');
-  const levelSubtitle = document.getElementById('level-subtitle');
-  const levelText = document.getElementById('level-text');
-  const levelExamples = document.getElementById('level-examples');
+  const helpTitle = document.getElementById('help-title');
+  const helpSubtitle = document.getElementById('help-subtitle');
+  const helpText = document.getElementById('help-text');
+  const helpExamples = document.getElementById('help-examples');
   const viewerSpan = document.getElementById('viewer-span_generate');
 
   level.innerHTML = count + 1;
@@ -35,16 +35,16 @@ function generateLevel() {
     innerP.append(arrMarkup[i]);
     viewerSpan.append(innerP);
   }
-  levelTitle.innerHTML = dataLevels[count].levelTitle;
-  levelSubtitle.innerHTML = dataLevels[count].levelSub;
-  levelText.innerHTML = dataLevels[count].levelDesc;
+  helpTitle.innerHTML = dataLevels[count].levelTitle;
+  helpSubtitle.innerHTML = dataLevels[count].levelSub;
+  helpText.innerHTML = dataLevels[count].levelDesc;
 
-  levelExamples.innerHTML = '';
+  helpExamples.innerHTML = '';
   let arrExam = dataLevels[count].examples;
   for (let i = 0; i < arrExam.length; i++) {
     const divEl = document.createElement("div");
     divEl.append(arrExam[i]);
-    levelExamples.append(divEl);
+    helpExamples.append(divEl);
   }
 
 }
