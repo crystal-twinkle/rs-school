@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+span {
+  display: block;
+}
+
 .container {
   display: flex;
   border: 10px solid #000000;
@@ -30,9 +34,8 @@ body {
 }
 
  .game__logo-img {
-   height: 30px;
-   width: 30px;
-   border-radius: 50%;
+   height: 40px;
+   width: 40px;;
    margin: auto 5px;
  }
 
@@ -125,6 +128,16 @@ footer .year {
   border-right: solid 1px #98909070;
 }
 
+.viewer__content {
+  margin-top: 8px;
+}
+
+.viewer__content, .viewer__span {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
 .table {
   background-color: #a83e3e;
   width: 250px;
@@ -138,14 +151,16 @@ footer .year {
   align-items: center;
 }
 
-.level__title {
-  margin-right: 20px;
-}
-
 .level__knob-wrap {
   display: flex;
   column-gap: 7px;
   margin-left: auto;
+}
+
+.level__examples {
+  display: flex;
+  flex-direction: column;
+  row-gap: 7px;
 }
 
 .knob {

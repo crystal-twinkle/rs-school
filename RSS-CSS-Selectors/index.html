@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RS Селекторы</title>
-  <link rel="icon" type="image/x-icon" href="picture/delicious-pozole.png">
+  <link rel="icon" type="image/x-icon" href="picture/delicious.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
 
   <div class="container__game game">
     <div class="game__header">
-      <img src="picture/delicious-pozole.png" class="game__logo-img" alt="game logo">
+      <img src="picture/delicious.png" class="game__logo-img" alt="game logo">
       <h1 class="game__logo">
         CSS Game
       </h1>
@@ -37,16 +37,16 @@
 
       <div class="action-wrap">
         <div class="action__editor">
+          <label for="cssEditor">Введите CSS:</label>
           <input type="text" name="edit-text" id="cssEditor">
           <p class="action-panel__description">Style would be here.</p>
         </div>
 
         <div class="action__viewer viewer">
           <div class="viewer__content">
-            <p>bento></p>
-            <p>orange />></p>
-            <p>plate id="fancy">></p>
-            <p>pickle />></p>
+            <span>  &lt;div class="table"&gt; </span>
+            <div class="viewer__span" id="viewer-span_generate"></div>
+            <span>  &lt;/div&gt; </span>
           </div>
         </div>
 
@@ -59,10 +59,10 @@
     <div class="level-wrap">
 
       <div class="level__header">
-        <h2 class="level__title">Level 1 of 11</h2>
+        <h2 class="level__title">Level <span id="level-now">1</span> of 11</h2>
         <div class="level__knob-wrap">
-        <span class="knob" id="but-left">🠼</span>
-        <span class="knob" id="but-right">🠾</span>
+          <span class="knob" id="but-left">🠼</span>
+          <span class="knob" id="but-right">🠾</span>
         </div>
         <span class="hamburger">
           <span class="hamburger__line"></span>
@@ -71,12 +71,12 @@
         </span>
       </div>
 
-      <h4>Type Selector</h4>
-      <h4>Select elements by their type</h4>
+      <h4 id="level-title"></h4>
+      <h4 id="level-subtitle">Select elements by their type</h4>
       <div class="level__desc">
-        <p class="level__text">Selects all elements of type A Type refers to the type of tag, so 'div' 'p' and 'ul' are
-          all different element types.</p>
-        <h3 class="level__example">Examples</h3>
+        <p id="level-text"></p>
+        <h3>Examples</h3>
+        <div class="level__examples" id="level-examples"></div>
       </div>
     </div>
   </div>
@@ -92,8 +92,7 @@
 
 </footer>
 
-<script src="index.js"></script>
-<script src="data_levels.js"></script>
+<script type="module" src="index.js"></script>
 
 
 </body>
