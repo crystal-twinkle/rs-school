@@ -200,6 +200,7 @@ footer .year {
   color: #ead8c3;
   box-sizing: border-box;
   width: 300px;
+  position: relative;
 }
 
 .level-wrap {
@@ -270,33 +271,36 @@ footer .year {
 }
 
 .container__all-levels {
-  display: none;
   background-color: #524c48;
   position: absolute;
   right: 0;
-  top: 10px;
+  top: 0;
   height: 722px;
   width: 0;
-  padding: 5px 0 0 10px;
   box-sizing: border-box;
   color: #c59e9e;
+  transition: all .6s ease-out;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+.all-levels-wrap {
+  padding: 0 10px;
+}
+
+.show {
+  width: 295px;
 }
 
 .container__all-levels h3 {
   opacity: 0.7;
+  white-space: nowrap
 }
 
 .container__all-levels p {
   cursor: pointer;
   opacity: 0.5;
-}
-
-.show {
-  transition: all 1s ease-out;
-  display: block;
-  width: 295px;
-  z-index: 1;
-  right: 10px;
+  white-space: nowrap
 }
 
 .number-level {
@@ -322,7 +326,7 @@ footer .year {
     width: 250px;
   }
 
-  .container__all-levels {
+  .show {
     width: 245px;
   }
 
@@ -359,7 +363,7 @@ footer .year {
     width: 185px;
   }
 
-  .container__all-levels {
+  .show {
     width: 180px;
   }
 
