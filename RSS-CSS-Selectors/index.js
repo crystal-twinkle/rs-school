@@ -84,7 +84,12 @@ hamburger.addEventListener("click", () => {
 function generaleLevelsList() {
   for (let i = 1; i <= 11; i++) {
     const innerP = document.createElement("p");
-    innerP.append(`${i} `);
+    innerP.style.whiteSpace = 'pre';
+    if (i > 9) {
+      innerP.append(`${i}\u00A0\u00A0\u00A0`);
+    } else {
+      innerP.append(`${i}\u00A0\u00A0\u00A0\u00A0`);
+    }
     allLevelsWrap.append(innerP);
   }
 
