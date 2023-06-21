@@ -2,14 +2,14 @@ import dataLevel from "./data_levels.js";
 
 const btnLeft = document.getElementById('but-left');
 const btnRight = document.getElementById('but-right');
-const level = document.getElementById('level-now');
+const numberlevel = document.getElementById('level-now');
 let count = 0;
 
 btnLeft.addEventListener('click', () => {
   if (count > 0 && count <= 10) {
     count -= 1;
   }
-  level.innerHTML = count + 1;
+  numberlevel.innerHTML = count + 1;
   generateLevel(count)
 })
 
@@ -17,7 +17,7 @@ btnRight.addEventListener('click', () => {
   if (count >= 0 && count < 10) {
     count += 1;
   }
-  level.innerHTML = count + 1;
+  numberlevel.innerHTML = count + 1;
   generateLevel(count)
 })
 
@@ -84,10 +84,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function chooseLevel() {
   const allLevel = document.querySelector(".container__all-level");
+
   allLevel.addEventListener('click', (event) => {
     let number = Number(event.target.innerHTML.charAt(0));
-    level.innerHTML = number;
+    numberlevel.innerHTML = number;
     generateLevel(number);
+    allLevel.classList.remove('show')
   })
 
 }
