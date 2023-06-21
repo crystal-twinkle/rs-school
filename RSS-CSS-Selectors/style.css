@@ -188,6 +188,8 @@ footer .year {
   width: 25px;
   height: 22px;
   margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
 }
 
 .hamburger__line {
@@ -196,6 +198,10 @@ footer .year {
   width: 100%;
   height: 3px;
   margin-top: 5px;
+}
+
+.burger-move {
+  transform: rotate(90deg);
 }
 
 @media (max-width: 800px) {
