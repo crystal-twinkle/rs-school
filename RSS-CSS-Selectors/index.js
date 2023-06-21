@@ -77,7 +77,6 @@ function generaleLevelsList() {
 
 generaleLevelsList();
 
-
 document.addEventListener('DOMContentLoaded', function () {
   chooseLevel();
 });

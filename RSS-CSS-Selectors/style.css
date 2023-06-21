@@ -170,6 +170,15 @@ footer .year {
   row-gap: 5px;
 }
 
+.viewer__content span {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.viewer__content span:hover {
+  opacity: 1;
+}
+
 .action__viewer span {
   display: block;
 }
