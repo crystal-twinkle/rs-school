@@ -38,6 +38,7 @@ body {
 
 .game__desc {
   margin: 20px auto 20px;
+  color: #f6ece6;
 }
 
 footer {
@@ -73,6 +74,7 @@ footer .year {
   padding: 5px;
   background-color: #383333;
   width: 350px;
+  color: #ead8c3;
 }
 
 .container__action {
@@ -161,7 +163,13 @@ footer .year {
 .help__examples {
   display: flex;
   flex-direction: column;
-  row-gap: 7px;
+  row-gap: 9px;
+}
+
+.help__examples div:first-child {
+  border-bottom: solid 2px rgba(255, 255, 255, 0.22);
+  padding-bottom: 5px;
+  line-height: 170%;
 }
 
 .knob {
