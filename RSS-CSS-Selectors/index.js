@@ -86,7 +86,7 @@ function chooseLevel() {
   allLevels.addEventListener('click', (event) => {
     let number = Number(event.target.innerHTML.charAt(0));
     numberlevel.innerHTML = number;
-    generateLevel(number);
+    generateLevel(number-1);
     allLevels.classList.remove('show')
   })
 

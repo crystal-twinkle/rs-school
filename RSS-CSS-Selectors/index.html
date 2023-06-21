@@ -37,9 +37,14 @@
 
       <div class="action-wrap">
         <div class="action__editor">
-          <label for="cssEditor">Введите CSS:</label>
-          <input type="text" name="edit-text" id="cssEditor">
-          <p class="action-panel__description">Styles would be here</p>
+          <label for="cssEditor"></label>
+          <div class="action__input-wrap">
+            <input class="input__text" id="cssEditor" type="text" placeholder="Type in a CSS selector">
+            <button class="input__button">Enter</button>
+          </div>
+          <div class="action-panel__desc">
+          <p> { </p> /* Styles would be here */ <p> } </p>
+          </div>
         </div>
 
         <div class="action__viewer viewer">

@@ -111,8 +111,39 @@ footer .year {
   width: 50%;
 }
 
-.action__editor input {
+.input__text {
   margin-top: 5px;
+  margin-bottom: 5px;
+  background: rgba(31, 203, 197, 0.3);
+  animation: input .5s infinite;
+  border: none;
+  width: calc(100%);
+}
+
+
+@keyframes input {
+  50% { background:none ; }
+}
+
+.input__button {
+  border: solid 2px #AF40FF;
+  background-image: linear-gradient(144deg, #5ab3bb, #5a47ee 70%, #8527e0);
+  border-radius: 8px;
+  color: white;
+  box-sizing: border-box;
+  font-size: 12px;
+  width: 60px;
+  padding: 3px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.input__button:hover {
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+}
+
+.input__button:active {
+  transform: scale(0.9);
 }
 
 .action__viewer {
@@ -121,6 +152,12 @@ footer .year {
   width: 50%;
   height: 350px;
   border-right: solid 1px #98909070;
+}
+
+.action-panel__desc {
+  display: flex;
+  flex-direction: column;
+  opacity: 0.5;
 }
 
 .viewer__content {
@@ -331,7 +368,7 @@ footer .year {
   }
 
   .action__border {
-    left: calc(50% - 3px);
+    left: calc(50% - 6px);
   }
 
   .action__editor {
@@ -343,7 +380,7 @@ footer .year {
     font-size: 12px;
   }
 
-  #cssEditor {
+  .input__text {
     width: 125px;
   }
 
