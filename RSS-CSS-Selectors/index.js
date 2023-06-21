@@ -2,45 +2,46 @@ import dataLevel from "./data_levels.js";
 
 const btnLeft = document.getElementById('but-left');
 const btnRight = document.getElementById('but-right');
+const level = document.getElementById('level-now');
 let count = 0;
 
 btnLeft.addEventListener('click', () => {
   if (count > 0 && count <= 10) {
     count -= 1;
   }
-  generateLevel()
+  level.innerHTML = count + 1;
+  generateLevel(count)
 })
 
 btnRight.addEventListener('click', () => {
   if (count >= 0 && count < 10) {
     count += 1;
   }
-  generateLevel()
+  level.innerHTML = count + 1;
+  generateLevel(count)
 })
 
-function generateLevel() {
-  const level = document.getElementById('level-now');
+function generateLevel(num=1) {
   const helpTitle = document.getElementById('help-title');
   const helpSubtitle = document.getElementById('help-subtitle');
   const helpText = document.getElementById('help-text');
   const helpExamples = document.getElementById('help-examples');
   const viewerSpan = document.getElementById('viewer-span_generate');
 
-  level.innerHTML = count + 1;
   viewerSpan.innerHTML = '';
 
-  let arrMarkup = dataLevel[count].markup;
+  let arrMarkup = dataLevel[num].markup;
   for (let i = 0; i < arrMarkup.length; i++) {
     const innerP = document.createElement("span");
     innerP.append(arrMarkup[i]);
     viewerSpan.append(innerP);
   }
-  helpTitle.innerHTML = dataLevel[count].helpTitle;
-  helpSubtitle.innerHTML = dataLevel[count].helpSub;
-  helpText.innerHTML = dataLevel[count].helpDesc;
+  helpTitle.innerHTML = dataLevel[num].helpTitle;
+  helpSubtitle.innerHTML = dataLevel[num].helpSub;
+  helpText.innerHTML = dataLevel[num].helpDesc;
 
   helpExamples.innerHTML = '';
-  let arrExam = dataLevel[count].examples;
+  let arrExam = dataLevel[num].examples;
   for (let i = 0; i < arrExam.length; i++) {
     const divEl = document.createElement("div");
     divEl.append(arrExam[i]);
@@ -63,10 +64,7 @@ hamburger.addEventListener("click", () => {
 function generaleLevelsList() {
   for (let i = 1; i <= 11; i++) {
     const innerP = document.createElement("p");
-    const innerSpan = document.createElement("span");
-    innerSpan.classList.add('number-level');
-    innerSpan.append(i);
-    innerP.append(innerSpan);
+    innerP.append(`${i} `);
     allLevel.append(innerP);
   }
 
@@ -78,3 +76,19 @@ function generaleLevelsList() {
 }
 
 generaleLevelsList();
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  chooseLevel();
+});
+
+function chooseLevel() {
+  const allLevel = document.querySelector(".container__all-level");
+  allLevel.addEventListener('click', (event) => {
+    let number = Number(event.target.innerHTML.charAt(0));
+    level.innerHTML = number;
+    generateLevel(number);
+  })
+
+}
+

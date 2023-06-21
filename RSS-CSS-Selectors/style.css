@@ -74,6 +74,7 @@ footer .year {
   background-color: #383333;
   width: 300px;
   color: #ead8c3;
+  box-sizing: border-box;
 }
 
 .container__action {
@@ -219,6 +220,10 @@ footer .year {
 
 .container__all-level p, .container__all-level h3 {
   opacity: 0.7;
+}
+
+.container__all-level p {
+  cursor: pointer;
 }
 
 .show {
