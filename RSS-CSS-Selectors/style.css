@@ -125,7 +125,9 @@ footer .year {
 }
 
 @keyframes input {
-  50% { background:none ; }
+  50% {
+    background: none;
+  }
 }
 
 .input__button {
@@ -142,7 +144,7 @@ footer .year {
 }
 
 .input__button:hover {
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
 }
 
 .input__button:active {
@@ -215,6 +217,15 @@ footer .year {
 .level__title {
   margin-top: 15px;
   margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.level-wrap > h4, .help__desc {
+  opacity: 0.5;
+}
+
+.help__desc p {
+  font-size: 14px;
 }
 
 .level__knob-wrap {
@@ -278,7 +289,7 @@ footer .year {
   height: 722px;
   width: 0;
   box-sizing: border-box;
-  color: #c59e9e;
+  color: #b5b7ae;
   transition: all .6s ease-out;
   overflow-x: hidden;
   z-index: 1;
@@ -294,13 +305,13 @@ footer .year {
 
 .container__all-levels h3 {
   opacity: 0.7;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 .container__all-levels p {
   cursor: pointer;
   opacity: 0.5;
-  white-space: nowrap
+  white-space: pre;
 }
 
 .number-level {
