@@ -4,7 +4,6 @@ body {
   margin: 0;
 }
 
-
 .container {
   display: flex;
   border: 10px solid #000000;
@@ -73,7 +72,7 @@ footer .year {
 .container__level {
   padding: 5px;
   background-color: #383333;
-  width: 350px;
+  width: 300px;
   color: #ead8c3;
 }
 
@@ -202,6 +201,35 @@ footer .year {
 
 .burger-move {
   transform: rotate(90deg);
+  z-index: 2;
+}
+
+.container__all-level {
+  background-color: #524c48;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  height: 722px;
+  width: 0;
+  transition: all 0.5s ease-out;
+  padding: 5px 0 0 10px;
+  box-sizing: border-box;
+  color: #c59e9e;
+}
+
+.container__all-level p, .container__all-level h3 {
+  opacity: 0.7;
+}
+
+.show {
+  width: 292px;
+  z-index: 1;
+  right: 10px;
+}
+
+.number-level {
+  margin-right: 10px;
+  opacity: 0.5;
 }
 
 @media (max-width: 800px) {

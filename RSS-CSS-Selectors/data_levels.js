@@ -1,9 +1,9 @@
-const dataLevels = [
+const dataLevel = [
   {
     taskDesc: "Select the plates",
-    levelTitle: "Type Selector",
-    levelSub: "Select elements by their type",
-    levelDesc: "Selects all elements of type <strong>A</strong>. Type refers to the type of tag, so <tag>div</tag>, <tag>p</tag> and <tag>ul</tag> are all different element types.",
+    helpTitle: "Type Selector",
+    helpSub: "Select elements by their type",
+    helpDesc: "Selects all elements of type <strong>A</strong>. Type refers to the type of tag, so <tag>div</tag>, <tag>p</tag> and <tag>ul</tag> are all different element types.",
     examples: [
       '<strong>div</strong> selects all <tag>div</tag> elements.',
       '<strong>p</strong> selects all <tag>p</tag> elements.',
@@ -12,14 +12,14 @@ const dataLevels = [
     markup: [
       '<plate/>',
       '<plate/>'
-    ]
-
+    ],
+    syntax: "A"
   },
   {
     taskDesc: "Select the bento boxes",
-    levelTitle: "Type Selector",
-    levelSub: "Select elements by their type",
-    levelDesc: "Selects all elements of type <strong>A</strong>. Type refers to the type of tag, so <tag>div</tag>, <tag>p</tag> and <tag>ul</tag> are all different element types.",
+    helpTitle: "Type Selector",
+    helpSub: "Select elements by their type",
+    helpDesc: "Selects all elements of type <strong>A</strong>. Type refers to the type of tag, so <tag>div</tag>, <tag>p</tag> and <tag>ul</tag> are all different element types.",
     examples: [
       '<strong>div</strong> selects all <tag>div</tag> elements.',
       '<strong>p</strong> selects all <tag>p</tag> elements.',
@@ -29,13 +29,14 @@ const dataLevels = [
       '<bento/>',
       '<plate/>',
       '<bento/>'
-    ]
+    ],
+    syntax: "A",
   },
   {
     taskDesc: "Select the fancy plate",
-    levelTitle: "ID Selector",
-    levelSub: "Select elements with an ID",
-    levelDesc: 'Selects the element with a specific <strong>id</strong>. You can also combine the ID selector with the type selector.',
+    helpTitle: "ID Selector",
+    helpSub: "Select elements with an ID",
+    helpDesc: 'Selects the element with a specific <strong>id</strong>. You can also combine the ID selector with the type selector.',
     examples: [
       '<strong>#cool</strong> selects any element with <strong>id="cool"</strong>',
       '<strong>ul#long</strong> selects <tag>ul id="long"</tag>'
@@ -45,14 +46,14 @@ const dataLevels = [
       '<plate id="fancy"/>',
       '<plate/>',
       '<bento/>'
-    ]
+    ],
+    syntax: "#id",
   },
   {
     taskDesc: "Select the apple on the plate",
-    levelTitle: "Descendant Selector",
-    levelSub: "Select an element inside another element",
-    syntax: "A&nbsp;&nbsp;B",
-    levelDesc: "Selects all <strong>B</strong> inside of <strong>A</strong>. <strong>B</strong> is called a descendant because it is inside of another element.",
+    helpTitle: "Descendant Selector",
+    helpSub: "Select an element inside another element",
+    helpDesc: "Selects all <strong>B</strong> inside of <strong>A</strong>. <strong>B</strong> is called a descendant because it is inside of another element.",
     examples: [
       '<strong>p&nbsp;&nbsp;strong</strong> selects all <tag>strong</tag> elements that are inside of any <tag>p</tag>',
       '<strong>#fancy&nbsp;&nbsp;span</strong> selects any <tag>span</tag> elements that are inside of the element with <strong>id="fancy"</strong>',
@@ -63,23 +64,36 @@ const dataLevels = [
       '<plate>',
       '<apple/>',
       '</plate>',
-      '<apple/>']
+      '<apple/>'
+    ],
+    syntax: "A&nbsp;&nbsp;B",
   },
   {
     taskDesc: "Select the pickle on the fancy plate",
-    levelSub: "Combine the Descendant & ID Selectors",
-    levelDesc: 'You can combine any selector with the descendent selector.',
+    helpSub: "Combine the Descendant & ID Selectors",
+    helpDesc: 'You can combine any selector with the descendent selector.',
     examples: [
       '<strong>#cool&nbsp;span</strong> selects all <tag>span</tag> elements that are inside of elements with <strong>id="cool"</strong>'
     ],
     answer: "#fancy pickle",
-    markup: ['<bento>', '<orange/>', '</bento>', '<plate id="fancy">', '<pickle/>', '</plate>', '<plate>', '<pickle/>', '</plate>']
+    markup: [
+      '<bento>',
+      '<orange/>',
+      '</bento>',
+      '<plate id="fancy">',
+      '<pickle/>',
+      '</plate>',
+      '<plate>',
+      '<pickle/>',
+      '</plate>'
+    ],
+    syntax: "#id&nbsp;&nbsp;A"
   },
   {
     taskDesc: "Select the small apples",
-    levelTitle: "Class Selector",
-    levelSub: "Select elements by their class",
-    levelDesc: 'The class selector selects all elements with that class attribute. Elements can only have one ID, but many classes.',
+    helpTitle: "Class Selector",
+    helpSub: "Select elements by their class",
+    helpDesc: 'The class selector selects all elements with that class attribute. Elements can only have one ID, but many classes.',
     examples: [
       '<strong>.neato</strong> selects all elements with <strong>class="neato"</strong>'
     ],
@@ -90,13 +104,14 @@ const dataLevels = [
       '<plate>',
       '<apple class="small"/>',
       '</plate>',
-      '<plate/>',]
+      '<plate/>',
+    ],
+    syntax: ".classname",
   },
   {
     taskDesc: "Select the small oranges",
-    levelSub: "Combine the Class Selector",
-    syntax: "A.className",
-    levelDesc: 'You can combine the class selector with other selectors, like the type selector.',
+    helpSub: "Combine the Class Selector",
+    helpDesc: 'You can combine the class selector with other selectors, like the type selector.',
     examples: [
       '<strong>ul.important</strong> selects all <tag>ul</tag> elements that have <strong>class="important"</strong>',
       '<strong>#big.wide</strong> selects all elements with <strong>id="big"</strong> that also have <strong>class="wide"</strong>'
@@ -113,13 +128,14 @@ const dataLevels = [
       '</plate>',
       '<plate>',
       '<orange class="small"/>',
-      '</plate>']
+      '</plate>'
+    ],
+    syntax: "A.className"
   },
   {
     taskDesc: "Select the small oranges in the bentos",
-    syntax: "Put your back into it!",
-    levelSub: "You can do it...",
-    levelDesc: 'Combine what you learned in the last few levels to solve this one!',
+    helpSub: "You can do it...",
+    helpDesc: 'Combine what you learned in the last few helps to solve this one!',
     answer: "bento orange.small",
     markup: [
       '<bento>',
@@ -135,13 +151,14 @@ const dataLevels = [
       '<bento>',
       '<orange class="small"/>',
       '</bento>'
-    ]
+    ],
+    syntax: "Put your back into it!"
   },
   {
     taskDesc: "Select all the plates and bentos",
-    levelTitle: "Comma Combinator",
-    levelSub: "Combine, selectors, with... commas!",
-    levelDesc: 'Thanks to Shatner technology, this selects all <strong>A</strong> and <strong>B</strong> elements. You can combine any selectors this way, and you can specify more than two.',
+    helpTitle: "Comma Combinator",
+    helpSub: "Combine, selectors, with... commas!",
+    helpDesc: 'Thanks to Shatner technology, this selects all <strong>A</strong> and <strong>B</strong> elements. You can combine any selectors this way, and you can specify more than two.',
     examples: [
       '<strong>p, .fun</strong> selects all <tag>p</tag> elements as well as all elements with <strong>class="fun"</strong>',
       '<strong>a, p, div</strong> selects all <tag>a</tag>, <tag>p</tag> and <tag>div</tag> elements'
@@ -161,13 +178,14 @@ const dataLevels = [
       '</plate>',
       '<pickle/>',
       '<pickle class="small"/>'
-    ]
+    ],
+    syntax : "A, B"
   },
   {
     taskDesc: "Select all the things!",
-    levelTitle: "The Universal Selector",
-    levelSub: "You can select everything!",
-    levelDesc: 'You can select all elements with the universal selector! ',
+    helpTitle: "The Universal Selector",
+    helpSub: "You can select everything!",
+    helpDesc: 'You can select all elements with the universal selector! ',
     examples: [
       '<strong>p *</strong> selects any element inside all <tag>p</tag> elements.',
     ],
@@ -182,12 +200,13 @@ const dataLevels = [
       '<orange/>',
       '</bento>',
       '<plate id="fancy"/>'
-    ]
+    ],
+    syntax : "*",
   },
   {
     taskDesc: "Select everything on a plate",
-    levelSub: "Combine the Universal Selector",
-    levelDesc: 'This selects all elements inside of <strong>A</strong>.',
+    helpSub: "Combine the Universal Selector",
+    helpDesc: 'This selects all elements inside of <strong>A</strong>.',
     examples: [
       '<strong>p *</strong> selects every element inside all <tag>p</tag> elements.',
       '<strong>ul.fancy *</strong> selects every element inside all <tag>ul class="fancy"</tag> elements.'
@@ -204,9 +223,10 @@ const dataLevels = [
       '<plate>',
       '<apple/>',
       '</plate>'
-    ]
+    ],
+    syntax : "A&nbsp;&nbsp;*",
   }
 ]
 
-export default dataLevels;
+export default dataLevel;
 
