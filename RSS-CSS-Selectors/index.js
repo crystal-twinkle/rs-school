@@ -54,21 +54,21 @@ generateLevel();
 
 
 const hamburger = document.querySelector(".hamburger");
-const allLevel = document.querySelector(".container__all-level");
+const allLevels = document.querySelector(".container__all-levels")
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("burger-move");
-  allLevel.classList.toggle("show");
+  allLevels.classList.toggle("show");
 })
 
 function generaleLevelsList() {
   for (let i = 1; i <= 11; i++) {
     const innerP = document.createElement("p");
     innerP.append(`${i} `);
-    allLevel.append(innerP);
+    allLevels.append(innerP);
   }
 
-  const allP = document.querySelectorAll(".container__all-level p");
+  const allP = document.querySelectorAll(".container__all-levels p");
   for (let i = 0; i < allP.length; i++) {
     allP[i].append(dataLevel[i].syntax);
   }
@@ -83,13 +83,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function chooseLevel() {
-  const allLevel = document.querySelector(".container__all-level");
-
-  allLevel.addEventListener('click', (event) => {
+  allLevels.addEventListener('click', (event) => {
     let number = Number(event.target.innerHTML.charAt(0));
     numberlevel.innerHTML = number;
     generateLevel(number);
-    allLevel.classList.remove('show')
+    allLevels.classList.remove('show')
   })
 
 }

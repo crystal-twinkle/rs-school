@@ -162,6 +162,11 @@ footer .year {
   align-items: center;
 }
 
+.level__title {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
 .level__knob-wrap {
   display: flex;
   column-gap: 7px;
@@ -216,13 +221,13 @@ footer .year {
 }
 
 .container__all-levels {
+  display: none;
   background-color: #524c48;
   position: absolute;
   right: 0;
   top: 10px;
   height: 722px;
   width: 0;
-  transition: all 0.5s ease-out;
   padding: 5px 0 0 10px;
   box-sizing: border-box;
   color: #c59e9e;
@@ -238,6 +243,8 @@ footer .year {
 }
 
 .show {
+  transition: all 1s ease-out;
+  display: block;
   width: 295px;
   z-index: 1;
   right: 10px;
@@ -264,10 +271,18 @@ footer .year {
 
 }
 
-@media (max-width: 675px) {
+@media (max-width: 680px) {
 
   .container__level {
     width: 250px;
+  }
+
+  .container__all-levels {
+    width: 245px;
+  }
+
+  .level-wrap {
+    width: 237px;
   }
 
   .level__title {
@@ -276,7 +291,7 @@ footer .year {
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 635px) {
 
   .game__desc {
     text-align: center;
@@ -296,7 +311,19 @@ footer .year {
   }
 
   .container__level {
-    width: 200px;
+    width: 185px;
+  }
+
+  .container__all-levels {
+    width: 180px;
+  }
+
+  .hamburger {
+    margin-left: 5px;
+  }
+
+  .level-wrap {
+    width: 172px;
   }
 
   .container__action {
