@@ -120,6 +120,9 @@ footer .year {
   width: calc(100%);
 }
 
+.input__text:focus {
+  background: rgb(255, 255, 255);
+}
 
 @keyframes input {
   50% { background:none ; }

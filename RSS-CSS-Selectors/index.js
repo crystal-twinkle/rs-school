@@ -3,13 +3,14 @@ import dataLevel from "./data_levels.js";
 const btnLeft = document.getElementById('but-left');
 const btnRight = document.getElementById('but-right');
 const numberLevel = document.getElementById('level-now');
+const inputText = document.getElementById('cssEditor');
+const inputButton = document.getElementById('input-button');
 let count = 0;
 
 btnLeft.addEventListener('click', () => {
   if (count > 0 && count <= 10) {
     count -= 1;
   }
-  numberLevel.innerHTML = count + 1;
   generateLevel(count)
 })
 
@@ -17,17 +18,33 @@ btnRight.addEventListener('click', () => {
   if (count >= 0 && count < 10) {
     count += 1;
   }
-  numberLevel.innerHTML = count + 1;
   generateLevel(count)
 })
 
-function generateLevel(num=1) {
+inputButton.addEventListener('click', () => {
+  inputAnswer();
+})
+
+inputText.addEventListener("keypress", function (e) {
+  if (e.code === 'Enter') {
+    inputAnswer();
+  }
+})
+
+function inputAnswer() {
+  let numIn = Number(numberLevel.innerHTML) - 1;
+  if (inputText.value === dataLevel[numIn].answer) {
+    generateLevel(numIn + 1);
+  }
+}
+
+function generateLevel(num = 0) {
   const helpTitle = document.getElementById('help-title');
   const helpSubtitle = document.getElementById('help-subtitle');
   const helpText = document.getElementById('help-text');
   const helpExamples = document.getElementById('help-examples');
   const viewerSpan = document.getElementById('viewer-span_generate');
-
+  numberLevel.innerHTML = num + 1;
   viewerSpan.innerHTML = '';
 
   let arrMarkup = dataLevel[num].markup;
@@ -84,8 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function chooseLevel() {
   allLevels.addEventListener('click', (event) => {
     let number = Number(event.target.innerHTML.charAt(0));
-    numberLevel.innerHTML = number;
-    generateLevel(number-1);
+    generateLevel(number - 1);
     allLevels.classList.remove('show')
   })
 
