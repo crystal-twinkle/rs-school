@@ -5,6 +5,8 @@ const btnRight = document.getElementById('but-right');
 const numberLevel = document.getElementById('level-now');
 const inputText = document.getElementById('cssEditor');
 const inputButton = document.getElementById('input-button');
+const table = document.getElementById('table');
+
 let count = 0;
 
 btnLeft.addEventListener('click', () => {
@@ -46,6 +48,7 @@ function generateLevel(num = 0) {
   const viewerSpan = document.getElementById('viewer-span_generate');
   numberLevel.innerHTML = num + 1;
   viewerSpan.innerHTML = '';
+  table.innerHTML = dataLevel[num].tableFill;
 
   let arrMarkup = dataLevel[num].markup;
   for (let i = 0; i < arrMarkup.length; i++) {

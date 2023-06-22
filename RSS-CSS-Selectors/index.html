@@ -23,8 +23,15 @@
       Select the pickle on the fancy plate
     </h2>
 
-    <div class="game-field">
-      <div class="table">
+    <div class="game-wrapper">
+      <div class="table-wrapper">
+        <div class="table-surface"></div>
+        <div class="table" id="table">
+        </div>
+      </div>
+      <div class="table-edge">
+        <div class="table-leg"></div>
+        <div class="table-leg"></div>
       </div>
     </div>
 
@@ -39,11 +46,11 @@
         <div class="action__editor">
           <label for="cssEditor"></label>
           <div class="action__input-wrap">
-            <input class="input__text" id="cssEditor" type="text" placeholder="Type in a CSS selector">
+            <input class="input__text" id="cssEditor" type="text" placeholder="Type here">
             <button class="input__button" id="input-button">Enter</button>
           </div>
           <div class="action-panel__desc">
-          <p> { </p> /*&ensp;Styles would be here&ensp;*/ <p> } </p>
+            <p> { </p> /*&ensp;Styles would be here&ensp;*/ <p> } </p>
           </div>
         </div>
 
@@ -64,7 +71,7 @@
 
     <div class="container__all-levels">
       <div class="all-levels-wrap">
-      <h3>Choose a level</h3>
+        <h3>Choose a level</h3>
       </div>
     </div>
 
