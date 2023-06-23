@@ -7,13 +7,14 @@ body {
 .container {
   display: flex;
   border: 10px solid #000000;
-  background-color: #dea479;
+  background-image: linear-gradient(130deg, #bd8968, #e3ac82 30%);
 }
 
 .container__game {
   display: flex;
   flex-direction: column;
   width: 80%;
+  border-right: solid 2px rgba(208, 48, 48, 0.63);
 }
 
 .game__header {
@@ -386,15 +387,38 @@ footer .year {
 }
 
 .bento:before {
-  content:"";
+  content: "";
   position: absolute;
   width: 100%;
   top: 0;
-  left:0;
+  left: 0;
   border-style: solid;
   border-width: 10px 0 0 0;
   border-color: #00000019;
 }
+
+
+.cucumber {
+  width: 50px;
+  height: 50px;
+  background-image: url('picture/381032.png');
+  background-size: cover;
+  position: relative;
+}
+
+.cucumber :after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50% - 7px);
+  bottom: -4px;
+  height: 15px;
+  width: 15px;
+  border-radius: 90%;
+  border-bottom: solid 8px #252525;
+  opacity: 0.5;
+}
+
 
 @media (max-width: 800px) {
 
