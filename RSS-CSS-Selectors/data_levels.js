@@ -78,7 +78,7 @@ const dataLevel = [
       '</div>'
     ],
     levelName: "Теги - потомки",
-    tableFill: '<div class = "bento"> <div class = "cucumber" style="left: -6px"> </div> <div class = "cucumber" style="left: -12px"> </div> </div>'
+    tableFill: '<div class = "bento"> <div class = "cucumber" style="left: -6px"> </div> <div class = "cucumber" style="left: 25px; top: -60px"> </div> </div>'
   },
   {
     taskDesc: "Выбери зелёную тарелку",
