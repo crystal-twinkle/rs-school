@@ -80,6 +80,7 @@ footer .year {
   margin: 30px auto 20px;
   width: 500px;
   position: relative;
+  height: 500px;
 }
 
 .action__header {
@@ -104,6 +105,7 @@ footer .year {
 
 .action-wrap {
   display: flex;
+  height: 100%;
 }
 
 .action__editor {
@@ -157,7 +159,6 @@ footer .year {
   background-color: #575757;
   padding: 0 10px;
   width: 50%;
-  height: 350px;
   border-right: solid 1px #98909070;
 }
 
@@ -180,6 +181,7 @@ footer .year {
 .viewer__content span {
   opacity: 0.7;
   cursor: default;
+  line-height: 150%;
 }
 
 .viewer__content span:hover {
@@ -365,7 +367,7 @@ footer .year {
 .plate, .bento {
   width: 70px;
   height: 70px;
-  box-shadow: 0 8px 0 #00000019;
+  box-shadow: 0 8px 0 rgba(14, 14, 14, 0.1);
   perspective: 1000px;
 }
 
@@ -395,8 +397,10 @@ footer .year {
   border-width: 20px 2px;
   border-color: #711c12;
   border-style: solid;
-  display: flex;
-  justify-content: space-around;
+}
+
+div.small {
+  transform: scale(0.7);
 }
 
 .bento:before {
@@ -410,7 +414,7 @@ footer .year {
   border-color: #00000019;
 }
 
-.cucumber, .pineapple {
+.cucumber, .pineapple, .watermelon {
   position: relative;
   width: 50px;
   height: 50px;
@@ -427,6 +431,10 @@ footer .year {
 
 .pineapple {
   background-image: url('picture/10848880.png');
+}
+
+.watermelon {
+  background-image: url('picture/watermelon.png');
 }
 
 .square {
@@ -534,6 +542,14 @@ footer .year {
 
   .input__text {
     width: 125px;
+  }
+
+  .container__all-levels h3 {
+    font-size: 14px;
+  }
+
+  .container__all-levels p {
+    font-size: 12px;
   }
 
 }

@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 });
 
-function generateLevel(num = 4) {
+function generateLevel(num = 6) {
   const helpTitle = document.getElementById('help-title');
   // const helpSubtitle = document.getElementById('help-subtitle');
   const helpText = document.getElementById('help-text');
