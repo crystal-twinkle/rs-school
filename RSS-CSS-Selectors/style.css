@@ -80,7 +80,7 @@ footer .year {
   margin: 30px auto 20px;
   width: 500px;
   position: relative;
-  height: 500px;
+  height: auto;
 }
 
 .action__header {
@@ -157,7 +157,7 @@ footer .year {
 
 .action__viewer {
   background-color: #575757;
-  padding: 0 10px;
+  padding: 7px 5px 5px 10px;
   width: 50%;
   border-right: solid 1px #98909070;
 }
@@ -166,10 +166,6 @@ footer .year {
   display: flex;
   flex-direction: column;
   opacity: 0.5;
-}
-
-.viewer__content {
-  margin-top: 8px;
 }
 
 .viewer__content, .viewer__span {
@@ -479,6 +475,9 @@ div.small {
     font-size: 18px;
   }
 
+  .viewer__content span {
+    font-size: 11px;
+  }
 
 }
 
@@ -533,10 +532,6 @@ div.small {
 
   .action__editor {
     padding: 10px 3px;
-    font-size: 12px;
-  }
-
-  .viewer__content span {
     font-size: 12px;
   }
 
