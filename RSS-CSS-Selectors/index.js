@@ -7,22 +7,6 @@ const inputText = document.getElementById('cssEditor');
 const inputButton = document.getElementById('input-button');
 const table = document.getElementById('table');
 
-let count = 0;
-
-btnLeft.addEventListener('click', () => {
-  if (count > 0 && count <= 10) {
-    count -= 1;
-  }
-  generateLevel(count);
-})
-
-btnRight.addEventListener('click', () => {
-  if (count >= 0 && count < 10) {
-    count += 1;
-  }
-  generateLevel(count);
-})
-
 inputButton.addEventListener('click', () => {
   effects();
   setTimeout(inputAnswer, 1000);
@@ -63,23 +47,26 @@ function effects() {
 }
 
 
-function view() {
-  let num = numberLevel.innerHTML;
-  console.log(num)
-  if (num === '4') {
-    const cucumbers = document.querySelectorAll('.cucumber');
-    for (let cucumber of cucumbers) {
-      cucumber.style.left = '-8px';
-    }
-
-  }
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-  view();
+
+  let count = Number(numberLevel.innerHTML) - 1;
+
+  btnLeft.addEventListener('click', () => {
+    if (count > 0 && count <= 10) {
+      count -= 1;
+    }
+    generateLevel(count);
+  })
+
+  btnRight.addEventListener('click', () => {
+    if (count >= 0 && count < 10) {
+      count += 1;
+    }
+    generateLevel(count);
+  })
 });
 
-function generateLevel(num = 3) {
+function generateLevel(num = 4) {
   const helpTitle = document.getElementById('help-title');
   // const helpSubtitle = document.getElementById('help-subtitle');
   const helpText = document.getElementById('help-text');
@@ -94,7 +81,6 @@ function generateLevel(num = 3) {
   numberLevel.innerHTML = num + 1;
   viewerSpan.innerHTML = '';
   table.innerHTML = dataLevel[num].tableFill;
-
 
   let arrMarkup = dataLevel[num].markup;
   for (let i = 0; i < arrMarkup.length; i++) {
@@ -155,9 +141,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function chooseLevel() {
   allLevels.addEventListener('click', (event) => {
-    let number = Number(event.target.innerHTML.charAt(0));
+    let firstTwoLitter = event.target.innerHTML.slice(0, 2);
+    let number = (firstTwoLitter.indexOf('&') !== -1) ? Number(firstTwoLitter.slice(0, 1)) : Number(firstTwoLitter);
     generateLevel(number - 1);
     allLevels.classList.remove('show');
+    hamburger.classList.remove("burger-move");
   })
 
 }
