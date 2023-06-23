@@ -1,96 +1,102 @@
 const dataLevel = [
   {
-    taskDesc: "Select the plates",
-    helpTitle: "Type Selector",
-    helpSub: "Select elements by their type",
-    helpDesc: "Selects all elements of type <strong>A</strong>. Type refers to the type of tag, so <tag>div</tag>, <tag>p</tag> and <tag>ul</tag> are all different element types.",
+    taskDesc: "Выбери тарелки",
+    helpTitle: "Выбери селекторы по их атрибуту class",
+    helpDesc: 'Атрибут class часто используется для указания на имя класса в стилях. А стили нужны для отрисовки тарелок например ) ',
     examples: [
-      '<div> selects all <div> elements.',
-      '<p> selects all <p> elements.',
+      '.bento выберет все &lt;div class = "bento"> элементы.',
+      '.text выберет все &lt;p class = "text"> элементы.',
     ],
-    answer: "plate",
+    answers: [".plate", "div.plate"],
     markup: [
-      '<plate/>',
-      '<plate/>'
+      '<div class = "plate"> </div>',
+      '<div class = "plate"> </div>',
+      '<div class = "bento"> </div>',
     ],
-    syntax: "A",
-    tableFill: '<div class = "plate"></div> <div class = "plate" > </div>'
+    levelName: "Атрибут class",
+    tableFill: '<div class = "plate"> </div> <div class = "plate"> </div> <div class = "bento">'
   },
   {
-    taskDesc: "Select the bento boxes",
-    helpTitle: "Type Selector",
-    helpSub: "Select elements by their type",
-    helpDesc: "Selects all elements of type <strong>A</strong>. Type refers to the type of tag, so <tag>div</tag>, <tag>p</tag> and <tag>ul</tag> are all different element types.",
+    taskDesc: "Покрась в зелёный",
+    helpTitle: "Сделай квадрат зелёного цвета",
+    helpDesc: 'Свойства задают цвет, размер и другие интересные вещи. Их следует писать в таком формате: имя свойства &#8594; двоеточие &#8594; значение свойства &#8594; точка с запятой.',
     examples: [
-      '<div> selects all <div> elements.',
-      '<p> selects all <p> elements.',
+      '<pre>.square {\n' +
+      '\u00A0\u00A0background: red;\n' +
+      '}</pre>' +
+      '(свойство - это background, а \"red\" - это значение) ' +
+      'такая запись покрасит в красный цвет',
+      'в данном упражнении достаточно написать только свойство и значение'
     ],
-    answer: "bento",
+    answers: ["background: green;", ".square {background: green;}", ".square { background: green; }"],
     markup: [
-      '<bento/>',
-      '<plate/>',
-      '<bento/>'
+      '<div class = "square"> </div>',
     ],
-    syntax: "A",
-    tableFill: '<div class = "bento"></div> <div class = "plate" > </div> <div class = "bento"></div>'
+    levelName: "CSS свойства",
+    tableFill: '<div class = "square"> </div>'
   },
   {
-    taskDesc: "Select the fancy plate",
-    helpTitle: "ID Selector",
-    helpSub: "Select elements with an ID",
-    helpDesc: 'Selects the element with a specific <strong>id</strong>. You can also combine the ID selector with the type selector.',
+    taskDesc: "Найди родителя",
+    helpTitle: "Родственные связи тегов",
+    helpDesc: 'Каждый тег, в зависимости от положения в HTML коде может быть либо родителем, либо потомком, либо и тем и другим одновременно.',
     examples: [
-      '<#cool> selects any element with <id="cool">',
-      '<ul#long> selects <ul id="long">'
+      '<pre>&lt;ul>\n' +
+      '\u00A0\u00A0&lt;li> 1 &lt;/li>\n' +
+      '\u00A0\u00A0&lt;li> 2 &lt;/li>\n' +
+      '\u00A0\u00A0&lt;li> 3 &lt;/i>&lt;/li>\n' +
+      '&lt;/ul></pre>  тег ul является родителем тегов li',
+      ''
     ],
-    answer: "#fancy",
+    answer: [".plate", "div.plate", "table", "div.table"],
     markup: [
-      '<plate id="fancy"/>',
-      '<plate/>',
-      '<bento/>'
+      '<div class = "plate">',
+      '\u3000<div class = "pine">',
+      '\u3000</div>',
+      '</div>'
     ],
-    syntax: "#id",
-    tableFill: '<div class = "bento"></div> <div class = "plate" > </div> <div class = "bento"></div> <div class = "bento"></div>'
+    levelName: "Теги - родители",
+    tableFill: '<div class = "plate"> <div class = "pineapple" > </div> </div>'
   },
   {
-    taskDesc: "Select the apple on the plate",
-    helpTitle: "Descendant Selector",
-    helpSub: "Select an element inside another element",
-    helpDesc: "Selects all <strong>B</strong> inside of <strong>A</strong>. <strong>B</strong> is called a descendant because it is inside of another element.",
+    taskDesc: "Найди потомка",
+    helpTitle: "Родственные связи тегов",
+    helpDesc: "Каждый тег, в зависимости от положения в HTML коде может быть либо родителем, либо потомком, либо и тем и другим одновременно.",
     examples: [
-      '<p>  selects all elements that are inside of any <p>',
-      '<#fancy> span selects any <span> elements that are inside of the element with <>id="fancy">',
+      '<pre>&lt;ul>\n' +
+      '\u00A0\u00A0&lt;li> 1 &lt;i>курсив&lt;/i>&lt;/li>\n' +
+      '\u00A0\u00A0&lt;li> 2 &lt;i>курсив&lt;/i>&lt;/li>\n' +
+      '\u00A0\u00A0&lt;li> 3 &lt;i>курсив&lt;/i>&lt;/li>\n' +
+      '&lt;/ul></pre>  теги i являются потомками тегов li и тега ul',
+      ''
     ],
-    answer: "plate apple",
+    answer: [".bento", "div.bento", "cucumber", "div.cucumber"],
     markup: [
-      '<bento/>',
-      '<plate>',
-      '<apple/>',
-      '</plate>',
-      '<apple/>'
+      '<div class = "bento">',
+      '\u3000<div class = "cucumber">',
+      '\u3000</div>',
+      '\u3000<div class = "cucumber">',
+      '\u3000</div>',
+      '</div>'
     ],
-    syntax: "A&nbsp;&nbsp;B",
+    levelName: "Теги - потомки",
+    tableFill: '<div class = "bento"> <div class = "cucumber"> </div> <div class = "cucumber"> </div> </div>'
   },
   {
     taskDesc: "Select the pickle on the fancy plate",
-    helpSub: "Combine the Descendant & ID Selectors",
     helpDesc: 'You can combine any selector with the descendent selector.',
     examples: [
       '<strong>#cool&nbsp;span</strong> selects all <tag>span</tag> elements that are inside of elements with <strong>id="cool"</strong>'
     ],
-    answer: "#fancy pickle",
+    answer: [".bento", "div.bento", "cucumber", "div.cucumber"],
     markup: [
-      '<bento>',
-      '<orange/>',
-      '</bento>',
-      '<plate id="fancy">',
-      '<pickle/>',
-      '</plate>',
-      '<plate>',
-      '<pickle/>',
-      '</plate>'
+      '<div class = "plate">',
+      '\u3000<div class = "cucumber">',
+      '\u3000</div>',
+      '\u3000<div class = "cucumber">',
+      '\u3000</div>',
+      '</div>'
     ],
-    syntax: "#id&nbsp;&nbsp;A"
+    levelName: "#id&nbsp;&nbsp;A"
   },
   {
     taskDesc: "Select the small apples",
@@ -109,7 +115,7 @@ const dataLevel = [
       '</plate>',
       '<plate/>',
     ],
-    syntax: ".classname",
+    levelName: ".classname",
   },
   {
     taskDesc: "Select the small oranges",
@@ -133,7 +139,7 @@ const dataLevel = [
       '<orange class="small"/>',
       '</plate>'
     ],
-    syntax: "A.className"
+    levelName: "A.className"
   },
   {
     taskDesc: "Select the small oranges in the bentos",
@@ -155,7 +161,7 @@ const dataLevel = [
       '<orange class="small"/>',
       '</bento>'
     ],
-    syntax: "Put your back into it!"
+    levelName: "Put your back into it!"
   },
   {
     taskDesc: "Select all the plates and bentos",
@@ -182,7 +188,7 @@ const dataLevel = [
       '<pickle/>',
       '<pickle class="small"/>'
     ],
-    syntax: "A, B"
+    levelName: "A, B"
   },
   {
     taskDesc: "Select all the things!",
@@ -204,7 +210,7 @@ const dataLevel = [
       '</bento>',
       '<plate id="fancy"/>'
     ],
-    syntax: "*",
+    levelName: "*",
   },
   {
     taskDesc: "Select everything on a plate",
@@ -227,7 +233,7 @@ const dataLevel = [
       '<apple/>',
       '</plate>'
     ],
-    syntax: "A&nbsp;&nbsp;*",
+    levelName: "A&nbsp;&nbsp;*",
   }
 ]
 

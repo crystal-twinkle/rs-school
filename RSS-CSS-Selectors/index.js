@@ -13,42 +13,88 @@ btnLeft.addEventListener('click', () => {
   if (count > 0 && count <= 10) {
     count -= 1;
   }
-  generateLevel(count)
+  generateLevel(count);
 })
 
 btnRight.addEventListener('click', () => {
   if (count >= 0 && count < 10) {
     count += 1;
   }
-  generateLevel(count)
+  generateLevel(count);
 })
 
 inputButton.addEventListener('click', () => {
-  inputAnswer();
+  effects();
+  setTimeout(inputAnswer, 1000);
 })
 
 inputText.addEventListener("keypress", function (e) {
   if (e.code === 'Enter') {
-    inputAnswer();
+    setTimeout(inputAnswer, 2000);
   }
 })
 
 function inputAnswer() {
   let numIn = Number(numberLevel.innerHTML) - 1;
-  if (inputText.value === dataLevel[numIn].answer) {
-    generateLevel(numIn + 1);
+  for (let e of dataLevel[numIn].answers) {
+    if (inputText.value === e) {
+      generateLevel(numIn + 1);
+    }
   }
 }
 
-function generateLevel(num = 0) {
+function effects() {
+  let num = numberLevel.innerHTML;
+  if (num === '2') {
+    const square = document.querySelector('.square');
+    const inputValue = inputText.value;
+    const colonIndex = inputValue.indexOf(':');
+    const ISBackground = inputValue.indexOf('background');
+    const ISSemicolon = inputValue.indexOf(';');
+    if (ISBackground !== -1 && ISSemicolon !== 1) {
+      console.log('1')
+      if (colonIndex !== -1) {
+        let trimmedValue = inputValue.slice(colonIndex + 1, -1);
+        console.log(trimmedValue)
+        square.style.background = trimmedValue;
+      }
+    }
+  }
+}
+
+
+function view() {
+  let num = numberLevel.innerHTML;
+  console.log(num)
+  if (num === '4') {
+    const cucumbers = document.querySelectorAll('.cucumber');
+    for (let cucumber of cucumbers) {
+      cucumber.style.left = '-8px';
+    }
+
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  view();
+});
+
+function generateLevel(num = 3) {
   const helpTitle = document.getElementById('help-title');
-  const helpSubtitle = document.getElementById('help-subtitle');
+  // const helpSubtitle = document.getElementById('help-subtitle');
   const helpText = document.getElementById('help-text');
   const helpExamples = document.getElementById('help-examples');
   const viewerSpan = document.getElementById('viewer-span_generate');
+  const taskDesc = document.getElementById('task-desc');
+
+
+  inputText.value = ''
+
+  taskDesc.innerHTML = dataLevel[num].taskDesc;
   numberLevel.innerHTML = num + 1;
   viewerSpan.innerHTML = '';
   table.innerHTML = dataLevel[num].tableFill;
+
 
   let arrMarkup = dataLevel[num].markup;
   for (let i = 0; i < arrMarkup.length; i++) {
@@ -57,17 +103,16 @@ function generateLevel(num = 0) {
     viewerSpan.append(innerP);
   }
   helpTitle.innerHTML = dataLevel[num].helpTitle;
-  helpSubtitle.innerHTML = dataLevel[num].helpSub;
+  // helpSubtitle.innerHTML = dataLevel[num].helpSub;
   helpText.innerHTML = dataLevel[num].helpDesc;
 
   helpExamples.innerHTML = '';
   let arrExam = dataLevel[num].examples;
   for (let i = 0; i < arrExam.length; i++) {
     const divEl = document.createElement("div");
-    divEl.append(arrExam[i]);
+    divEl.innerHTML = arrExam[i];
     helpExamples.append(divEl);
   }
-
 }
 
 generateLevel();
@@ -87,7 +132,6 @@ hamburger.addEventListener("click", () => {
 function generaleLevelsList() {
   for (let i = 1; i <= 11; i++) {
     const innerP = document.createElement("p");
-    // innerP.style.whiteSpace = 'pre';
     if (i > 9) {
       innerP.append(`${i}\u00A0\u00A0\u00A0`);
     } else {
@@ -98,7 +142,7 @@ function generaleLevelsList() {
 
   const allP = document.querySelectorAll(".container__all-levels p");
   for (let i = 0; i < allP.length; i++) {
-    allP[i].append(dataLevel[i].syntax);
+    allP[i].append(dataLevel[i].levelName);
   }
 
 }

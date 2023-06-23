@@ -257,6 +257,7 @@ footer .year {
 }
 
 .help__desc p {
+  line-height: 130%;
   font-size: 14px;
 }
 
@@ -272,10 +273,19 @@ footer .year {
   row-gap: 9px;
 }
 
+.help__examples div {
+  line-height: 170%;
+  font-weight: 200;
+  font-size: 13px;
+}
+
+.help__examples div pre {
+  margin: 0;
+}
+
 .help__examples div:first-child {
   border-bottom: solid 2px rgba(255, 255, 255, 0.22);
   padding-bottom: 5px;
-  line-height: 170%;
 }
 
 .knob {
@@ -355,8 +365,8 @@ footer .year {
 .plate, .bento {
   width: 70px;
   height: 70px;
-  position: relative;
   box-shadow: 0 8px 0 #00000019;
+  perspective: 1000px;
 }
 
 .plate:before {
@@ -374,7 +384,7 @@ footer .year {
 }
 
 .plate {
-  background-color: white;
+  background: white;
   border-radius: 100%;
   border-bottom: solid 5px #cbc3c3;
 }
@@ -385,6 +395,8 @@ footer .year {
   border-width: 20px 2px;
   border-color: #711c12;
   border-style: solid;
+  display: flex;
+  justify-content: space-around;
 }
 
 .bento:before {
@@ -398,33 +410,34 @@ footer .year {
   border-color: #00000019;
 }
 
-
 .cucumber, .pineapple {
+  position: relative;
   width: 50px;
   height: 50px;
   background-size: cover;
+  left: 9px;
+  top: -10px;
+  transform: scale3d(1.2, 1.2, 1.2);
+  filter: drop-shadow(0 8px 1px rgba(0, 0, 0, 0.3));
 }
 
 .cucumber {
   background-image: url('picture/381032.png');
-  position: relative;
 }
 
 .pineapple {
   background-image: url('picture/10848880.png');
 }
 
-.cucumber :after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: calc(50% - 7px);
-  bottom: -4px;
-  height: 15px;
-  width: 15px;
-  border-radius: 90%;
-  border-bottom: solid 8px #252525;
-  opacity: 0.5;
+.square {
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  position: relative;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3),
+  -3px -3px 5px rgba(0, 0, 0, 0.3),
+  3px -3px 5px rgba(0, 0, 0, 0.3),
+  -3px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -549,6 +562,10 @@ footer .year {
 
   .container__all-levels h3 {
     font-size: 15px;
+  }
+
+  .container__all-levels p {
+    font-size: 14px;
   }
 
 }
