@@ -58,7 +58,7 @@ const dataLevel = [
     tableFill: '<div class = "plate"> <div class = "pineapple" > </div> </div>'
   },
   {
-    taskDesc: "Найди потомка",
+    taskDesc: "Найди потомков",
     helpTitle: "Родственные связи тегов",
     helpDesc: "Каждый тег, в зависимости от положения в HTML коде может быть либо родителем, либо потомком, либо и тем и другим одновременно.",
     examples: [
@@ -78,27 +78,7 @@ const dataLevel = [
       '</div>'
     ],
     levelName: "Теги - потомки",
-    tableFill: '<div class = "bento"> <div class = "cucumber" style="left: -6px"> </div> <div class = "cucumber" style="left: 25px; top: -60px"> </div> </div>'
-  },
-  {
-    taskDesc: "Выбери зелёную тарелку",
-    helpTitle: "Кобинация селектора и атрибута",
-    helpDesc: 'Устанавливает стиль для элемента, если задан специфичный атрибут тега. Записывается в таком формате: [имя аттрибута]: { описание правил стиля } или селектор[атрибут]: { описание правил стиля } ',
-    examples: [
-      '.element[style="background: blue"] выберет все элементы с синим цветом',
-      '.element[data-state: ready] выберет все элементы у которых готовое состояние',
-    ],
-    answer: ['.plate[style="background: green"]', 'div[style="background: green"]', 'div > .plate[style="background: green"]', '.plate:first-child', '.plate[style*="background: green"]', '.plate[style$="background: n"]', '.plate[style$="background: en"]', '.plate[style^="background: g"]', '.plate[style^="background: gr"]'],
-    markup: [
-      '<div class = "plate" style="background: green;>',
-      '</div>',
-      '<div class = "plate">',
-      '</div>',
-      '<div class = "plate" style="background: blue;>',
-      '</div>'
-    ],
-    levelName: '[атрибут="значение"]',
-    tableFill: '<div class = "plate" style="background: #089f08; border-bottom: solid 5px #37592f;"> </div> <div class = "plate"> </div> <div class = "plate" style="background: #2525bd; border-bottom: solid 5px #162134;"> </div>'
+    tableFill: '<div class = "bento"> <div class = "cucumber" style="left: -6px"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div>'
   },
   {
     taskDesc: "Выбери маленькие ананасы, которые лежат на бенто",
@@ -134,16 +114,15 @@ const dataLevel = [
   {
     taskDesc: "Выбери огурец, который следуют за арбузам",
     helpTitle: "Селектор для соседних элементов",
-    helpSub: "Combine the Class Selector",
     helpDesc: 'Соседний селектор в CSS используется для выбора элемента, который является непосредственным соседом другого элемента. Записывается в таком формате: элемент1 + элемент2',
     examples: [
       'h3 + p выбирает соседний p элемента h3',
-      '<pre>&lt;h3>\n  &lt;p class = "p1"&lt;/p>\n  &lt;p class = "p2" &lt;/p>\n &lt;/h3></pre>'+
+      '<pre>&lt;h3>\n  &lt;p class = "p1"&lt;/p>\n  &lt;p class = "p2" &lt;/p>\n &lt;/h3></pre>' +
       'h3 + p, выберет p с классом p1'
     ],
-    answer: ['', '', '.pine + .cucumber', '', ''],
+    answer: ['.pineapple + .cucumber', 'cucumber:nth-of-type(2)', 'cucumber:nth-last-child(1)', 'cucumber:last-of-type', 'cucumber:nth-child(4)', 'cucumber:last-child'],
     markup: [
-      '<div class="pine">',
+      '<div class="pineapple">',
       '</div>',
       '<div class = "cucumber">',
       '</div>',
@@ -151,76 +130,114 @@ const dataLevel = [
       '</div>',
       '<div class = "cucumber">',
       '</div>',
-
     ],
     levelName: "Соседний селектор",
     tableFill: '<div class="pineapple"> </div> <div class = "cucumber"></div> <div class="watermelon"> </div> <div class = "cucumber"></div></div>  '
 
   },
   {
-    taskDesc: "Select the small oranges in the bentos",
-    helpSub: "You can do it...",
-    helpDesc: 'Combine what you learned in the last few helps to solve this one!',
-    answer: "bento orange.small",
-    markup: [
-      '<bento>',
-      '<orange/>',
-      '</bento>',
-      '<orange class="small"/>',
-      '<bento>',
-      '<orange class="small"/>',
-      '</bento>',
-      '<bento>',
-      '<apple class="small"/>',
-      '</bento>',
-      '<bento>',
-      '<orange class="small"/>',
-      '</bento>'
+    taskDesc: "Выбери маленькие огурцы",
+    helpTitle: "Псевдокласс :is()",
+    helpDesc: ':is() принимает список селекторов в качестве аргумента и выбирает любой элемент, который может быть выбран одним из селекторов в этом списке',
+    examples: [
+      ':is(header, footer) p - выберет все p, лежащие в header и footer',
+      ':is(menu, dir) :is(ol, nav) ul - выберет все ul, лежащие в ol, nav, котовые также лежат в menu или dir'
     ],
-    levelName: "Put your back into it!"
+    answer: [':is(.bento, .plate) .small', '.bento .small, .plate .small', '.small', ':is(.bento, .plate) cucumber .small', '.cucumber .small'],
+    markup: [
+      '<div class = "bento">',
+      '\u3000<div class = "cucumber small">',
+      '\u3000</div>',
+      '\u3000<div class = "pineapple">',
+      '\u3000</div>',
+      '</div>',
+      '<div class = "plate">',
+      '\u3000<div class = "cucumber small">',
+      '\u3000</div>',
+      '\u3000<div class = "cucumber">',
+      '\u3000</div>',
+      '</div>'
+    ],
+    levelName: ":is()",
+    tableFill: '<div class = "bento"> <div class = "cucumber small" style="left: -12px"> </div> <div class = "pineapple" style="left: 20px; top: -65px"> </div> </div>   <div class = "plate"> <div class = "cucumber small" style="left: -6px; top: 5px;"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div>'
   },
   {
-    taskDesc: "Select all the plates and bentos",
-    helpTitle: "Comma Combinator",
-    helpSub: "Combine, selectors, with... commas!",
-    helpDesc: 'Thanks to Shatner technology, this selects all <strong>A</strong> and <strong>B</strong> elements. You can combine any selectors this way, and you can specify more than two.',
+    taskDesc: "Выбери тарелки в которых лежат ананасы",
+    helpTitle: "родитель:has(потомки)",
+    helpDesc: 'Селектор :has проверяет, содержит ли родитель хотя бы один конкретный элемент или выполняется ли условие, например, если инпут сфокусирован.',
     examples: [
-      '<strong>p, .fun</strong> selects all <tag>p</tag> elements as well as all elements with <strong>class="fun"</strong>',
-      '<strong>a, p, div</strong> selects all <tag>a</tag>, <tag>p</tag> and <tag>div</tag> elements'
+      'h1:has(h2) - выберет все h1, которые содержат в себе h2',
+      'h3:has(p) - выберет все h3, которые содержат в себе p'
     ],
-    answer: "plate, bento",
-    boardMarkup: [
-      '<pickle class="small"/>',
-      '<pickle/>',
-      '<plate>',
-      '<pickle/>',
-      '</plate>',
-      '<bento>',
-      '<pickle/>',
-      '</bento>',
-      '<plate>',
-      '<pickle/>',
-      '</plate>',
-      '<pickle/>',
-      '<pickle class="small"/>'
+    answer: ['plate:has(pineapple)', 'plate:first-child, plate:nth-of-type(2)', 'plate:first-child, plate:nth-child(2)'],
+    markup: [
+      '<div class = "plate">',
+      '\u3000<div class = "pineapple">',
+      '\u3000</div>',
+      '</div>',
+      '<div class = "plate">',
+      '\u3000<div class = "pineapple small">',
+      '\u3000</div>',
+      '\u3000<div class = "pineapple">',
+      '\u3000</div>',
+      '</div>',
+      '<div class = "plate">',
+      '\u3000<div class = "watermelon">',
+      '\u3000</div>',
+      '</div>'
     ],
-    levelName: "A, B"
+    levelName: "родитель:has(потомки)",
+    tableFill: '<div class = "plate"> <div class = "pineapple"> </div> </div>  <div class = "plate"> <div class = "pineapple small" style="left: -6px; top: 5px;"> </div> <div class = "pineapple" style="left: 25px; top: -55px"> </div> </div> <div class = "plate"> <div class="watermelon"> </div></div>'
   },
   {
-    taskDesc: "Select all the things!",
-    helpTitle: "The Universal Selector",
-    helpSub: "You can select everything!",
-    helpDesc: 'You can select all elements with the universal selector! ',
+    taskDesc: "Выбери бенто в которых лежит 2 огурца",
+    helpTitle: "родитель:has(условие)",
+    helpDesc: ':has может проверить различные условия, например содержит ли родитель определённое количество потомков.',
     examples: [
-      '<strong>p *</strong> selects any element inside all <tag>p</tag> elements.',
+      '.wrapper:has(.item:nth-last-child(n + 5)) - проверит содержит ли .wrapper 5 или более элементов',
+      'h3:not(:has(+ p)) - проверит, что за h3 не следут p'
     ],
-    answer: "*",
+    answer: ['.bento:has(.cucumber:nth-last-child(n + 2)]', '.bento:nth-of-type(n+2)'],
     markup: [
-      '<div class = "plate" style="width: 90px; height: 90px"> </div>',
-      '<div class = "plate" style="width: 70px; height: 70px"> </div>',
-      '<div class = "plate" style="width: 90px; height: 90px"> </div>',
+      '<div class = "bento">',
+      '<div class = "cucumber">',
+      '</div>',
+      '</div>',
+      '<div class = "bento">',
+      '<div class = "cucumber">',
+      '</div>',
+      '<div class = "cucumber">',
+      '</div>',
+      '</div>',
+      '<div class = "bento">',
+      '<div class = "cucumber">',
+      '</div>',
+      '<div class = "cucumber">',
+      '</div>',
+      '</div>',
     ],
-    levelName: "*",
+    levelName: "родитель:has(условие)",
+    tableFill: ' <div class = "bento"> <div class = "cucumber"> </div> </div> <div class = "bento"> <div class = "cucumber" style="left: -7px"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div> <div class = "bento"> <div class = "cucumber" style="left: -7px"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div> '
+  },
+  {
+    taskDesc: "Выбери зелёную тарелку",
+    helpTitle: "Кобинация селектора и атрибута",
+    helpDesc: 'Устанавливает стиль для элемента, если задан специфичный атрибут тега. Записывается в таком формате: [имя аттрибута]: { описание правил стиля } или селектор[атрибут]: { описание правил стиля } ',
+    examples: [
+      '.element[style="background: blue"] выберет все элементы с синим цветом',
+      '.element[data-state: ready] выберет все элементы у которых готовое состояние',
+    ],
+    answer: ['.plate[style="background: green"]', 'div[style="background: green"]', 'div > .plate[style="background: green"]', '.plate:first-child', '.plate[style*="background: green"]', '.plate[style$="background: n"]', '.plate[style$="background: en"]', '.plate[style^="background: g"]', '.plate[style^="background: gr"]'],
+    markup: [
+      '<div class = "plate" style="background: green;>',
+      '</div>',
+      '<div class = "plate">',
+      '</div>',
+      '<div class = "plate" style="background: blue;>',
+      '</div>'
+    ],
+    levelName: '[атрибут="значение"]',
+    tableFill: '<div class = "plate" style="background: #089f08; border-bottom: solid 5px #37592f;"> </div> <div class = "plate"> </div> <div class = "plate" style="background: #2525bd; border-bottom: solid 5px #162134;"> </div>'
   },
   {
     taskDesc: "Выбери большие тарелки",

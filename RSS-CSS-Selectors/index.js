@@ -66,9 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 });
 
-function generateLevel(num = 6) {
+function generateLevel(num = 8) {
   const helpTitle = document.getElementById('help-title');
-  // const helpSubtitle = document.getElementById('help-subtitle');
   const helpText = document.getElementById('help-text');
   const helpExamples = document.getElementById('help-examples');
   const viewerSpan = document.getElementById('viewer-span_generate');
@@ -89,7 +88,6 @@ function generateLevel(num = 6) {
     viewerSpan.append(innerP);
   }
   helpTitle.innerHTML = dataLevel[num].helpTitle;
-  // helpSubtitle.innerHTML = dataLevel[num].helpSub;
   helpText.innerHTML = dataLevel[num].helpDesc;
 
   helpExamples.innerHTML = '';

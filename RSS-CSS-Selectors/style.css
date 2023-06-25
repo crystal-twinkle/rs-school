@@ -416,7 +416,7 @@ div.small {
   height: 50px;
   background-size: cover;
   left: 9px;
-  top: -10px;
+  top: -5px;
   transform: scale3d(1.2, 1.2, 1.2);
   filter: drop-shadow(0 8px 1px rgba(0, 0, 0, 0.3));
 }
@@ -476,7 +476,7 @@ div.small {
   }
 
   .viewer__content span {
-    font-size: 11px;
+    font-size: 10px;
   }
 
 }
@@ -572,11 +572,11 @@ div.small {
   }
 
   .container__all-levels h3 {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .container__all-levels p {
-    font-size: 14px;
+    font-size: 12px;
   }
 
 }
