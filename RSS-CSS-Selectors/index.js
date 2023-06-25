@@ -46,27 +46,23 @@ function effects() {
   }
 }
 
-
-document.addEventListener("DOMContentLoaded", () => {
-
+btnLeft.addEventListener('click', () => {
   let count = Number(numberLevel.innerHTML) - 1;
+  if (count > 0 && count <= 10) {
+    count -= 1;
+  }
+  generateLevel(count);
+})
 
-  btnLeft.addEventListener('click', () => {
-    if (count > 0 && count <= 10) {
-      count -= 1;
-    }
-    generateLevel(count);
-  })
+btnRight.addEventListener('click', () => {
+  let count = Number(numberLevel.innerHTML) - 1;
+  if (count >= 0 && count < 10) {
+    count += 1;
+  }
+  generateLevel(count);
+})
 
-  btnRight.addEventListener('click', () => {
-    if (count >= 0 && count < 10) {
-      count += 1;
-    }
-    generateLevel(count);
-  })
-});
-
-function generateLevel(num = 8) {
+function generateLevel(num) {
   const helpTitle = document.getElementById('help-title');
   const helpText = document.getElementById('help-text');
   const helpExamples = document.getElementById('help-examples');
@@ -99,7 +95,7 @@ function generateLevel(num = 8) {
   }
 }
 
-generateLevel();
+generateLevel(0);
 
 
 const hamburger = document.querySelector(".hamburger");
