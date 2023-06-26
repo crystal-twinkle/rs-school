@@ -1,6 +1,5 @@
-import dataLevel from "./data_levels";
-import {allLevelsWrap} from "./hamburger";
-
+import dataLevel from './data_levels';
+import { allLevelsWrap } from './hamburger';
 
 function generaleLevelsList() {
   for (let i = 1; i <= 11; i += 1) {

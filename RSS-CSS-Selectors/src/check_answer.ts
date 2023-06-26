@@ -1,12 +1,23 @@
-import dataLevel from "./data_levels";
-import {generateLevel} from "./index";
-import {getOfBuild} from "./check_elem";
-import {getOfQuery} from "./check_elem";
-import {inputText} from "./index";
+import dataLevel from './data_levels';
+import { generateLevel, inputText } from './index';
+import { getOfBuild, getOfQuery } from './check_elem';
 
 const numberLevel = getOfBuild('level-now');
 const inputButton = getOfBuild('input-button');
 const actionContainer = getOfQuery('.container__action');
+
+function addFlyOut() {
+  const elements = document.querySelectorAll('*');
+  for (let i = 0; i < elements.length; i += 1) {
+    const element = elements[i];
+
+    if (element.classList.contains('move-small') || element.classList.contains('move-norm')) {
+      element.classList.remove('move-small');
+      element.classList.remove('move-norm');
+      element.classList.add('flyOut');
+    }
+  }
+}
 
 function inputAnswer() {
   const numIn: number = Number(numberLevel.innerHTML) - 1;
@@ -24,19 +35,6 @@ function inputAnswer() {
           actionContainer.classList.remove('shake');
         }, 400);
       }
-    }
-  }
-}
-
-function addFlyOut() {
-  const elements = document.querySelectorAll('*');
-  for (let i = 0; i < elements.length; i += 1) {
-    const element = elements[i];
-
-    if (element.classList.contains('move-small') || element.classList.contains('move-norm')) {
-      element.classList.remove('move-small');
-      element.classList.remove('move-norm');
-      element.classList.add('flyOut');
     }
   }
 }

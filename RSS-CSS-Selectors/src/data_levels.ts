@@ -1,4 +1,5 @@
-import {data} from "./types/interfaces";
+import { data } from './types/interfaces';
+
 const dataLevel: data[] = [
   {
     taskDesc: 'Выбери тарелки',

@@ -1,6 +1,6 @@
 import dataLevel from './data_levels';
 import '../styles.css';
-import {getOfBuild} from "./check_elem";
+import { getOfBuild } from './check_elem';
 
 const btnLeft = getOfBuild('but-left');
 const btnRight = getOfBuild('but-right');
@@ -8,7 +8,7 @@ const numberLevel = getOfBuild('level-now');
 export const inputText = getOfBuild('cssEditor');
 const table = getOfBuild('table');
 
-export function generateLevel(num: number):void {
+export function generateLevel(num: number): void {
   const helpTitle = getOfBuild('help-title');
   const helpText = getOfBuild('help-text');
   const helpExamples = getOfBuild('help-examples');
@@ -57,5 +57,3 @@ btnRight.addEventListener('click', () => {
   }
   generateLevel(count);
 });
-
-
