@@ -1,4 +1,5 @@
-const dataLevel = [
+import {data} from "./types/interfaces";
+const dataLevel: data[] = [
   {
     taskDesc: 'Выбери тарелки',
     helpTitle: 'Выбери селекторы по их атрибуту class',
@@ -8,7 +9,7 @@ const dataLevel = [
       '.bento выберет все &lt;div class = "bento"> элементы.',
       '.text выберет все &lt;p class = "text"> элементы.',
     ],
-    answers: ['.plate', 'div.plate'],
+    answer: ['.plate', 'div.plate'],
     markup: ['<div class = "plate"> </div>', '<div class = "plate"> </div>', '<div class = "bento"> </div>'],
     levelName: 'Атрибут class',
     tableFill: '<div class="plate move-norm"></div> <div class="plate move-norm"></div> <div class="bento"></div>',
@@ -229,7 +230,7 @@ const dataLevel = [
       'h2:not(p) - выберет h2 которые не содержат p',
       'p:not(.irrelevant) - выберет p которые не содержат класс .irrelevant',
     ],
-    answers: ['.plate:not(.cucumber)', 'div.plate:not(.cucumber)'],
+    answer: ['.plate:not(.cucumber)', 'div.plate:not(.cucumber)'],
     markup: [
       '<div class = "plate">',
       '<div>',
@@ -283,7 +284,7 @@ const dataLevel = [
     helpDesc: '* ищет атрибуты у которых в любом месте есть определённые символы',
     examples: [
       '.element[style*="background: b"] выберет все элементы с цветами начинающичся с буквы "b"',
-      '.element[class*="cuc"] выберет все элементы у которых класс начинается с "cuc"',
+      '.element[class*="pine"] выберет все элементы у которых класс начинается с "pine"',
     ],
     answer: [
       'div[style*="width: 9"]',
