@@ -434,17 +434,6 @@ div.small {
   background-image: url('picture/watermelon.png');
 }
 
-.square {
-  width: 70px;
-  height: 70px;
-  background-color: white;
-  position: relative;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3),
-  -3px -3px 5px rgba(0, 0, 0, 0.3),
-  3px -3px 5px rgba(0, 0, 0, 0.3),
-  -3px 3px 5px rgba(0, 0, 0, 0.3);
-}
-
 .move-small {
   transform-origin: bottom;
   animation: caper-small 1s linear 0s infinite;
@@ -485,6 +474,21 @@ div.small {
     transform: translateY(-400px);
   }
 }
+
+.shake {
+  animation: shake 0.2s ease-in-out;
+  animation-play-state: running;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-7px); }
+  50% { transform: translateX(7px); }
+  75% { transform: translateX(-7px); }
+  100% { transform: translateX(0); }
+}
+
+
 
 @media (max-width: 800px) {
 

@@ -8,7 +8,6 @@ const inputButton = document.getElementById('input-button');
 const table = document.getElementById('table');
 
 inputButton.addEventListener('click', () => {
-  effects();
   setTimeout(inputAnswer, 1000);
 })
 
@@ -19,6 +18,7 @@ inputText.addEventListener("keypress", function (e) {
 })
 
 function inputAnswer() {
+  const actionContainer = document.querySelector('.container__action');
   let numIn = Number(numberLevel.innerHTML) - 1;
   for (let e of dataLevel[numIn].answers) {
     if (inputText.value === e) {
@@ -26,6 +26,12 @@ function inputAnswer() {
       setTimeout(() => {
         generateLevel(numIn + 1);
       }, 1000);
+    } else {
+      console.log('1')
+      actionContainer.classList.add('shake');
+      setTimeout(() => {
+        actionContainer.classList.remove('shake');
+      }, 400);
     }
   }
 }
@@ -39,25 +45,6 @@ function addFlyOut() {
       element.classList.remove('move-small');
       element.classList.remove('move-norm');
       element.classList.add('flyOut');
-    }
-  }
-}
-
-function effects() {
-  let num = numberLevel.innerHTML;
-  if (num === '2') {
-    const square = document.querySelector('.square');
-    const inputValue = inputText.value;
-    const colonIndex = inputValue.indexOf(':');
-    const ISBackground = inputValue.indexOf('background');
-    const ISSemicolon = inputValue.indexOf(';');
-    if (ISBackground !== -1 && ISSemicolon !== 1) {
-      console.log('1')
-      if (colonIndex !== -1) {
-        let trimmedValue = inputValue.slice(colonIndex + 1, -1);
-        console.log(trimmedValue)
-        square.style.background = trimmedValue;
-      }
     }
   }
 }
