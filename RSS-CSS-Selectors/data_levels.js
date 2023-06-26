@@ -17,25 +17,6 @@ const dataLevel = [
     tableFill: '<div class="plate move-norm"></div> <div class="plate move-norm"></div> <div class="bento"></div>'
   },
   {
-    taskDesc: "Покрась в зелёный",
-    helpTitle: "Сделай квадрат зелёного цвета",
-    helpDesc: 'Свойства задают цвет, размер и другие интересные вещи. Их следует писать в таком формате: имя свойства &#8594; двоеточие &#8594; значение свойства &#8594; точка с запятой.',
-    examples: [
-      '<pre>.square {\n' +
-      '\u00A0\u00A0background: red;\n' +
-      '}</pre>' +
-      '(свойство - это background, а \"red\" - это значение) ' +
-      'такая запись покрасит в красный цвет',
-      'в данном упражнении достаточно написать только свойство и значение'
-    ],
-    answers: ["background: green;", ".square {background: green;}", ".square { background: green; }"],
-    markup: [
-      '<div class = "square"> </div>',
-    ],
-    levelName: "CSS свойства",
-    tableFill: '<div class = "square"> </div>'
-  },
-  {
     taskDesc: "Найди родителей",
     helpTitle: "Родственные связи тегов",
     helpDesc: 'Каждый тег, в зависимости от положения в HTML коде может быть либо родителем, либо потомком, либо и тем и другим одновременно.',
@@ -93,7 +74,7 @@ const dataLevel = [
       '<pre>&lt;div class = "parent">\n &lt;div class = "children1">\n  &lt;div class = "children2">\n  &lt;/div>\n &lt;/div>\n&lt;/div></pre>' +
       '.parent > div выберет только div с классом children1',
     ],
-    answer: ['.pine[style="transform: scale(0.7);"]', '.bento > .small', '.bento > div.small'],
+    answer: ['.bento > .small', '.bento > div.small'],
     markup: [
       '<div class = "bento">',
       '\u3000<div class = "pineapple small"> ',
@@ -124,7 +105,7 @@ const dataLevel = [
       '<pre>&lt;h3>\n  &lt;p class = "p1"&lt;/p>\n  &lt;p class = "p2" &lt;/p>\n &lt;/h3></pre>' +
       'h3 + p, выберет p с классом p1'
     ],
-    answer: ['.pineapple + .cucumber', 'cucumber:nth-of-type(2)', 'cucumber:nth-last-child(1)', 'cucumber:last-of-type', 'cucumber:nth-child(4)', 'cucumber:last-child'],
+    answer: ['.pineapple + .cucumber', 'div.pineapple + div.cucumber'],
     markup: [
       '<div class="pineapple">',
       '</div>',
@@ -147,7 +128,7 @@ const dataLevel = [
       ':is(header, footer) p - выберет все p, лежащие в header и footer',
       ':is(menu, dir) :is(ol, nav) ul - выберет все ul, лежащие в ol, nav, котовые также лежат в menu или dir'
     ],
-    answer: [':is(.bento, .plate) .small', '.bento .small, .plate .small', '.small', ':is(.bento, .plate) cucumber .small', '.cucumber .small'],
+    answer: [':is(.bento, .plate) .small', ':is(.bento, .plate) cucumber .small', ':is(div) :is(.bento, .plate) .small'],
     markup: [
       '<div class = "bento">',
       '\u3000<div class = "cucumber small">',
@@ -173,7 +154,7 @@ const dataLevel = [
       'h1:has(h2) - выберет все h1, которые содержат в себе h2',
       'h3:has(p) - выберет все h3, которые содержат в себе p'
     ],
-    answer: ['plate:has(pineapple)', 'plate:first-child, plate:nth-of-type(2)', 'plate:first-child, plate:nth-child(2)'],
+    answer: ['plate:has(pineapple)', 'div.plate:has(pineapple)'],
     markup: [
       '<div class = "plate">',
       '\u3000<div class = "pineapple">',
@@ -190,7 +171,7 @@ const dataLevel = [
       '\u3000</div>',
       '</div>'
     ],
-    levelName: "родитель:has(потомки)",
+    levelName: ":has()",
     tableFill: '<div class = "plate move-norm"> <div class = "pineapple"> </div> </div>  <div class = "plate move-norm"> <div class = "pineapple small" style="left: -6px; top: 5px;"> </div> <div class = "pineapple" style="left: 25px; top: -55px"> </div> </div> <div class = "plate"> <div class="watermelon"> </div></div>'
   },
   {
@@ -201,27 +182,56 @@ const dataLevel = [
       '.wrapper:has(.item:nth-last-child(n + 5)) - проверит содержит ли .wrapper 5 или более элементов',
       'h3:not(:has(+ p)) - проверит, что за h3 не следут p'
     ],
-    answer: ['.bento:has(.cucumber:nth-last-child(n + 2)]', '.bento:nth-of-type(n+2)'],
+    answer: ['.bento:has(.cucumber:nth-last-child(n + 2)]', 'div.bento:has(.cucumber:nth-last-child(n + 2)]', 'div > bento:has(.cucumber:nth-last-child(n + 2)]'],
     markup: [
       '<div class = "bento">',
-      '<div class = "cucumber">',
-      '</div>',
-      '</div>',
-      '<div class = "bento">',
-      '<div class = "cucumber">',
-      '</div>',
-      '<div class = "cucumber">',
-      '</div>',
+      '\u3000<div class = "cucumber">',
+      '\u3000</div>',
       '</div>',
       '<div class = "bento">',
-      '<div class = "cucumber">',
+      '\u3000<div class = "cucumber">',
+      '\u3000</div>',
+      '\u3000<div class = "cucumber">',
+      '\u3000</div>',
       '</div>',
-      '<div class = "cucumber">',
-      '</div>',
+      '<div class = "bento">',
+      '\u3000<div class = "cucumber">',
+      '\u3000</div>',
+      '\u3000<div class = "cucumber">',
+      '\u3000</div>',
       '</div>',
     ],
-    levelName: "родитель:has(условие)",
+    levelName: ":has(условие)",
     tableFill: ' <div class = "bento"> <div class = "cucumber"> </div> </div> <div class = "bento move-norm"> <div class = "cucumber" style="left: -7px"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div> <div class = "bento move-norm"> <div class = "cucumber" style="left: -7px"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div> '
+  },
+  {
+    taskDesc: "Выбери тарелки без огурцов",
+    helpTitle: "Псевдокласс :not()",
+    helpDesc: 'Псевдокласс :not задаёт правила стилей для элементов, которые не содержат указанный селектор',
+    examples: [
+      'h2:not(p) - выберет h2 которые не содержат p',
+      'p:not(.irrelevant) - выберет p которые не содержат класс .irrelevant'
+    ],
+    answers: [".plate:not(.cucumber)", "div.plate:not(.cucumber)"],
+    markup: [
+      '<div class = "plate">',
+      '<div>',
+      '\u3000<div class = "cucumber">',
+      '\u3000</div>',
+      '<div>',
+      '<div class = "plate">',
+      '<div>',
+      '\u3000<div class = "watermelon">',
+      '\u3000</div>',
+      '<div>',
+      '<div class = "plate">',
+      '<div>',
+      '\u3000<div class = "pineapple">',
+      '\u3000</div>',
+      '<div>',
+    ],
+    levelName: ":not()",
+    tableFill: '<div class = "plate"> <div class="cucumber"></div> </div> <div class = "plate move-norm"> <div class="watermelon"></div> </div> <div class = "plate move-norm"> <div class="pineapple"></div> </div> '
   },
   {
     taskDesc: "Выбери зелёную тарелку",
@@ -231,7 +241,7 @@ const dataLevel = [
       '.element[style="background: blue"] выберет все элементы с синим цветом',
       '.element[data-state: ready] выберет все элементы у которых готовое состояние',
     ],
-    answer: ['.plate[style="background: green"]', 'div[style="background: green"]', 'div > .plate[style="background: green"]', '.plate:first-child', '.plate[style*="background: green"]', '.plate[style$="background: n"]', '.plate[style$="background: en"]', '.plate[style^="background: g"]', '.plate[style^="background: gr"]'],
+    answer: ['.plate[style="background: green"]', 'div[style="background: green"]', 'div > .plate[style="background: green"]'],
     markup: [
       '<div class = "plate" style="background: green;>',
       '</div>',
@@ -251,7 +261,7 @@ const dataLevel = [
       '.element[style*="background: b"] выберет все элементы с цветами начинающичся с буквы "b"',
       '.element[class*="cuc"] выберет все элементы у которых класс начинается с "cuc"',
     ],
-    answer: ['div[style*="width: 9"]', 'div[style*="width: 90px"]', 'div[style*="width: 90"]', '.plate[style*="width: 9"]', '.plate[style*="width: 90px"]', '.plate[style*="width: 90"]', '.plate[style*="height: 90px"]', '.plate[style*="height: 9"]', '.plate[style*="height: 90"]', '.plate:nth-of-type(odd)'],
+    answer: ['div[style*="width: 9"]', 'div[style*="width: 90px"]', 'div[style*="width: 90"]', '.plate[style*="width: 9"]', '.plate[style*="width: 90px"]', '.plate[style*="width: 90"]', '.plate[style*="height: 90px"]', '.plate[style*="height: 9"]', '.plate[style*="height: 90"]'],
     markup: [
       '<div class = "plate" style="width: 90px; height: 90px"> </div>',
       '<div class = "plate" style="width: 70px; height: 70px"> </div>',
