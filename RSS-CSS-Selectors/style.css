@@ -445,15 +445,32 @@ div.small {
   -3px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
-.move {
+.move-small {
   transform-origin: bottom;
-  animation: caper 1.5s linear 0s infinite;
+  animation: caper-small 1s linear 0s infinite;
 }
 
-@keyframes caper {
-  0% { transform:   skew(10deg,0deg); }
-  50% { transform:  skew(-5deg,0deg); }
-  100% {transform: skew(10deg,0deg); }
+@keyframes caper-small {
+  0% { transform: matrix(1, 0, 0.0875, 1, 0, 0) scale(0.7); }
+  10% { transform: matrix(1, 0, 0.0174, 1, 0, 0) scale(0.7, 0.6); }
+  50% { transform: matrix(1, -0.0875, 0, 1, 0, 0) scale(0.7); }
+  60% { transform: matrix(1, 0, -0.0174, 1, 0, 0) scale(0.7, 0.6); }
+  100% {transform: matrix(1, 0, 0.0875, 1, 0, 0) scale(0.7); }
+
+}
+
+
+.move-norm {
+  transform-origin: bottom;
+  animation: caper-norm 1s ease-out 1s infinite;
+}
+
+@keyframes caper-norm {
+  0% { transform: skew(4deg,0deg) scaleX(1); }
+  10% { transform: skew(1deg,0deg) scaleY(.9) ; }
+  50% { transform: skew(-4deg,0deg) scaleX(1); }
+  60% { transform: skew(-1deg,0deg) scaleY(.9) ; }
+  100% {transform: skew(4deg,0deg) scaleX(1); }
 }
 
 @media (max-width: 800px) {

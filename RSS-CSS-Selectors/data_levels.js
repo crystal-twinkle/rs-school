@@ -14,7 +14,7 @@ const dataLevel = [
       '<div class = "bento"> </div>',
     ],
     levelName: "Атрибут class",
-    tableFill: '<div class = "plate move"> </div> <div class = "plate move"> </div> <div class = "bento">'
+    tableFill: '<div class="plate move-norm"></div> <div class="plate move-norm"></div> <div class="bento"></div>'
   },
   {
     taskDesc: "Покрась в зелёный",
@@ -36,7 +36,7 @@ const dataLevel = [
     tableFill: '<div class = "square"> </div>'
   },
   {
-    taskDesc: "Найди родителя",
+    taskDesc: "Найди родителей",
     helpTitle: "Родственные связи тегов",
     helpDesc: 'Каждый тег, в зависимости от положения в HTML коде может быть либо родителем, либо потомком, либо и тем и другим одновременно.',
     examples: [
@@ -52,10 +52,14 @@ const dataLevel = [
       '<div class = "plate">',
       '\u3000<div class = "pineapple">',
       '\u3000</div>',
+      '</div>',
+      '<div class = "plate">',
+      '\u3000<div class = "pineapple">',
+      '\u3000</div>',
       '</div>'
     ],
     levelName: "Теги - родители",
-    tableFill: '<div class = "plate move"> <div class = "pineapple" > </div> </div>'
+    tableFill: '<div class = "plate move-norm"> <div class = "pineapple" > </div> </div> <div class = "plate move-norm"> <div class = "pineapple" > </div> </div>'
   },
   {
     taskDesc: "Найди потомков",
@@ -78,7 +82,7 @@ const dataLevel = [
       '</div>'
     ],
     levelName: "Теги - потомки",
-    tableFill: '<div class = "bento"> <div class = "cucumber move" style="left: -6px"> </div> <div class = "cucumber move" style="left: 25px; top: -55px"> </div> </div>'
+    tableFill: '<div class = "bento"> <div class = "cucumber move-norm" style="left: -6px"> </div> <div class = "cucumber move-norm" style="left: 25px; top: -55px"> </div> </div>'
   },
   {
     taskDesc: "Выбери маленькие ананасы, которые лежат на бенто",
@@ -109,7 +113,7 @@ const dataLevel = [
       '</div>',
     ],
     levelName: "Дочерний селектор",
-    tableFill: '<div class = "bento"> <div class="pineapple small move" style="left: -5px; top: 5px;"> </div> <div class="pineapple small move" style="left: 25px; top: -45px;"> </div> </div> <div class = "bento"> <div class="pineapple" style="left: -3px;"></div> <div class="pineapple small move" style="left: 30px; top: -45px;"> </div></div> <div class = "plate"> <div class="pineapple small" style="top: -5px;"> </div></div>  '
+    tableFill: '<div class = "bento"> <div class="pineapple small move-small" style="left: -5px; top: 5px;"> </div> <div class="pineapple small move-small" style="left: 25px; top: -45px;"> </div> </div> <div class = "bento"> <div class="pineapple" style="left: -3px;"></div> <div class="pineapple small move-small" style="left: 30px; top: -45px;"> </div></div> <div class = "plate"> <div class="pineapple small" style="top: -5px;"> </div></div>  '
   },
   {
     taskDesc: "Выбери огурец, который следуют за арбузам",
@@ -132,7 +136,7 @@ const dataLevel = [
       '</div>',
     ],
     levelName: "Соседний селектор",
-    tableFill: '<div class="pineapple"> </div> <div class = "cucumber"></div> <div class="watermelon"> </div> <div class = "cucumber move"></div></div>  '
+    tableFill: '<div class="pineapple"> </div> <div class = "cucumber"></div> <div class="watermelon"> </div> <div class = "cucumber move-norm"></div></div>  '
 
   },
   {
@@ -159,7 +163,7 @@ const dataLevel = [
       '</div>'
     ],
     levelName: ":is()",
-    tableFill: '<div class = "bento"> <div class = "cucumber small move" style="left: -12px"> </div> <div class = "pineapple" style="left: 20px; top: -65px"> </div> </div>   <div class = "plate"> <div class = "cucumber small move" style="left: -6px; top: 5px;"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div>'
+    tableFill: '<div class = "bento"> <div class = "cucumber small move-small" style="left: -12px"> </div> <div class = "pineapple" style="left: 20px; top: -65px"> </div> </div>   <div class = "plate"> <div class = "cucumber small move-small" style="left: -6px; top: 5px;"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div>'
   },
   {
     taskDesc: "Выбери тарелки в которых лежат ананасы",
@@ -187,7 +191,7 @@ const dataLevel = [
       '</div>'
     ],
     levelName: "родитель:has(потомки)",
-    tableFill: '<div class = "plate move"> <div class = "pineapple"> </div> </div>  <div class = "plate move"> <div class = "pineapple small" style="left: -6px; top: 5px;"> </div> <div class = "pineapple" style="left: 25px; top: -55px"> </div> </div> <div class = "plate"> <div class="watermelon"> </div></div>'
+    tableFill: '<div class = "plate move-norm"> <div class = "pineapple"> </div> </div>  <div class = "plate move-norm"> <div class = "pineapple small" style="left: -6px; top: 5px;"> </div> <div class = "pineapple" style="left: 25px; top: -55px"> </div> </div> <div class = "plate"> <div class="watermelon"> </div></div>'
   },
   {
     taskDesc: "Выбери бенто в которых лежит 2 огурца",
@@ -217,7 +221,7 @@ const dataLevel = [
       '</div>',
     ],
     levelName: "родитель:has(условие)",
-    tableFill: ' <div class = "bento"> <div class = "cucumber"> </div> </div> <div class = "bento move"> <div class = "cucumber" style="left: -7px"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div> <div class = "bento  move"> <div class = "cucumber" style="left: -7px"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div> '
+    tableFill: ' <div class = "bento"> <div class = "cucumber"> </div> </div> <div class = "bento move-norm"> <div class = "cucumber" style="left: -7px"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div> <div class = "bento move-norm"> <div class = "cucumber" style="left: -7px"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div> '
   },
   {
     taskDesc: "Выбери зелёную тарелку",
@@ -237,7 +241,7 @@ const dataLevel = [
       '</div>'
     ],
     levelName: '[атрибут="значение"]',
-    tableFill: '<div class = "plate move" style="background: #089f08; border-bottom: solid 5px #37592f;"> </div> <div class = "plate"> </div> <div class = "plate" style="background: #2525bd; border-bottom: solid 5px #162134;"> </div>'
+    tableFill: '<div class = "plate move-norm" style="background: #089f08; border-bottom: solid 5px #37592f;"> </div> <div class = "plate"> </div> <div class = "plate" style="background: #2525bd; border-bottom: solid 5px #162134;"> </div>'
   },
   {
     taskDesc: "Выбери большие тарелки",
@@ -254,7 +258,7 @@ const dataLevel = [
       '<div class = "plate" style="width: 90px; height: 90px"> </div>',
     ],
     levelName: '[атрибут*="значение"]',
-    tableFill: '<div class = "plate move" style="width: 80px; height: 80px"> </div> <div class = "plate" style="width: 65px; height: 65px"> </div> <div class = "plate move" style="width: 80px; height: 80px"> </div>'
+    tableFill: '<div class = "plate move-norm" style="width: 80px; height: 80px"> </div> <div class = "plate" style="width: 65px; height: 65px"> </div> <div class = "plate move-norm" style="width: 80px; height: 80px"> </div>'
   }
 ]
 
