@@ -327,7 +327,7 @@ footer .year {
   position: absolute;
   right: 0;
   top: 0;
-  height: 722px;
+  height: auto;
   width: 0;
   box-sizing: border-box;
   color: #b5b7ae;
