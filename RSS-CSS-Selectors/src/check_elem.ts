@@ -1,7 +1,15 @@
-export const getElement = <T extends HTMLElement>( selector: string): T => {
+export const getOfQuery = <T extends HTMLElement>( selector: string): T => {
     const element = document.querySelector<T>(selector)
     if (!element) {
         throw new TypeError('Oh..You have type null here :(')
     }
-    return element
+    return element;
+}
+
+export const getOfBuild = <T extends HTMLElement>( selector: string): HTMLElement => {
+    const element = document.getElementById(selector);
+    if (!element) {
+        throw new TypeError('Oh..You have type null here :(')
+    }
+    return element;
 }
