@@ -22,7 +22,23 @@ function inputAnswer() {
   let numIn = Number(numberLevel.innerHTML) - 1;
   for (let e of dataLevel[numIn].answers) {
     if (inputText.value === e) {
-      generateLevel(numIn + 1);
+      addFlyOut();
+      setTimeout(() => {
+        generateLevel(numIn + 1);
+      }, 1000);
+    }
+  }
+}
+
+function addFlyOut() {
+  let elements = document.querySelectorAll("*");
+  for (let i = 0; i < elements.length; i++) {
+    let element = elements[i];
+
+    if (element.classList.contains("move-small") || element.classList.contains("move-norm")) {
+      element.classList.remove('move-small');
+      element.classList.remove('move-norm');
+      element.classList.add('flyOut');
     }
   }
 }
