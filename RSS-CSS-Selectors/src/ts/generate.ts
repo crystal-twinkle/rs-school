@@ -3,7 +3,7 @@ import dataLevel from './data_levels';
 
 const btnLeft = getOfBuild('but-left');
 const btnRight = getOfBuild('but-right');
-const numberLevel = getOfBuild('level-now');
+export const numberLevel = getOfBuild('level-now');
 export const inputText = getOfBuild('cssEditor');
 const table = getOfBuild('table');
 

@@ -35,8 +35,11 @@
 
     <div class="container__action action">
       <div class="action__header">
-        <h4 class="action__title">CSS editor</h4>
-        <h4 class="action__title title2">HTML Viewer</h4>
+        <div>
+          <h4 class="action__title">CSS editor</h4>
+          <button class="btn help__button" id="help-button">Help</button>
+        </div>
+        <h4 class="action__title">HTML Viewer</h4>
       </div>
       <div class="action__border"></div>
 
@@ -44,8 +47,8 @@
         <div class="action__editor">
           <label for="cssEditor"></label>
           <div class="action__input-wrap">
-            <input class="input__text" id="cssEditor" type="text" placeholder="Type here">
-            <button class="input__button" id="input-button">Enter</button>
+            <input class="input__text blink-effect" id="cssEditor" type="text" placeholder="Type here">
+            <button class="btn input__button" id="input-button">Enter</button>
           </div>
           <div class="action-panel__desc">
             <p> { </p> /*&ensp;Styles would be here&ensp;*/ <p> } </p>
@@ -95,6 +98,7 @@
         <div class="help__examples" id="help-examples"></div>
       </div>
     </div>
+
   </div>
 
 </div>

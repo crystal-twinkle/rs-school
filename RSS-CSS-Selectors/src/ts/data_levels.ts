@@ -28,7 +28,7 @@ const dataLevel: Data[] = [
         '&lt;/ul></pre>  тег ul является родителем тегов li',
       '',
     ],
-    answer: ['.plate', 'div.plate', 'table', 'div.table'],
+    answer: ['.plate', 'div.plate'],
     markup: [
       '<div class = "plate">',
       '\u3000<div class = "pineapple">',
@@ -55,7 +55,7 @@ const dataLevel: Data[] = [
         '\u00A0\u00A0&lt;li> 3 &lt;i>курсив&lt;/i>&lt;/li>\n' +
         '&lt;/ul></pre>  теги i являются потомками тегов li и тега ul',
     ],
-    answer: ['.bento', 'div.bento', 'cucumber', 'div.cucumber'],
+    answer: ['.cucumber', 'div.cucumber'],
     markup: [
       '<div class = "bento">',
       '\u3000<div class = "cucumber">',
@@ -259,14 +259,10 @@ const dataLevel: Data[] = [
     helpDesc:
       'Устанавливает стиль для элемента, если задан специфичный атрибут тега. Записывается в таком формате: [имя аттрибута]: { описание правил стиля } или селектор[атрибут]: { описание правил стиля } ',
     examples: [
-      '.element[style="background: blue"] выберет все элементы с синим цветом',
+      '.element[style="color: blue"] выберет все элементы с синим цветом',
       '.element[data-state: ready] выберет все элементы у которых готовое состояние',
     ],
-    answer: [
-      '.plate[style="background: green"]',
-      'div[style="background: green"]',
-      'div > .plate[style="background: green"]',
-    ],
+    answer: ['.plate[style="color: green"]', 'div[style="color: green"]', 'div > .plate[style="color: green"]'],
     markup: [
       '<div class = "plate" style="background: green;>',
       '</div>',
@@ -288,24 +284,22 @@ const dataLevel: Data[] = [
       '.element[class*="pine"] выберет все элементы у которых класс начинается с "pine"',
     ],
     answer: [
+      '.plate[style*="width: 9"]',
       'div[style*="width: 9"]',
       'div[style*="width: 90px"]',
       'div[style*="width: 90"]',
-      '.plate[style*="width: 9"]',
       '.plate[style*="width: 90px"]',
       '.plate[style*="width: 90"]',
-      '.plate[style*="height: 90px"]',
-      '.plate[style*="height: 9"]',
-      '.plate[style*="height: 90"]',
+      '.plate[style*="width: 90p"]',
     ],
     markup: [
-      '<div class = "plate" style="width: 90px; height: 90px"> </div>',
-      '<div class = "plate" style="width: 70px; height: 70px"> </div>',
-      '<div class = "plate" style="width: 90px; height: 90px"> </div>',
+      '<div class = "plate" style="width: 90px;"> </div>',
+      '<div class = "plate" style="width: 70px;"> </div>',
+      '<div class = "plate" style="width: 90px;"> </div>',
     ],
     levelName: '[атрибут*="значение"]',
     tableFill:
-      '<div class = "plate move-norm" style="width: 80px; height: 80px"> </div> <div class = "plate" style="width: 65px; height: 65px"> </div> <div class = "plate move-norm" style="width: 80px; height: 80px"> </div>',
+      '<div class = "plate move-norm" style="width: 80px; height: 80px"> </div> <div class = "plate" style="width: 60px; height: 60px"> </div> <div class = "plate move-norm" style="width: 80px; height: 80px"> </div>',
   },
 ];
 

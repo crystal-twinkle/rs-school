@@ -6,3 +6,4 @@ import './interfaces';
 import './generate';
 import './check_answer';
 import './check_elem';
+import './help';

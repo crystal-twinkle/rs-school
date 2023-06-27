@@ -87,17 +87,20 @@ footer .year {
   display: flex;
   background-color: #00000026;
   border: solid 1px #98909070;
+  column-gap: 30px;
 }
 
-.action__title {
-  width: 50%;
-  margin-left: 10px;
+.action__header div {
+  display: flex;
+  width: 45%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .action__border {
   background-color: black;
   position: absolute;
-  left: calc(50% - 8px);
+  left: calc(50% - 4px);
   width: 8px;
   top: 0;
   bottom: 0;
@@ -106,6 +109,11 @@ footer .year {
 .action-wrap {
   display: flex;
   height: 100%;
+}
+
+.action__input-wrap {
+  display: flex;
+  flex-direction:column ;
 }
 
 .action__editor {
@@ -118,33 +126,54 @@ footer .year {
 .input__text {
   margin-top: 5px;
   margin-bottom: 5px;
-  background: rgba(31, 203, 197, 0.3);
-  animation: input .5s infinite;
   border: none;
   width: calc(100%);
+}
+
+.blink-effect {
+  background: rgba(31, 203, 197, 0.3);
+  animation: input-blink 1s infinite;
 }
 
 .input__text:focus {
   background: rgb(255, 255, 255);
 }
 
-@keyframes input {
+@keyframes input-blink {
   50% {
     background: none;
   }
 }
 
-.input__button {
-  border: solid 2px #AF40FF;
-  background-image: linear-gradient(144deg, #5ab3bb, #5a47ee 70%, #8527e0);
+.print-effect {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes print {
+  from { width: 0; }
+}
+
+.btn {
   border-radius: 8px;
   color: white;
   box-sizing: border-box;
   font-size: 12px;
   width: 60px;
+  height: 25px;
   padding: 3px;
   cursor: pointer;
   transition: all .3s;
+}
+
+.input__button {
+  border: solid 2px #AF40FF;
+  background-image: linear-gradient(144deg, #5ab3bb, #5a47ee 70%, #8527e0);
+}
+
+.help__button {
+  border: solid 2px #601919;
+  background-image: linear-gradient(144deg, #bb22c9, #d2196c 70%, #d2196c);
 }
 
 .input__button:hover {
@@ -153,6 +182,12 @@ footer .year {
 
 .input__button:active {
   transform: scale(0.9);
+}
+
+.action__title {
+  font-size: 15px;
+  margin-left: 10px;
+  letter-spacing: 0.05rem;
 }
 
 .action__viewer {
@@ -327,11 +362,11 @@ footer .year {
   position: absolute;
   right: 0;
   top: 0;
-  height: auto;
+  height: 100%;
   width: 0;
   box-sizing: border-box;
   color: #b5b7ae;
-  transition: all .6s ease-out;
+  transition: all .3s ease-out;
   overflow-x: hidden;
   z-index: 1;
 }
@@ -366,7 +401,6 @@ footer .year {
   box-shadow: 0 8px 0 0 rgba(14, 14, 14, 0.1);
   perspective: 1000px;
 }
-
 
 .plate:before {
   content: "";
@@ -500,6 +534,14 @@ div.small {
     font-size: 22px;
   }
 
+  .action__header {
+    column-gap: 15px;
+  }
+
+  .action__header div {
+    width: 47%;
+  }
+
 }
 
 @media (max-width: 682px) {
@@ -580,6 +622,18 @@ div.small {
     font-size: 12px;
   }
 
+  .action__header div {
+    width: 45%;
+  }
+
+  .action__title {
+    font-size: 12px;
+  }
+
+  .action__border {
+    left: calc(50% - 8px);
+  }
+
   .input__text {
     width: 125px;
   }
@@ -622,6 +676,10 @@ div.small {
 
   .container__all-levels p {
     font-size: 12px;
+  }
+
+  .input__text {
+    font-size: 10px;
   }
 
 }
