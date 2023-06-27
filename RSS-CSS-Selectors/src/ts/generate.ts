@@ -8,6 +8,14 @@ export const numberLevel = getOfBuild('level-now');
 export const inputText = getOfBuild('cssEditor');
 const table = getOfBuild('table');
 
+function saveLevelGame() {
+  const level = numberLevel.textContent;
+  console.log(typeof level);
+  if (level) {
+    localStorage.setItem('level', level);
+  }
+}
+
 export function generateLevel(num: number): void {
   const helpTitle = getOfBuild('help-title');
   const helpText = getOfBuild('help-text');
@@ -39,9 +47,8 @@ export function generateLevel(num: number): void {
     helpExamples.append(divEl);
   }
   highlight();
+  saveLevelGame();
 }
-
-generateLevel(0);
 
 btnLeft.addEventListener('click', () => {
   let count: number = Number(numberLevel.innerHTML) - 1;
@@ -58,3 +65,15 @@ btnRight.addEventListener('click', () => {
   }
   generateLevel(count);
 });
+
+function loadLevelGame() {
+  const local = localStorage.getItem('level');
+  if (local) {
+    const number = Number(local) - 1;
+    generateLevel(number);
+  } else {
+    generateLevel(0);
+  }
+}
+
+loadLevelGame();
