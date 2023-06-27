@@ -7,3 +7,4 @@ import './generate';
 import './check_answer';
 import './check_elem';
 import './help';
+import './highlight_level';

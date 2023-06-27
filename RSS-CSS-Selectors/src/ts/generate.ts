@@ -1,5 +1,6 @@
 import { getOfBuild } from './check_elem';
 import dataLevel from './data_levels';
+import highlight from './highlight_level';
 
 const btnLeft = getOfBuild('but-left');
 const btnRight = getOfBuild('but-right');
@@ -37,6 +38,7 @@ export function generateLevel(num: number): void {
     divEl.innerHTML = arrExam[i];
     helpExamples.append(divEl);
   }
+  highlight();
 }
 
 generateLevel(0);
