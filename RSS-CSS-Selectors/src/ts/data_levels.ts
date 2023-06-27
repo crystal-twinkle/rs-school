@@ -1,6 +1,6 @@
-import { data } from './types/interfaces';
+import { Data } from './interfaces';
 
-const dataLevel: data[] = [
+const dataLevel: Data[] = [
   {
     taskDesc: 'Выбери тарелки',
     helpTitle: 'Выбери селекторы по их атрибуту class',

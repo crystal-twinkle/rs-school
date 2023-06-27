@@ -5,7 +5,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const EslintPlugin = require('eslint-webpack-plugin');
 
 const baseConfig = {
-  entry: path.resolve(__dirname, './src/index'),
+  entry: path.resolve(__dirname, './src/ts/index'),
   mode: 'development',
   module: {
     rules: [
@@ -15,7 +15,7 @@ const baseConfig = {
       },
       {
         test: /\.ts$/i,
-        use: 'ts-loader',
+        use: ['ts-loader'],
       },
       {
         test: /\.(png|jpe?g|gif)$/,
@@ -50,6 +50,7 @@ const baseConfig = {
     new CleanWebpackPlugin({}),
   ],
 };
+
 
 module.exports = ({mode}) => {
   const isProductionMode = mode === 'prod';

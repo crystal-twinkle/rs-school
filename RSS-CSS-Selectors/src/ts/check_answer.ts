@@ -1,5 +1,5 @@
 import dataLevel from './data_levels';
-import { generateLevel, inputText } from './index';
+import { generateLevel, inputText } from './generate';
 import { getOfBuild, getOfQuery } from './check_elem';
 
 const numberLevel = getOfBuild('level-now');
@@ -43,7 +43,7 @@ inputButton.addEventListener('click', () => {
   inputAnswer();
 });
 
-inputText.addEventListener('keypress', (e) => {
+inputText.addEventListener('keypress', (e: KeyboardEvent) => {
   if (e.code === 'Enter') {
     inputAnswer();
   }

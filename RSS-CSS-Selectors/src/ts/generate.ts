@@ -1,6 +1,5 @@
-import dataLevel from './data_levels';
-import '../styles.css';
 import { getOfBuild } from './check_elem';
+import dataLevel from './data_levels';
 
 const btnLeft = getOfBuild('but-left');
 const btnRight = getOfBuild('but-right');

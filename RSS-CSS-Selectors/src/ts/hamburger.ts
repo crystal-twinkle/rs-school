@@ -5,6 +5,7 @@ export const allLevels = getOfQuery<HTMLSpanElement>('.container__all-levels');
 export const allLevelsWrap = getOfQuery<HTMLSpanElement>('.container__all-levels div');
 
 hamburger.addEventListener('click', () => {
+  console.log('1');
   hamburger.classList.toggle('burger-move');
   allLevels.classList.toggle('show');
   allLevelsWrap.classList.toggle('div-show');

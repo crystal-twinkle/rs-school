@@ -1,4 +1,4 @@
-export interface data {
+export interface Data {
   taskDesc: string;
   helpTitle: string;
   helpDesc: string;

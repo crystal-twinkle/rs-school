@@ -1,4 +1,4 @@
-import { generateLevel } from './index';
+import { generateLevel } from './generate';
 import { allLevels, hamburger } from './hamburger';
 
 function chooseLevel(): void {
