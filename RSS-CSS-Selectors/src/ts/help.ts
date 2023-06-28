@@ -7,6 +7,7 @@ const btnHelp = getOfBuild('help-button');
 const checkmarks = document.querySelectorAll('.checkmark');
 
 btnHelp.addEventListener('click', () => {
+  saveContLevels();
   if (inputText instanceof HTMLInputElement) inputText.value = '';
   inputText.classList.remove('blink-effect');
   inputText.classList.add('print-effect');
@@ -14,7 +15,6 @@ btnHelp.addEventListener('click', () => {
   const answer: string = dataLevel[n].answer[0];
   const chars = answer.split('');
   let index = 0;
-
   const printInterval = setInterval(() => {
     if (inputText instanceof HTMLInputElement) inputText.value += chars[index];
 
@@ -28,5 +28,4 @@ btnHelp.addEventListener('click', () => {
     }
   }, 200);
   checkmarks[n].classList.add('yellow');
-  saveContLevels();
 });

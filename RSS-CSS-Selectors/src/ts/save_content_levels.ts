@@ -1,5 +1,5 @@
 import { getOfQuery } from './check_elem';
-import generateLevelsList from './levels_list';
+import levelsList from './levels_list';
 
 const allLevel = getOfQuery('.all-levels-wrap');
 
@@ -13,7 +13,7 @@ function loadContLevels() {
   if (local) {
     allLevel.innerHTML = local;
   } else {
-    generateLevelsList();
+    levelsList.generate();
   }
 }
 
