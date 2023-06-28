@@ -22,13 +22,13 @@ function addFlyOut() {
 }
 
 function inputAnswer() {
-  saveContLevels();
   const numIn: number = Number(numberLevel.innerHTML) - 1;
   for (let i = 0; i < dataLevel[numIn].answer.length; i += 1) {
     const e = dataLevel[numIn].answer[i];
     if (inputText instanceof HTMLInputElement) {
       if (inputText.value === e) {
         addFlyOut();
+        saveContLevels();
         if (!checkmarks[numIn].classList.contains('yellow')) {
           checkmarks[numIn].classList.add('green');
         }
