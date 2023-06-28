@@ -113,7 +113,7 @@ footer .year {
 
 .action__input-wrap {
   display: flex;
-  flex-direction:column ;
+  flex-direction: column;
 }
 
 .action__editor {
@@ -151,7 +151,9 @@ footer .year {
 }
 
 @keyframes print {
-  from { width: 0; }
+  from {
+    width: 0;
+  }
 }
 
 .btn {
@@ -388,6 +390,33 @@ footer .year {
   padding: 0 10px;
 }
 
+.checkmark {
+  display: inline-block;
+  margin-right: 10px;
+  width: 8px;
+  height: 12px;
+  border-color: white;
+  border-style: solid;
+  border-width: 0 3px 3px 0;
+  opacity: 0.2;
+  transform: rotate(40deg);
+}
+
+.green {
+  opacity: 0.5;
+  border-color: #4cbb4a;
+  border-style: solid;
+  border-width: 0 3px 3px 0;
+}
+
+.yellow {
+  opacity: 1;
+  border-color: #ffea00;
+  border-style: solid;
+  border-width: 0 3px 3px 0;
+  filter: brightness(10);
+}
+
 .number-level {
   margin-right: 10px;
   opacity: 0.5;
@@ -478,11 +507,21 @@ div.small {
 }
 
 @keyframes caper-small {
-  0% { transform: matrix(1, 0, 0.0875, 1, 0, 0) scale(0.7); }
-  10% { transform: matrix(1, 0, 0.0174, 1, 0, 0) scale(0.7, 0.6); }
-  50% { transform: matrix(1, -0.0875, 0, 1, 0, 0) scale(0.7); }
-  60% { transform: matrix(1, 0, -0.0174, 1, 0, 0) scale(0.7, 0.6); }
-  100% {transform: matrix(1, 0, 0.0875, 1, 0, 0) scale(0.7); }
+  0% {
+    transform: matrix(1, 0, 0.0875, 1, 0, 0) scale(0.7);
+  }
+  10% {
+    transform: matrix(1, 0, 0.0174, 1, 0, 0) scale(0.7, 0.6);
+  }
+  50% {
+    transform: matrix(1, -0.0875, 0, 1, 0, 0) scale(0.7);
+  }
+  60% {
+    transform: matrix(1, 0, -0.0174, 1, 0, 0) scale(0.7, 0.6);
+  }
+  100% {
+    transform: matrix(1, 0, 0.0875, 1, 0, 0) scale(0.7);
+  }
 
 }
 
@@ -492,11 +531,21 @@ div.small {
 }
 
 @keyframes caper-norm {
-  0% { transform: skew(4deg,0deg) scaleX(1); }
-  10% { transform: skew(1deg,0deg) scaleY(.9) ; }
-  50% { transform: skew(-4deg,0deg) scaleX(1); }
-  60% { transform: skew(-1deg,0deg) scaleY(.9) ; }
-  100% {transform: skew(4deg,0deg) scaleX(1); }
+  0% {
+    transform: skew(4deg, 0deg) scaleX(1);
+  }
+  10% {
+    transform: skew(1deg, 0deg) scaleY(.9);
+  }
+  50% {
+    transform: skew(-4deg, 0deg) scaleX(1);
+  }
+  60% {
+    transform: skew(-1deg, 0deg) scaleY(.9);
+  }
+  100% {
+    transform: skew(4deg, 0deg) scaleX(1);
+  }
 }
 
 .flyOut {
@@ -519,13 +568,22 @@ div.small {
 }
 
 @keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-7px); }
-  50% { transform: translateX(7px); }
-  75% { transform: translateX(-7px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-7px);
+  }
+  50% {
+    transform: translateX(7px);
+  }
+  75% {
+    transform: translateX(-7px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
-
 
 
 @media (max-width: 800px) {
@@ -644,10 +702,18 @@ div.small {
 
   .container__all-levels h3 {
     font-size: 14px;
+    padding: 0 5px;
   }
 
   .container__all-levels p {
     font-size: 12px;
+    padding: 0 5px;
+  }
+
+  .checkmark {
+    width: 4px;
+    height: 8px;
+    margin-right: 8px;
   }
 
 }

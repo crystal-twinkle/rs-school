@@ -5,6 +5,7 @@ import { getOfBuild, getOfQuery } from './check_elem';
 const numberLevel = getOfBuild('level-now');
 const inputButton = getOfBuild('input-button');
 const actionContainer = getOfQuery('.container__action');
+const checkmarks = document.querySelectorAll('.checkmark');
 
 function addFlyOut() {
   const elements = document.querySelectorAll('*');
@@ -26,6 +27,9 @@ function inputAnswer() {
     if (inputText instanceof HTMLInputElement) {
       if (inputText.value === e) {
         addFlyOut();
+        if (!checkmarks[numIn].classList.contains('yellow')) {
+          checkmarks[numIn].classList.add('green');
+        }
         setTimeout(() => {
           generateLevel(numIn + 1);
         }, 1000);

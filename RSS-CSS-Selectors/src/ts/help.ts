@@ -3,6 +3,7 @@ import { getOfBuild } from './check_elem';
 import { numberLevel, inputText } from './generate';
 
 const btnHelp = getOfBuild('help-button');
+const checkmarks = document.querySelectorAll('.checkmark');
 
 btnHelp.addEventListener('click', () => {
   if (inputText instanceof HTMLInputElement) inputText.value = '';
@@ -10,8 +11,6 @@ btnHelp.addEventListener('click', () => {
   inputText.classList.add('print-effect');
   const n = Number(numberLevel.textContent) - 1;
   const answer: string = dataLevel[n].answer[0];
-
-  console.log(answer.length);
   const chars = answer.split('');
   let index = 0;
 
@@ -27,4 +26,5 @@ btnHelp.addEventListener('click', () => {
       }, 200);
     }
   }, 200);
+  checkmarks[n].classList.add('yellow');
 });

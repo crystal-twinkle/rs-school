@@ -9,7 +9,7 @@ allLevels.addEventListener('click', (event: Event) => {
     const closest: HTMLElement | null = target.closest('.container__all-levels p');
 
     if (closest === null) return;
-    const spanElement = closest.querySelector('span');
+    const spanElement = closest.querySelector('strong');
     if (spanElement === null) return;
     const number = Number(spanElement.textContent);
     generateLevel(number - 1);

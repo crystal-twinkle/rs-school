@@ -4,10 +4,12 @@ import { allLevelsWrap } from './hamburger';
 function generaleLevelsList() {
   for (let i = 1; i <= 11; i += 1) {
     const innerP = document.createElement('p');
+    const innerStrong = document.createElement('strong');
     const innerSpan = document.createElement('span');
-    innerSpan.append(`${i}\u00A0\u00A0`);
+    innerSpan.classList.add('checkmark');
+    innerStrong.append(`${i}\u00A0\u00A0`);
 
-    innerP.append(innerSpan);
+    innerP.append(innerSpan, innerStrong);
 
     allLevelsWrap.append(innerP);
   }
