@@ -170,12 +170,16 @@ footer .year {
 
 .input__button {
   border: solid 2px #AF40FF;
-  background-image: linear-gradient(144deg, #5ab3bb, #5a47ee 70%, #8527e0);
+  background-image: linear-gradient(144deg, #5ab3bb, #6556d5 70%, #8527e0);
 }
 
 .help__button {
   border: solid 2px #601919;
-  background-image: linear-gradient(144deg, #bb22c9, #d2196c 70%, #d2196c);
+  background-image: linear-gradient(144deg, #bb22c9, #a11d5a 70%, #d2196c);
+}
+
+.help__button:hover {
+  background-image: linear-gradient(144deg, #d2196c, #d2196c 70%, #bb22c9);
 }
 
 .input__button:hover {
@@ -420,6 +424,23 @@ footer .year {
 .number-level {
   margin-right: 10px;
   opacity: 0.5;
+}
+
+.reset-progress {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  box-sizing: border-box;
+  width: calc(100% - 40px);
+  cursor: pointer;
+  background-color: inherit;
+  border: solid 2px #960000;
+  color: rgba(255,255,255,.4);
+}
+
+.reset-progress:hover {
+  background-color: rgba(121, 116, 116, 0.38);
+  border: solid 2px #383333;
 }
 
 .plate, .bento {
