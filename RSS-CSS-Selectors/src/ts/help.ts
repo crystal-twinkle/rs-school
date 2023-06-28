@@ -1,6 +1,7 @@
 import dataLevel from './data_levels';
 import { getOfBuild } from './check_elem';
 import { numberLevel, inputText } from './generate';
+import saveContLevels from './highlight_level';
 
 const btnHelp = getOfBuild('help-button');
 const checkmarks = document.querySelectorAll('.checkmark');
@@ -27,4 +28,5 @@ btnHelp.addEventListener('click', () => {
     }
   }, 200);
   checkmarks[n].classList.add('yellow');
+  saveContLevels();
 });

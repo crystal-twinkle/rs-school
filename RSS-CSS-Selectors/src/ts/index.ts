@@ -8,3 +8,4 @@ import './check_answer';
 import './check_elem';
 import './help';
 import './highlight_level';
+import './save_content_levels';

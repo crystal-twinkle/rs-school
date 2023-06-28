@@ -1,6 +1,7 @@
 import dataLevel from './data_levels';
 import { generateLevel, inputText } from './generate';
 import { getOfBuild, getOfQuery } from './check_elem';
+import saveContLevels from './save_content_levels';
 
 const numberLevel = getOfBuild('level-now');
 const inputButton = getOfBuild('input-button');
@@ -21,6 +22,7 @@ function addFlyOut() {
 }
 
 function inputAnswer() {
+  saveContLevels();
   const numIn: number = Number(numberLevel.innerHTML) - 1;
   for (let i = 0; i < dataLevel[numIn].answer.length; i += 1) {
     const e = dataLevel[numIn].answer[i];

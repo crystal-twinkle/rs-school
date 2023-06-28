@@ -1,7 +1,7 @@
 import dataLevel from './data_levels';
 import { allLevelsWrap } from './hamburger';
 
-function generaleLevelsList() {
+export default function generateLevelsList() {
   for (let i = 1; i <= 11; i += 1) {
     const innerP = document.createElement('p');
     const innerStrong = document.createElement('strong');
@@ -19,5 +19,3 @@ function generaleLevelsList() {
     allP[i].append(dataLevel[i].levelName);
   }
 }
-
-generaleLevelsList();

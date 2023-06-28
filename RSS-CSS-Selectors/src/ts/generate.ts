@@ -10,7 +10,6 @@ const table = getOfBuild('table');
 
 function saveLevelGame() {
   const level = numberLevel.textContent;
-  console.log(typeof level);
   if (level) {
     localStorage.setItem('level', level);
   }
@@ -46,7 +45,9 @@ export function generateLevel(num: number): void {
     divEl.innerHTML = arrExam[i];
     helpExamples.append(divEl);
   }
-  highlight();
+  setTimeout(() => {
+    highlight()(Number(numberLevel.textContent) - 1);
+  }, 0);
   saveLevelGame();
 }
 
