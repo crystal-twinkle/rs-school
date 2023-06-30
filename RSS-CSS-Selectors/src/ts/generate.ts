@@ -15,7 +15,7 @@ function saveLevelGame() {
   }
 }
 
-export function generateLevel(num: number): void {
+export default function generateLevel(num: number): void {
   const helpTitle = getOfBuild('help-title');
   const helpText = getOfBuild('help-text');
   const helpExamples = getOfBuild('help-examples');
