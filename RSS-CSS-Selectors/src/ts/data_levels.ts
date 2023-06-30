@@ -12,9 +12,10 @@ const dataLevel: Data[] = [
     ],
     answer: ['.plate', 'div.plate'],
     markup:
-      '<div class="hover1"> &lt;div class="plate"&gt; &lt;/div&gt; </div> <div class="hover1"> &lt;div class="plate"&gt; &lt;/div&gt; </div> <div class="hover1"> &lt;div class="bento"&gt; &lt;/div&gt </div>',
+      '<div class="hover1" data-elem="elem1"> &lt;div class="plate"&gt; &lt;/div&gt; </div> <div class="hover1" data-elem="elem2"> &lt;div class="plate"&gt; &lt;/div&gt; </div> <div class="hover1" data-elem="elem3"> &lt;div class="bento"&gt; &lt;/div&gt </div>',
     levelName: 'Атрибут class',
-    tableFill: '<div class="plate move-norm"></div> <div class="plate move-norm"></div> <div class="bento"></div>',
+    tableFill:
+      '<div class="plate move-norm" data-elem="elem1"></div> <div class="plate move-norm" data-elem="elem2"></div> <div class="bento" data-elem="elem3"></div>',
   },
   {
     taskDesc: 'Найди родителей',
@@ -31,11 +32,11 @@ const dataLevel: Data[] = [
     ],
     answer: ['.plate', 'div.plate'],
     markup:
-      '<div class="hover1"> &lt;div class = "plate"> <div class="hover2"> &lt;div class = "pineapple"> &lt;/div> </div> &lt;/div> </div>' +
-      '<div class="hover1"> &lt;div class = "plate"> <div class="hover2"> &lt;div class = "pineapple"> &lt;/div> </div> &lt;/div> </div>',
+      '<div class="hover1" data-elem="elem1"> &lt;div class = "plate"> <div class="hover2" data-elem="elem3"> &lt;div class = "pineapple"> &lt;/div> </div> &lt;/div> </div>' +
+      '<div class="hover1" data-elem="elem2"> &lt;div class = "plate"> <div class="hover2" data-elem="elem4"> &lt;div class = "pineapple"> &lt;/div> </div> &lt;/div> </div>',
     levelName: 'Теги - родители',
     tableFill:
-      '<div class = "plate move-norm"> <div class = "pineapple" > </div> </div> <div class = "plate move-norm"> <div class = "pineapple" > </div> </div>',
+      '<div class = "plate move-norm" data-elem="elem1"> <div class = "pineapple" data-elem="elem3"> </div> </div> <div class = "plate move-norm" data-elem="elem2"> <div class = "pineapple" data-elem="elem4"> </div> </div>',
   },
   {
     taskDesc: 'Найди потомков',
@@ -51,10 +52,10 @@ const dataLevel: Data[] = [
     ],
     answer: ['.cucumber', 'div.cucumber'],
     markup:
-      '<div class="hover1"> &lt;div class = "bento"> <div class="hover2"> &lt;div class = "cucumber"> &lt;/div> </div> <div class="hover2"> &lt;div class = "cucumber"> &lt;/div>  </div>  &lt;/div> </div>',
+      '<div class="hover1" data-elem="elem1"> &lt;div class = "bento"> <div class="hover2" data-elem="elem2"> &lt;div class = "cucumber"> &lt;/div> </div> <div class="hover2" data-elem="elem3"> &lt;div class = "cucumber"> &lt;/div>  </div>  &lt;/div> </div>',
     levelName: 'Теги - потомки',
     tableFill:
-      '<div class = "bento"> <div class = "cucumber move-norm" style="left: -6px"> </div> <div class = "cucumber move-norm" style="left: 25px; top: -55px"> </div> </div>',
+      '<div class = "bento" data-elem="elem1"> <div class = "cucumber move-norm" data-elem="elem2" style="left: -6px"> </div> <div class = "cucumber move-norm" data-elem="elem3" style="left: 25px; top: -55px"> </div> </div>',
   },
   {
     taskDesc: 'Выбери маленькие ананасы, которые лежат на бенто',
@@ -68,33 +69,33 @@ const dataLevel: Data[] = [
     ],
     answer: ['.bento > .small', '.bento > div.small'],
     markup:
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem1">' +
       '&lt;div class = "bento">' +
-      '<div class="hover2"> ' +
+      '<div class="hover2" data-elem="elem4"> ' +
       '&lt;div class = "pineapple small"> ' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover2"> ' +
+      '<div class="hover2" data-elem="elem5"> ' +
       '&lt;div class = "pineapple small"> ' +
       '&lt;/div>' +
       '</div>' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "bento">' +
-      '<div class="hover2"> ' +
+      '<div class="hover2" data-elem="elem6"> ' +
       '&lt;div class = "pineapple"> ' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover2"> ' +
+      '<div class="hover2" data-elem="elem7"> ' +
       '&lt;div class = "pineapple small"> ' +
       '&lt;/div>' +
       '</div>' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem3">' +
       '&lt;div class ="plate">' +
-      '<div class="hover2"> ' +
+      '<div class="hover2" data-elem="elem8"> ' +
       '&lt;div class = "pineapple small"> ' +
       '&lt;/div>' +
       '</div>' +
@@ -102,10 +103,15 @@ const dataLevel: Data[] = [
       '</div>',
     levelName: 'Дочерний селектор',
     tableFill:
-      '<div class = "bento"> <div class="pineapple small move-small" style="left: -5px; top: 5px;"> </div> <div class="pineapple small move-small" style="left: 25px; top: -45px;"> </div> </div> <div class = "bento"> <div class="pineapple" style="left: -3px;"></div> <div class="pineapple small move-small" style="left: 30px; top: -45px;"> </div></div> <div class = "plate"> <div class="pineapple small" style="top: -5px;"> </div></div>  ',
+      '<div class = "bento" data-elem="elem1">' +
+      ' <div class="pineapple small move-small" data-elem="elem4" style="left: -5px; top: 5px;"> </div>' +
+      ' <div class="pineapple small move-small" data-elem="elem5" style="left: 25px; top: -45px;"> </div>' +
+      ' </div> <div class = "bento" data-elem="elem2"> <div class="pineapple" data-elem="elem6" style="left: -3px;"></div>' +
+      '<div class="pineapple small move-small" data-elem="elem7" style="left: 30px; top: -45px;"> </div></div>' +
+      '<div class = "plate" data-elem="elem3"> <div class="pineapple small" data-elem="elem8" style="top: -5px;"> </div></div>  ',
   },
   {
-    taskDesc: 'Выбери огурец, который следуют за арбузам',
+    taskDesc: 'Выбери огурец, который следуют за ананасом',
     helpTitle: 'Селектор для соседних элементов',
     helpDesc:
       'Соседний селектор в CSS используется для выбора элемента, который является непосредственным соседом другого элемента. Записывается в таком формате: элемент1 + элемент2',
@@ -116,25 +122,44 @@ const dataLevel: Data[] = [
     ],
     answer: ['.pineapple + .cucumber', 'div.pineapple + div.cucumber'],
     markup:
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem1">' +
+      '&lt;div class = "bento">' +
+      '<div class="hover2" data-elem="elem5">' +
       '&lt;div class="pineapple">' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1" data-elem="elem2">' +
+      '&lt;div class = "bento">' +
+      '<div class="hover2" data-elem="elem6">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1" data-elem="elem3">' +
+      '&lt;div class = "bento">' +
+      '<div class="hover2" data-elem="elem7">' +
       '&lt;div class="watermelon">' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1" data-elem="elem4">' +
+      '&lt;div class = "bento">' +
+      '<div class="hover2" data-elem="elem8">' +
       '&lt;div class = "cucumber">' +
+      '&lt;/div>' +
+      '</div>' +
       '&lt;/div>' +
       '</div>',
     levelName: 'Соседний селектор',
     tableFill:
-      '<div class="pineapple"> </div> <div class = "cucumber"></div> <div class="watermelon"> </div> <div class = "cucumber move-norm"></div></div>  ',
+      '<div class = "bento" data-elem="elem1"> <div class="pineapple" data-elem="elem5"></div> </div>' +
+      '<div class = "bento" data-elem="elem2"> <div class = "cucumber" data-elem="elem6"></div> </div>' +
+      '<div class = "bento" data-elem="elem3"> <div class="watermelon" data-elem="elem7"> </div> </div>' +
+      '<div class = "bento" data-elem="elem4"> <div class = "cucumber move-norm" data-elem="elem8"></div></div>',
   },
   {
     taskDesc: 'Выбери маленькие огурцы',
@@ -151,23 +176,23 @@ const dataLevel: Data[] = [
       ':is(div) :is(.bento, .plate) .small',
     ],
     markup:
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem1">' +
       '&lt;div class = "bento">' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem3">' +
       '&lt;div class = "cucumber small"> &lt;/div>' +
       '</div>' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem4">' +
       '&lt;div class = "pineapple"> &lt;/div>' +
       '</div>' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "plate">' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem5">' +
       '&lt;div class = "cucumber small">' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem6">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
@@ -176,7 +201,11 @@ const dataLevel: Data[] = [
 
     levelName: ':is()',
     tableFill:
-      '<div class = "bento"> <div class = "cucumber small move-small" style="left: -12px"> </div> <div class = "pineapple" style="left: 20px; top: -65px"> </div> </div>   <div class = "plate"> <div class = "cucumber small move-small" style="left: -6px; top: 5px;"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div>',
+      '<div class = "bento" data-elem="elem1">' +
+      ' <div class = "cucumber small move-small" data-elem="elem3" style="left: -12px"> </div>' +
+      '<div class = "pineapple" data-elem="elem4" style="left: 20px; top: -65px"> </div> </div>' +
+      '<div class = "plate" data-elem="elem2"> <div class = "cucumber small move-small" data-elem="elem5" style="left: -6px; top: 5px;"> </div>' +
+      '<div class = "cucumber" data-elem="elem6" style="left: 25px; top: -55px"> </div> </div>',
   },
   {
     taskDesc: 'Выбери тарелки в которых лежат ананасы',
@@ -189,29 +218,29 @@ const dataLevel: Data[] = [
     ],
     answer: ['plate:has(pineapple)', 'div.plate:has(pineapple)'],
     markup:
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem1">' +
       '&lt;div class = "plate">' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem4">' +
       '&lt;div class = "pineapple">' +
       '&lt;/div>' +
       '</div>' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "plate">' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem5">' +
       '&lt;div class = "pineapple small">' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem6">' +
       '&lt;div class = "pineapple">' +
       '&lt;/div>' +
       '</div>' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem3">' +
       '&lt;div class = "plate">' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem7">' +
       '&lt;div class = "watermelon">' +
       '&lt;/div>' +
       '</div>' +
@@ -219,7 +248,10 @@ const dataLevel: Data[] = [
       '</div>',
     levelName: ':has()',
     tableFill:
-      '<div class = "plate move-norm"> <div class = "pineapple"> </div> </div>  <div class = "plate move-norm"> <div class = "pineapple small" style="left: -6px; top: 5px;"> </div> <div class = "pineapple" style="left: 25px; top: -55px"> </div> </div> <div class = "plate"> <div class="watermelon"> </div></div>',
+      '<div class = "plate move-norm" data-elem="elem1"> <div class = "pineapple" data-elem="elem4"> </div>' +
+      '</div>  <div class = "plate move-norm" data-elem="elem2"> <div class = "pineapple small" data-elem="elem5" style="left: -6px; top: 5px;"> </div>' +
+      '<div class = "pineapple" data-elem="elem6" style="left: 25px; top: -55px"> </div> </div>' +
+      '<div class = "plate" data-elem="elem3"> <div class="watermelon" data-elem="elem7"> </div></div>',
   },
   {
     taskDesc: 'Выбери бенто в которых лежит 2 огурца',
@@ -235,32 +267,32 @@ const dataLevel: Data[] = [
       'div > bento:has(.cucumber:nth-last-child(n + 2)]',
     ],
     markup:
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem1">' +
       '&lt;div class = "bento">' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem4">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "bento">' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem5">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem6">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem3">' +
       '&lt;div class = "bento">' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem7">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem8">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
@@ -268,7 +300,13 @@ const dataLevel: Data[] = [
       '</div>',
     levelName: ':has(условие)',
     tableFill:
-      ' <div class = "bento"> <div class = "cucumber"> </div> </div> <div class = "bento move-norm"> <div class = "cucumber" style="left: -7px"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div> <div class = "bento move-norm"> <div class = "cucumber" style="left: -7px"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div> ',
+      ' <div class = "bento" data-elem="elem1">' +
+      '<div class = "cucumber" data-elem="elem4"> </div> </div>' +
+      '<div class = "bento move-norm" data-elem="elem2">' +
+      '<div class = "cucumber" data-elem="elem5" style="left: -7px"> </div>' +
+      '<div class = "cucumber" data-elem="elem6" style="left: 25px; top: -55px"> </div> </div>' +
+      '<div class = "bento move-norm" data-elem="elem3">' +
+      '<div class = "cucumber" data-elem="elem7" style="left: -7px"> </div> <div class = "cucumber" data-elem="elem8" style="left: 25px; top: -55px"> </div> </div> ',
   },
   {
     taskDesc: 'Выбери тарелки без огурцов',
@@ -280,28 +318,28 @@ const dataLevel: Data[] = [
     ],
     answer: ['.plate:not(.cucumber)', 'div.plate:not(.cucumber)'],
     markup:
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem1">' +
       '&lt;div class = "plate">' +
       '&lt;div>' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem4">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
       '&lt;div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "plate">' +
       '&lt;div>' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem5">' +
       '&lt;div class = "watermelon">' +
       '&lt;/div>' +
       '</div>' +
       '&lt;div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem3">' +
       '&lt;div class = "plate">' +
       '&lt;div>' +
-      '<div class="hover2">' +
+      '<div class="hover2" data-elem="elem6">' +
       '&lt;div class = "pineapple">' +
       '&lt;/div>' +
       '</div>' +
@@ -309,7 +347,9 @@ const dataLevel: Data[] = [
       '</div>',
     levelName: ':not()',
     tableFill:
-      '<div class = "plate"> <div class="cucumber"></div> </div> <div class = "plate move-norm"> <div class="watermelon"></div> </div> <div class = "plate move-norm"> <div class="pineapple"></div> </div> ',
+      '<div class = "plate" data-elem="elem1"> <div class="cucumber" data-elem="elem4"></div> </div>' +
+      '<div class = "plate move-norm" data-elem="elem2"> <div class="watermelon" data-elem="elem5"></div>' +
+      '</div> <div class = "plate move-norm" data-elem="elem3"> <div class="pineapple" data-elem="elem6"></div> </div> ',
   },
   {
     taskDesc: 'Выбери зелёную тарелку',
@@ -322,21 +362,22 @@ const dataLevel: Data[] = [
     ],
     answer: ['.plate[style="color: green"]', 'div[style="color: green"]', 'div > .plate[style="color: green"]'],
     markup:
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem1">' +
       '&lt;div class = "plate" style="background: green;>' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "plate">' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem3">' +
       '&lt;div class = "plate" style="background: blue;>' +
       '&lt;/div>' +
       '</div>',
     levelName: '[атрибут="значение"]',
     tableFill:
-      '<div class = "plate move-norm" style="background: #089f08; border-bottom: solid 5px #37592f;"> </div> <div class = "plate"> </div> <div class = "plate" style="background: #2525bd; border-bottom: solid 5px #162134;"> </div>',
+      '<div class = "plate move-norm" data-elem="elem1" style="background: #089f08; border-bottom: solid 5px #37592f;"> </div>' +
+      '<div class = "plate" data-elem="elem2" > </div> <div class = "plate" data-elem="elem3" style="background: #2525bd; border-bottom: solid 5px #162134;"> </div>',
   },
   {
     taskDesc: 'Выбери большие тарелки',
@@ -356,19 +397,21 @@ const dataLevel: Data[] = [
       '.plate[style*="width: 90p"]',
     ],
     markup:
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem1">' +
       '&lt;div class = "plate" style="width: 90px;"> &lt;/div>' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "plate" style="width: 70px;"> &lt;/div>' +
       '</div>' +
-      '<div class="hover1">' +
+      '<div class="hover1" data-elem="elem3">' +
       '&lt;div class = "plate" style="width: 90px;"> &lt;/div>' +
       '</div>',
     levelName: '[атрибут*="значение"]',
     tableFill:
-      '<div class = "plate move-norm" style="width: 80px; height: 80px"> </div> <div class = "plate" style="width: 60px; height: 60px"> </div> <div class = "plate move-norm" style="width: 80px; height: 80px"> </div>',
+      '<div class = "plate move-norm" data-elem="elem1" style="width: 80px; height: 80px"> </div>' +
+      '<div class = "plate" data-elem="elem2" style="width: 60px; height: 60px"> </div>' +
+      '<div class = "plate move-norm" data-elem="elem3" style="width: 80px; height: 80px"> </div>',
   },
 ];
 

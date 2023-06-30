@@ -529,6 +529,19 @@ div.small {
   background-image: url('picture/watermelon.png');
 }
 
+.enhance {
+  color: rgba(255,255,255,.7);
+}
+
+.backlight {
+  box-shadow: 0 0 0 6px rgba(255,255,255,.4);
+}
+
+.backlight-img {
+  filter: invert(100%) opacity(1) sepia(100%) saturate(100%) hue-rotate(30deg);;
+
+}
+
 .checked {
   font-weight: 700;
   color: #fffdfd;

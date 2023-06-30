@@ -9,7 +9,6 @@ export default function saveContLevels() {
 
 function loadContLevels() {
   const local = localStorage.getItem('containerLevel');
-  console.log(local);
   if (local) {
     allLevel.innerHTML = local;
   } else {
