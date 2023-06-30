@@ -1,5 +1,5 @@
+import { describe, beforeEach, jest, test, afterEach, expect } from 'jest';
 import generateLevel from '../src/ts/generate';
-import { describe, beforeEach } from 'jest';
 
 describe('generateLevel', () => {
   let mockTaskDesc;
@@ -42,6 +42,8 @@ describe('generateLevel', () => {
     expect(mockTaskDesc.innerHTML).toBe('Выбери тарелки');
     expect(mockNumberLevel.innerHTML).toBe('1');
     expect(mockHelpTitle.innerHTML).toBe('Выбери селекторы по их атрибуту class');
-    expect(mockHelpText.innerHTML).toBe('Атрибут class часто используется для указания на имя класса в стилях. А стили нужны для отрисовки тарелок например )');
+    expect(mockHelpText.innerHTML).toBe(
+      'Атрибут class часто используется для указания на имя класса в стилях. А стили нужны для отрисовки тарелок например )'
+    );
   });
 });

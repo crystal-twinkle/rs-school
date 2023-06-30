@@ -10,3 +10,4 @@ import './help';
 import './highlight_level';
 import './save_content_levels';
 import './reset';
+import './hovers';

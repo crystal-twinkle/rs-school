@@ -1,6 +1,7 @@
 import { getOfBuild } from './check_elem';
 import dataLevel from './data_levels';
 import highlight from './highlight_level';
+import hoversMarkup from './hovers';
 
 const btnLeft = getOfBuild('but-left');
 const btnRight = getOfBuild('but-right');
@@ -15,7 +16,7 @@ function saveLevelGame() {
   }
 }
 
-export default function generateLevel(num: number): void {
+export function generateLevel(num: number): void {
   const helpTitle = getOfBuild('help-title');
   const helpText = getOfBuild('help-text');
   const helpExamples = getOfBuild('help-examples');
@@ -28,16 +29,9 @@ export default function generateLevel(num: number): void {
   if (typeof numberLevel === 'object') numberLevel.innerHTML = String(num + 1);
   viewerSpan.innerHTML = '';
   table.innerHTML = dataLevel[num].tableFill;
-
-  const arrMarkup: string[] = dataLevel[num].markup;
-  for (let i = 0; i < arrMarkup.length; i += 1) {
-    const innerP = document.createElement('span');
-    innerP.append(arrMarkup[i]);
-    viewerSpan.append(innerP);
-  }
+  viewerSpan.innerHTML = dataLevel[num].markup;
   helpTitle.innerHTML = dataLevel[num].helpTitle;
   helpText.innerHTML = dataLevel[num].helpDesc;
-
   helpExamples.innerHTML = '';
   const arrExam: string[] = dataLevel[num].examples;
   for (let i = 0; i < arrExam.length; i += 1) {
@@ -47,6 +41,7 @@ export default function generateLevel(num: number): void {
   }
   setTimeout(() => {
     highlight()(Number(numberLevel.textContent) - 1);
+    hoversMarkup();
   }, 0);
   saveLevelGame();
 }

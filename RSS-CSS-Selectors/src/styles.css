@@ -215,14 +215,27 @@ footer .year {
   row-gap: 5px;
 }
 
-.viewer__content span {
-  opacity: 0.7;
+.hover1 {
   cursor: default;
   line-height: 150%;
+  opacity: 0.5;
 }
 
-.viewer__content span:hover {
+.hover2 {
+  cursor: default;
+  line-height: 150%;
   opacity: 1;
+  margin-left: 10px;
+}
+
+.hover1.highlight {
+  background-color: transparent;
+  color: #ffab25;
+}
+
+.hover2.highlight {
+  background-color: transparent;
+  color: #aaff00;
 }
 
 .action__viewer span {
@@ -645,7 +658,7 @@ div.small {
     font-size: 18px;
   }
 
-  .viewer__content span {
+  .viewer__content div {
     font-size: 10px;
   }
 

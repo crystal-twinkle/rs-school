@@ -4,7 +4,7 @@ export interface Data {
   helpDesc: string;
   examples: string[];
   answer: string[];
-  markup: string[];
+  markup: string;
   levelName: string;
   tableFill: string;
 }

@@ -11,7 +11,8 @@ const dataLevel: Data[] = [
       '.text выберет все &lt;p class = "text"> элементы.',
     ],
     answer: ['.plate', 'div.plate'],
-    markup: ['<div class = "plate"> </div>', '<div class = "plate"> </div>', '<div class = "bento"> </div>'],
+    markup:
+      '<div class="hover1"> &lt;div class="plate"&gt; &lt;/div&gt; </div> <div class="hover1"> &lt;div class="plate"&gt; &lt;/div&gt; </div> <div class="hover1"> &lt;div class="bento"&gt; &lt;/div&gt </div>',
     levelName: 'Атрибут class',
     tableFill: '<div class="plate move-norm"></div> <div class="plate move-norm"></div> <div class="bento"></div>',
   },
@@ -29,16 +30,9 @@ const dataLevel: Data[] = [
       '',
     ],
     answer: ['.plate', 'div.plate'],
-    markup: [
-      '<div class = "plate">',
-      '\u3000<div class = "pineapple">',
-      '\u3000</div>',
-      '</div>',
-      '<div class = "plate">',
-      '\u3000<div class = "pineapple">',
-      '\u3000</div>',
-      '</div>',
-    ],
+    markup:
+      '<div class="hover1"> &lt;div class = "plate"> <div class="hover2"> &lt;div class = "pineapple"> &lt;/div> </div> &lt;/div> </div>' +
+      '<div class="hover1"> &lt;div class = "plate"> <div class="hover2"> &lt;div class = "pineapple"> &lt;/div> </div> &lt;/div> </div>',
     levelName: 'Теги - родители',
     tableFill:
       '<div class = "plate move-norm"> <div class = "pineapple" > </div> </div> <div class = "plate move-norm"> <div class = "pineapple" > </div> </div>',
@@ -56,14 +50,8 @@ const dataLevel: Data[] = [
         '&lt;/ul></pre>  теги i являются потомками тегов li и тега ul',
     ],
     answer: ['.cucumber', 'div.cucumber'],
-    markup: [
-      '<div class = "bento">',
-      '\u3000<div class = "cucumber">',
-      '\u3000</div>',
-      '\u3000<div class = "cucumber">',
-      '\u3000</div>',
-      '</div>',
-    ],
+    markup:
+      '<div class="hover1"> &lt;div class = "bento"> <div class="hover2"> &lt;div class = "cucumber"> &lt;/div> </div> <div class="hover2"> &lt;div class = "cucumber"> &lt;/div>  </div>  &lt;/div> </div>',
     levelName: 'Теги - потомки',
     tableFill:
       '<div class = "bento"> <div class = "cucumber move-norm" style="left: -6px"> </div> <div class = "cucumber move-norm" style="left: 25px; top: -55px"> </div> </div>',
@@ -79,24 +67,39 @@ const dataLevel: Data[] = [
         '.parent > div выберет только div с классом children1',
     ],
     answer: ['.bento > .small', '.bento > div.small'],
-    markup: [
-      '<div class = "bento">',
-      '\u3000<div class = "pineapple small"> ',
-      '\u3000</div>',
-      '\u3000<div class = "pineapple small"> ',
-      '\u3000</div>',
+    markup:
+      '<div class="hover1">' +
+      '&lt;div class = "bento">' +
+      '<div class="hover2"> ' +
+      '&lt;div class = "pineapple small"> ' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover2"> ' +
+      '&lt;div class = "pineapple small"> ' +
+      '&lt;/div>' +
+      '</div>' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "bento">' +
+      '<div class="hover2"> ' +
+      '&lt;div class = "pineapple"> ' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover2"> ' +
+      '&lt;div class = "pineapple small"> ' +
+      '&lt;/div>' +
+      '</div>' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class ="plate">' +
+      '<div class="hover2"> ' +
+      '&lt;div class = "pineapple small"> ' +
+      '&lt;/div>' +
+      '</div>' +
+      '&lt;/div>' +
       '</div>',
-      '<div class = "bento">',
-      '\u3000<div class = "pineapple"> ',
-      '\u3000</div>',
-      '\u3000<div class = "pineapple small""> ',
-      '</div>',
-      '</div>',
-      '<div class = "plate">',
-      '\u3000<div class = "pineapple small"> ',
-      '\u3000</div>',
-      '</div>',
-    ],
     levelName: 'Дочерний селектор',
     tableFill:
       '<div class = "bento"> <div class="pineapple small move-small" style="left: -5px; top: 5px;"> </div> <div class="pineapple small move-small" style="left: 25px; top: -45px;"> </div> </div> <div class = "bento"> <div class="pineapple" style="left: -3px;"></div> <div class="pineapple small move-small" style="left: 30px; top: -45px;"> </div></div> <div class = "plate"> <div class="pineapple small" style="top: -5px;"> </div></div>  ',
@@ -112,16 +115,23 @@ const dataLevel: Data[] = [
         'h3 + p, выберет p с классом p1',
     ],
     answer: ['.pineapple + .cucumber', 'div.pineapple + div.cucumber'],
-    markup: [
-      '<div class="pineapple">',
+    markup:
+      '<div class="hover1">' +
+      '&lt;div class="pineapple">' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "cucumber">' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class="watermelon">' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "cucumber">' +
+      '&lt;/div>' +
       '</div>',
-      '<div class = "cucumber">',
-      '</div>',
-      '<div class="watermelon">',
-      '</div>',
-      '<div class = "cucumber">',
-      '</div>',
-    ],
     levelName: 'Соседний селектор',
     tableFill:
       '<div class="pineapple"> </div> <div class = "cucumber"></div> <div class="watermelon"> </div> <div class = "cucumber move-norm"></div></div>  ',
@@ -140,20 +150,30 @@ const dataLevel: Data[] = [
       ':is(.bento, .plate) cucumber .small',
       ':is(div) :is(.bento, .plate) .small',
     ],
-    markup: [
-      '<div class = "bento">',
-      '\u3000<div class = "cucumber small">',
-      '\u3000</div>',
-      '\u3000<div class = "pineapple">',
-      '\u3000</div>',
+    markup:
+      '<div class="hover1">' +
+      '&lt;div class = "bento">' +
+      '<div class="hover2">' +
+      '&lt;div class = "cucumber small"> &lt;/div>' +
+      '</div>' +
+      '<div class="hover2">' +
+      '&lt;div class = "pineapple"> &lt;/div>' +
+      '</div>' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "plate">' +
+      '<div class="hover2">' +
+      '&lt;div class = "cucumber small">' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover2">' +
+      '&lt;div class = "cucumber">' +
+      '&lt;/div>' +
+      '</div>' +
+      '&lt;/div>' +
       '</div>',
-      '<div class = "plate">',
-      '\u3000<div class = "cucumber small">',
-      '\u3000</div>',
-      '\u3000<div class = "cucumber">',
-      '\u3000</div>',
-      '</div>',
-    ],
+
     levelName: ':is()',
     tableFill:
       '<div class = "bento"> <div class = "cucumber small move-small" style="left: -12px"> </div> <div class = "pineapple" style="left: 20px; top: -65px"> </div> </div>   <div class = "plate"> <div class = "cucumber small move-small" style="left: -6px; top: 5px;"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div>',
@@ -168,22 +188,35 @@ const dataLevel: Data[] = [
       'h3:has(p) - выберет все h3, которые содержат в себе p',
     ],
     answer: ['plate:has(pineapple)', 'div.plate:has(pineapple)'],
-    markup: [
-      '<div class = "plate">',
-      '\u3000<div class = "pineapple">',
-      '\u3000</div>',
+    markup:
+      '<div class="hover1">' +
+      '&lt;div class = "plate">' +
+      '<div class="hover2">' +
+      '&lt;div class = "pineapple">' +
+      '&lt;/div>' +
+      '</div>' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "plate">' +
+      '<div class="hover2">' +
+      '&lt;div class = "pineapple small">' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover2">' +
+      '&lt;div class = "pineapple">' +
+      '&lt;/div>' +
+      '</div>' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "plate">' +
+      '<div class="hover2">' +
+      '&lt;div class = "watermelon">' +
+      '&lt;/div>' +
+      '</div>' +
+      '&lt;/div>' +
       '</div>',
-      '<div class = "plate">',
-      '\u3000<div class = "pineapple small">',
-      '\u3000</div>',
-      '\u3000<div class = "pineapple">',
-      '\u3000</div>',
-      '</div>',
-      '<div class = "plate">',
-      '\u3000<div class = "watermelon">',
-      '\u3000</div>',
-      '</div>',
-    ],
     levelName: ':has()',
     tableFill:
       '<div class = "plate move-norm"> <div class = "pineapple"> </div> </div>  <div class = "plate move-norm"> <div class = "pineapple small" style="left: -6px; top: 5px;"> </div> <div class = "pineapple" style="left: 25px; top: -55px"> </div> </div> <div class = "plate"> <div class="watermelon"> </div></div>',
@@ -201,24 +234,38 @@ const dataLevel: Data[] = [
       'div.bento:has(.cucumber:nth-last-child(n + 2)]',
       'div > bento:has(.cucumber:nth-last-child(n + 2)]',
     ],
-    markup: [
-      '<div class = "bento">',
-      '\u3000<div class = "cucumber">',
-      '\u3000</div>',
+    markup:
+      '<div class="hover1">' +
+      '&lt;div class = "bento">' +
+      '<div class="hover2">' +
+      '&lt;div class = "cucumber">' +
+      '&lt;/div>' +
+      '</div>' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "bento">' +
+      '<div class="hover2">' +
+      '&lt;div class = "cucumber">' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover2">' +
+      '&lt;div class = "cucumber">' +
+      '&lt;/div>' +
+      '</div>' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "bento">' +
+      '<div class="hover2">' +
+      '&lt;div class = "cucumber">' +
+      '&lt;/div>' +
+      '<div class="hover2">' +
+      '&lt;div class = "cucumber">' +
+      '&lt;/div>' +
+      '</div>' +
+      '&lt;/div>' +
       '</div>',
-      '<div class = "bento">',
-      '\u3000<div class = "cucumber">',
-      '\u3000</div>',
-      '\u3000<div class = "cucumber">',
-      '\u3000</div>',
-      '</div>',
-      '<div class = "bento">',
-      '\u3000<div class = "cucumber">',
-      '\u3000</div>',
-      '\u3000<div class = "cucumber">',
-      '\u3000</div>',
-      '</div>',
-    ],
     levelName: ':has(условие)',
     tableFill:
       ' <div class = "bento"> <div class = "cucumber"> </div> </div> <div class = "bento move-norm"> <div class = "cucumber" style="left: -7px"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div> <div class = "bento move-norm"> <div class = "cucumber" style="left: -7px"> </div> <div class = "cucumber" style="left: 25px; top: -55px"> </div> </div> ',
@@ -232,23 +279,34 @@ const dataLevel: Data[] = [
       'p:not(.irrelevant) - выберет p которые не содержат класс .irrelevant',
     ],
     answer: ['.plate:not(.cucumber)', 'div.plate:not(.cucumber)'],
-    markup: [
-      '<div class = "plate">',
-      '<div>',
-      '\u3000<div class = "cucumber">',
-      '\u3000</div>',
-      '<div>',
-      '<div class = "plate">',
-      '<div>',
-      '\u3000<div class = "watermelon">',
-      '\u3000</div>',
-      '<div>',
-      '<div class = "plate">',
-      '<div>',
-      '\u3000<div class = "pineapple">',
-      '\u3000</div>',
-      '<div>',
-    ],
+    markup:
+      '<div class="hover1">' +
+      '&lt;div class = "plate">' +
+      '&lt;div>' +
+      '<div class="hover2">' +
+      '&lt;div class = "cucumber">' +
+      '&lt;/div>' +
+      '</div>' +
+      '&lt;div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "plate">' +
+      '&lt;div>' +
+      '<div class="hover2">' +
+      '&lt;div class = "watermelon">' +
+      '&lt;/div>' +
+      '</div>' +
+      '&lt;div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "plate">' +
+      '&lt;div>' +
+      '<div class="hover2">' +
+      '&lt;div class = "pineapple">' +
+      '&lt;/div>' +
+      '</div>' +
+      '&lt;div>' +
+      '</div>',
     levelName: ':not()',
     tableFill:
       '<div class = "plate"> <div class="cucumber"></div> </div> <div class = "plate move-norm"> <div class="watermelon"></div> </div> <div class = "plate move-norm"> <div class="pineapple"></div> </div> ',
@@ -263,14 +321,19 @@ const dataLevel: Data[] = [
       '.element[data-state: ready] выберет все элементы у которых готовое состояние',
     ],
     answer: ['.plate[style="color: green"]', 'div[style="color: green"]', 'div > .plate[style="color: green"]'],
-    markup: [
-      '<div class = "plate" style="background: green;>',
+    markup:
+      '<div class="hover1">' +
+      '&lt;div class = "plate" style="background: green;>' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "plate">' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "plate" style="background: blue;>' +
+      '&lt;/div>' +
       '</div>',
-      '<div class = "plate">',
-      '</div>',
-      '<div class = "plate" style="background: blue;>',
-      '</div>',
-    ],
     levelName: '[атрибут="значение"]',
     tableFill:
       '<div class = "plate move-norm" style="background: #089f08; border-bottom: solid 5px #37592f;"> </div> <div class = "plate"> </div> <div class = "plate" style="background: #2525bd; border-bottom: solid 5px #162134;"> </div>',
@@ -292,11 +355,17 @@ const dataLevel: Data[] = [
       '.plate[style*="width: 90"]',
       '.plate[style*="width: 90p"]',
     ],
-    markup: [
-      '<div class = "plate" style="width: 90px;"> </div>',
-      '<div class = "plate" style="width: 70px;"> </div>',
-      '<div class = "plate" style="width: 90px;"> </div>',
-    ],
+    markup:
+      '<div class="hover1">' +
+      '&lt;div class = "plate" style="width: 90px;"> &lt;/div>' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "plate" style="width: 70px;"> &lt;/div>' +
+      '</div>' +
+      '<div class="hover1">' +
+      '&lt;div class = "plate" style="width: 90px;"> &lt;/div>' +
+      '</div>',
     levelName: '[атрибут*="значение"]',
     tableFill:
       '<div class = "plate move-norm" style="width: 80px; height: 80px"> </div> <div class = "plate" style="width: 60px; height: 60px"> </div> <div class = "plate move-norm" style="width: 80px; height: 80px"> </div>',
