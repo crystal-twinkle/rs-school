@@ -122,19 +122,19 @@ const dataLevel: Data[] = [
     ],
     answer: ['.pineapple + .cucumber', 'div.pineapple + div.cucumber'],
     markup:
-      '<div class="hover2" data-elem="elem1">' +
+      '<div class="hover1" data-elem="elem1">' +
       '&lt;div class="pineapple">' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover2" data-elem="elem2">' +
+      '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover2" data-elem="elem3">' +
+      '<div class="hover1" data-elem="elem3">' +
       '&lt;div class="watermelon">' +
       '&lt;/div>' +
       '</div>' +
-      '<div class="hover2" data-elem="elem4">' +
+      '<div class="hover1" data-elem="elem4">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>',

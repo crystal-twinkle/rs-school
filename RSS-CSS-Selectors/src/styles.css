@@ -218,13 +218,13 @@ footer .year {
 .hover1 {
   cursor: default;
   line-height: 150%;
-  opacity: 0.5;
+  color: rgba(255,255,255,.3);
 }
 
 .hover2 {
   cursor: default;
   line-height: 150%;
-  opacity: 1;
+  color: rgba(255,255,255,.3);
   margin-left: 10px;
 }
 

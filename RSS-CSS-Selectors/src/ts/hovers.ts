@@ -20,10 +20,10 @@ function removeEffect(block: Element, removeClass: string) {
   }
 }
 
+const arr: string[] = ['watermelon', 'cucumber', 'pineapple'];
 function hoverTable() {
   const table = document.querySelectorAll('.table *');
   const view = document.querySelectorAll('.viewer__span *');
-  const arr: string[] = ['watermelon', 'cucumber', 'pineapple'];
 
   table.forEach((something) => {
     something.addEventListener('mouseover', (event) => {
@@ -69,8 +69,18 @@ export default function hoverMarkup() {
   const hover2 = document.querySelectorAll('.viewer__span .hover2');
 
   hover1.forEach((block) => {
-    block.addEventListener('mouseover', () => {
-      addEffect(block, 'backlight');
+    block.addEventListener('mouseover', (e) => {
+      const target = <HTMLElement>e.target;
+
+      arr.forEach((className) => {
+        if (target.classList.contains(className)) {
+          addEffect(block, 'backlight-img');
+        } else {
+          addEffect(block, 'backlight');
+        }
+      });
+
+      block.classList.add('highlight');
     });
 
     block.addEventListener('mouseout', () => {
