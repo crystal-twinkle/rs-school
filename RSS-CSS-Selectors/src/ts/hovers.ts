@@ -1,10 +1,30 @@
-export default function hoversMarkup() {
+function addEffect(block: Element, addClass: string) {
+  const table = document.querySelectorAll('.table *');
+  for (let i = 0; i < table.length; i += 1) {
+    const element = table[i];
+    const dataElemTable = element.getAttribute('data-elem');
+    const dataBlock = block.getAttribute('data-elem');
+    if (dataElemTable === dataBlock) {
+      element.classList.add(addClass);
+    }
+  }
+  block.classList.add('highlight');
+}
+
+function removeEffect(block: Element, removeClass: string) {
+  const table = document.querySelectorAll('.table *');
+  block.classList.remove('highlight');
+  for (let i = 0; i < table.length; i += 1) {
+    const element = table[i];
+    element.classList.remove(removeClass);
+  }
+}
+
+function hoverTable() {
   const table = document.querySelectorAll('.table *');
   const view = document.querySelectorAll('.viewer__span *');
-  const hover1 = document.querySelectorAll('.viewer__span .hover1');
-  const hover2 = document.querySelectorAll('.viewer__span .hover2');
-
   const arr: string[] = ['watermelon', 'cucumber', 'pineapple'];
+
   table.forEach((something) => {
     something.addEventListener('mouseover', (event) => {
       const target = <HTMLElement>event.target;
@@ -42,50 +62,32 @@ export default function hoversMarkup() {
       something.classList.remove('backlight-img');
     });
   });
+}
+
+export default function hoverMarkup() {
+  const hover1 = document.querySelectorAll('.viewer__span .hover1');
+  const hover2 = document.querySelectorAll('.viewer__span .hover2');
 
   hover1.forEach((block) => {
     block.addEventListener('mouseover', () => {
-      for (let i = 0; i < table.length; i += 1) {
-        const element = table[i];
-        const dataElemTable = element.getAttribute('data-elem');
-        const dataBlock = block.getAttribute('data-elem');
-        if (dataElemTable === dataBlock) {
-          element.classList.add('backlight');
-        }
-      }
-      block.classList.add('highlight');
+      addEffect(block, 'backlight');
     });
 
     block.addEventListener('mouseout', () => {
-      for (let i = 0; i < table.length; i += 1) {
-        const element = table[i];
-        element.classList.remove('backlight');
-      }
-      block.classList.remove('highlight');
+      removeEffect(block, 'backlight');
     });
   });
 
   hover2.forEach((block) => {
     block.addEventListener('mouseover', (e) => {
       e.stopPropagation();
-      block.classList.add('highlight');
-      for (let i = 0; i < table.length; i += 1) {
-        const element = table[i];
-        const dataElemTable = element.getAttribute('data-elem');
-        const dataBlock = block.getAttribute('data-elem');
-        if (dataElemTable === dataBlock) {
-          element.classList.add('backlight-img');
-        }
-      }
+      addEffect(block, 'backlight-img');
     });
 
     block.addEventListener('mouseout', () => {
-      block.classList.remove('highlight');
-      for (let i = 0; i < table.length; i += 1) {
-        const element = table[i];
-        element.classList.remove('backlight-img');
-      }
-      block.classList.remove('highlight');
+      removeEffect(block, 'backlight-img');
     });
   });
+
+  hoverTable();
 }

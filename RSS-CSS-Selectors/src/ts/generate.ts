@@ -1,7 +1,7 @@
 import { getOfBuild } from './check_elem';
 import dataLevel from './data_levels';
 import highlight from './highlight_level';
-import hoversMarkup from './hovers';
+import hoverMarkup from './hovers';
 
 const btnLeft = getOfBuild('but-left');
 const btnRight = getOfBuild('but-right');
@@ -41,7 +41,7 @@ export function generateLevel(num: number): void {
   }
   setTimeout(() => {
     highlight()(Number(numberLevel.textContent) - 1);
-    hoversMarkup();
+    hoverMarkup();
   }, 0);
   saveLevelGame();
 }
