@@ -122,44 +122,28 @@ const dataLevel: Data[] = [
     ],
     answer: ['.pineapple + .cucumber', 'div.pineapple + div.cucumber'],
     markup:
-      '<div class="hover1" data-elem="elem1">' +
-      '&lt;div class = "bento">' +
-      '<div class="hover2" data-elem="elem5">' +
+      '<div class="hover2" data-elem="elem1">' +
       '&lt;div class="pineapple">' +
       '&lt;/div>' +
       '</div>' +
-      '&lt;/div>' +
-      '</div>' +
-      '<div class="hover1" data-elem="elem2">' +
-      '&lt;div class = "bento">' +
-      '<div class="hover2" data-elem="elem6">' +
+      '<div class="hover2" data-elem="elem2">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
-      '&lt;/div>' +
-      '</div>' +
-      '<div class="hover1" data-elem="elem3">' +
-      '&lt;div class = "bento">' +
-      '<div class="hover2" data-elem="elem7">' +
+      '<div class="hover2" data-elem="elem3">' +
       '&lt;div class="watermelon">' +
       '&lt;/div>' +
       '</div>' +
-      '&lt;/div>' +
-      '</div>' +
-      '<div class="hover1" data-elem="elem4">' +
-      '&lt;div class = "bento">' +
-      '<div class="hover2" data-elem="elem8">' +
+      '<div class="hover2" data-elem="elem4">' +
       '&lt;div class = "cucumber">' +
-      '&lt;/div>' +
-      '</div>' +
       '&lt;/div>' +
       '</div>',
     levelName: 'Соседний селектор',
     tableFill:
-      '<div class = "bento" data-elem="elem1"> <div class="pineapple" data-elem="elem5"></div> </div>' +
-      '<div class = "bento" data-elem="elem2"> <div class = "cucumber" data-elem="elem6"></div> </div>' +
-      '<div class = "bento" data-elem="elem3"> <div class="watermelon" data-elem="elem7"> </div> </div>' +
-      '<div class = "bento" data-elem="elem4"> <div class = "cucumber move-norm" data-elem="elem8"></div></div>',
+      '<div class="pineapple" data-elem="elem1"></div>' +
+      '<div class = "cucumber" data-elem="elem2"></div>' +
+      '<div class="watermelon" data-elem="elem3"> </div>' +
+      '<div class = "cucumber move-norm" data-elem="elem4"></div>',
   },
   {
     taskDesc: 'Выбери маленькие огурцы',
