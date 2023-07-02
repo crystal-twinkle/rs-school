@@ -238,12 +238,24 @@ footer .year {
   color: #aaff00;
 }
 
+.helper {
+  position: absolute;
+  background: white;
+  padding: 5px 5px;
+  font-size: 10px;
+  color: #666;
+  border-bottom: solid 2px #BBB;
+  box-shadow: 0 5px 0 rgba(0,0,0,.2);
+  display: none;
+}
+
 .action__viewer span {
   display: block;
 }
 
 .game-wrapper {
   perspective: 500px;
+  text-align: center;
 }
 
 .table-wrapper {

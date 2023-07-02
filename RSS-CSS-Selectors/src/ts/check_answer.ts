@@ -1,7 +1,7 @@
 import dataLevel from './data_levels';
 import { generateLevel, inputText } from './generate';
 import { getOfBuild, getOfQuery } from './check_elem';
-import saveContLevels from './save_content_levels';
+import saveContLevels from './save_levels_list';
 
 const numberLevel = getOfBuild('level-now');
 const inputButton = getOfBuild('input-button');
