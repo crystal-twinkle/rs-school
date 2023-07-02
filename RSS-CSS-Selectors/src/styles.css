@@ -6,8 +6,10 @@ body {
 
 .container {
   display: flex;
-  border: 10px solid #000000;
+  margin: auto;
+  max-width: 1500px;
   background-image: linear-gradient(130deg, #bd8968, #e3ac82 30%);
+  border: black 10px solid;
 }
 
 .container__game {
@@ -59,12 +61,12 @@ footer .year {
   font-family: 'Arial', sans-serif;
   color: #7e1d1d;
   font-weight: 700;
-  text-decoration: underline solid 3px #f89a84;
+  text-decoration: underline solid 2px #b65902;
   text-underline-offset: 0.4rem;
 }
 
 .rsSchool-logo {
-  background-image: url('picture/logo_rs_text.svg');
+  background-image: url('picture/logo_rs_text.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 80px;
@@ -218,13 +220,13 @@ footer .year {
 .hover1 {
   cursor: default;
   line-height: 150%;
-  color: rgba(255,255,255,.3);
+  color: rgba(255, 255, 255, .3);
 }
 
 .hover2 {
   cursor: default;
   line-height: 150%;
-  color: rgba(255,255,255,.3);
+  color: rgba(255, 255, 255, .3);
   margin-left: 10px;
 }
 
@@ -245,7 +247,7 @@ footer .year {
   font-size: 10px;
   color: #666;
   border-bottom: solid 2px #BBB;
-  box-shadow: 0 5px 0 rgba(0,0,0,.2);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, .2);
   display: none;
 }
 
@@ -460,7 +462,7 @@ footer .year {
   cursor: pointer;
   background-color: inherit;
   border: solid 2px #960000;
-  color: rgba(255,255,255,.4);
+  color: rgba(255, 255, 255, .4);
 }
 
 .reset-progress:hover {
@@ -542,11 +544,11 @@ div.small {
 }
 
 .enhance {
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, .7);
 }
 
 .backlight {
-  box-shadow: 0 0 0 6px rgba(255,255,255,.4);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, .4);
 }
 
 .backlight-img {
