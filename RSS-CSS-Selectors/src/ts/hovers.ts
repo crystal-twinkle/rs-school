@@ -1,3 +1,20 @@
+const helper = <HTMLElement>document.querySelector('.helper');
+function showHelper(tableItem: HTMLElement, viewItem: Element) {
+  const pos = tableItem.getBoundingClientRect();
+
+  if (tableItem.classList.contains('bento')) {
+    helper.textContent = '<div class="bento"> </div>';
+  } else if (tableItem.classList.contains('plate')) {
+    helper.textContent = '<div class="plate"> </div>';
+  } else {
+    helper.textContent = viewItem.textContent;
+  }
+
+  helper.style.top = `${pos.top - 40}px`;
+  helper.style.left = `${pos.left - tableItem.offsetWidth / 3}px`;
+  helper.style.display = 'block';
+}
+
 function classCheck(elem: Element) {
   if (elem.closest('.pineapple, .cucumber, .watermelon')) {
     elem.classList.add('backlight-img');
@@ -9,11 +26,12 @@ function classCheck(elem: Element) {
 function addEffect(block: Element) {
   const table = document.querySelectorAll('.table *');
   for (let i = 0; i < table.length; i += 1) {
-    const element = table[i];
-    const dataElemTable = element.getAttribute('data-elem');
+    const tableItem = <HTMLElement>table[i];
+    const dataElemTable = tableItem.getAttribute('data-elem');
     const dataBlock = block.getAttribute('data-elem');
     if (dataElemTable === dataBlock) {
-      classCheck(element);
+      classCheck(tableItem);
+      showHelper(tableItem, block);
     }
   }
   block.classList.add('highlight');
@@ -21,6 +39,7 @@ function addEffect(block: Element) {
 
 function removeEffect(block: Element) {
   const table = document.querySelectorAll('.table *');
+  helper.style.display = 'none';
   block.classList.remove('highlight');
   for (let i = 0; i < table.length; i += 1) {
     const element = table[i];
@@ -35,15 +54,17 @@ function hoverTable() {
   table.forEach((something) => {
     something.addEventListener('mouseover', (event) => {
       const target = <HTMLElement>event.target;
+
       if (target.classList.contains('backlight-img')) {
         return;
       }
       const dataBlock = something.getAttribute('data-elem');
       for (let i = 0; i < view.length; i += 1) {
-        const element = view[i];
-        const dataElem = element.getAttribute('data-elem');
+        const viewItem = view[i];
+        const dataElem = viewItem.getAttribute('data-elem');
         if (dataElem === dataBlock) {
-          element.classList.add('highlight');
+          showHelper(target, viewItem);
+          viewItem.classList.add('highlight');
         }
       }
       classCheck(target);
@@ -56,6 +77,7 @@ function hoverTable() {
       }
       something.classList.remove('backlight');
       something.classList.remove('backlight-img');
+      helper.style.display = 'none';
     });
   });
 }
