@@ -17,6 +17,9 @@ function saveLevelGame() {
 }
 
 export function generateLevel(num: number): void {
+  if (num > 11) {
+    return;
+  }
   const helpTitle = getOfBuild('help-title');
   const helpText = getOfBuild('help-text');
   const helpExamples = getOfBuild('help-examples');

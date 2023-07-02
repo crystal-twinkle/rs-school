@@ -1,39 +1,44 @@
-function addEffect(block: Element, addClass: string) {
+function classCheck(elem: Element) {
+  if (elem.closest('.pineapple, .cucumber, .watermelon')) {
+    elem.classList.add('backlight-img');
+  } else {
+    elem.classList.add('backlight');
+  }
+}
+
+function addEffect(block: Element) {
   const table = document.querySelectorAll('.table *');
   for (let i = 0; i < table.length; i += 1) {
     const element = table[i];
     const dataElemTable = element.getAttribute('data-elem');
     const dataBlock = block.getAttribute('data-elem');
     if (dataElemTable === dataBlock) {
-      element.classList.add(addClass);
+      classCheck(element);
     }
   }
   block.classList.add('highlight');
 }
 
-function removeEffect(block: Element, removeClass: string) {
+function removeEffect(block: Element) {
   const table = document.querySelectorAll('.table *');
   block.classList.remove('highlight');
   for (let i = 0; i < table.length; i += 1) {
     const element = table[i];
-    element.classList.remove(removeClass);
+    element.classList.remove('backlight');
+    element.classList.remove('backlight-img');
   }
 }
 
-const arr: string[] = ['watermelon', 'cucumber', 'pineapple'];
 function hoverTable() {
   const table = document.querySelectorAll('.table *');
   const view = document.querySelectorAll('.viewer__span *');
-
   table.forEach((something) => {
     something.addEventListener('mouseover', (event) => {
       const target = <HTMLElement>event.target;
       if (target.classList.contains('backlight-img')) {
         return;
       }
-      let hasClass = false;
       const dataBlock = something.getAttribute('data-elem');
-      const targetElement = document.querySelector(`[data-elem="${dataBlock}"]`);
       for (let i = 0; i < view.length; i += 1) {
         const element = view[i];
         const dataElem = element.getAttribute('data-elem');
@@ -41,16 +46,7 @@ function hoverTable() {
           element.classList.add('highlight');
         }
       }
-      arr.forEach((className) => {
-        if (targetElement.classList.contains(className)) {
-          hasClass = true;
-          something.classList.add('backlight-img');
-        }
-      });
-
-      if (!hasClass) {
-        something.classList.add('backlight');
-      }
+      classCheck(target);
     });
 
     something.addEventListener('mouseout', () => {
@@ -69,33 +65,24 @@ export default function hoverMarkup() {
   const hover2 = document.querySelectorAll('.viewer__span .hover2');
 
   hover1.forEach((block) => {
-    block.addEventListener('mouseover', (e) => {
-      const target = <HTMLElement>e.target;
-
-      arr.forEach((className) => {
-        if (target.classList.contains(className)) {
-          addEffect(block, 'backlight-img');
-        } else {
-          addEffect(block, 'backlight');
-        }
-      });
-
+    block.addEventListener('mouseover', () => {
+      addEffect(block);
       block.classList.add('highlight');
     });
 
     block.addEventListener('mouseout', () => {
-      removeEffect(block, 'backlight');
+      removeEffect(block);
     });
   });
 
   hover2.forEach((block) => {
     block.addEventListener('mouseover', (e) => {
       e.stopPropagation();
-      addEffect(block, 'backlight-img');
+      addEffect(block);
     });
 
     block.addEventListener('mouseout', () => {
-      removeEffect(block, 'backlight-img');
+      removeEffect(block);
     });
   });
 
