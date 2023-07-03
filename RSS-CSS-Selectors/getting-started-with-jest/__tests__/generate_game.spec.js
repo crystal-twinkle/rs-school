@@ -1,5 +1,4 @@
-import { describe, beforeEach, jest, test, afterEach, expect } from 'jest';
-import generateLevel from '../src/ts/generate';
+import { generateLevel } from '../../src/ts/generate';
 
 describe('generateLevel', () => {
   let mockTaskDesc;
@@ -35,9 +34,7 @@ describe('generateLevel', () => {
   });
 
   test('should generate a level with correct elements and data', () => {
-    const testNum = 0;
-
-    generateLevel(testNum);
+    generateLevel(0);
 
     expect(mockTaskDesc.innerHTML).toBe('Выбери тарелки');
     expect(mockNumberLevel.innerHTML).toBe('1');

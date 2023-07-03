@@ -3,25 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
-  "directories": {
-    "test": "./tests"
-  },
   "scripts": {
     "start": "webpack serve --open --config ./webpack.config.js --env mode=dev",
     "build": "webpack --config ./webpack.config.js --env mode=prod --output-path dist",
     "lint": "eslint . --ext .ts",
-    "test": "jest --transform='{\"^.+\\\\.(ts|tsx)?$\": \"babel-jest\"}'"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
-  "jest": {
-    "testMatch": [
-      "**/__tests__/**/*.[jt]s?(x)",
-      "**/?(*.)+(spec|test).[tj]s?(x)",
-      "tests/**/*.test.ts",
-      "tests/**/*.spec.ts"
-    ]
-  },
   "dependencies": {
     "@types/webpack": "^5.28.1",
     "@types/webpack-env": "^1.18.1",
