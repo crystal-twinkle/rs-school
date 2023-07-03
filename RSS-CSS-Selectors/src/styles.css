@@ -215,18 +215,17 @@ footer .year {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
+  cursor: default;
+  color: rgba(255, 255, 255, 0.27);
 }
 
 .hover1 {
   cursor: default;
   line-height: 150%;
-  color: rgba(255, 255, 255, .3);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .hover2 {
-  cursor: default;
-  line-height: 150%;
-  color: rgba(255, 255, 255, .3);
   margin-left: 10px;
 }
 

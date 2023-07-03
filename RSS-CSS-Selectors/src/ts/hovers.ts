@@ -1,16 +1,29 @@
 const helper = <HTMLElement>document.querySelector('.helper');
 function showHelper(tableItem: HTMLElement, viewItem: Element) {
-  const pos = tableItem.getBoundingClientRect();
+  const hover2Element = viewItem.querySelector('.hover2');
 
-  if (tableItem.classList.contains('bento')) {
+  if (!hover2Element) {
+    helper.textContent = viewItem.textContent;
+  } else if (tableItem.classList.contains('bento')) {
     helper.textContent = '<div class="bento"> </div>';
   } else if (tableItem.classList.contains('plate')) {
     helper.textContent = '<div class="plate"> </div>';
-  } else {
-    helper.textContent = viewItem.textContent;
   }
 
-  helper.style.top = `${pos.top - 40}px`;
+  const pos = tableItem.getBoundingClientRect();
+
+  if (tableItem.classList.contains('small')) {
+    helper.style.top = `${pos.top - 60}px`;
+  } else {
+    helper.style.top = `${pos.top - 35}px`;
+  }
+  if (helper.textContent.length === 49) {
+    helper.style.width = '100px';
+  } else if (helper.textContent.length > 51) {
+    helper.style.width = '120px';
+  } else {
+    helper.style.width = 'auto';
+  }
   helper.style.left = `${pos.left - tableItem.offsetWidth / 3}px`;
   helper.style.display = 'block';
 }

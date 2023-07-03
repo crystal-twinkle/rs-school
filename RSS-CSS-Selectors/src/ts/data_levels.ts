@@ -276,6 +276,7 @@ const dataLevel: Data[] = [
       '<div class="hover2" data-elem="elem7">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
+      '</div>' +
       '<div class="hover2" data-elem="elem8">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
@@ -304,7 +305,6 @@ const dataLevel: Data[] = [
     markup:
       '<div class="hover1" data-elem="elem1">' +
       '&lt;div class = "plate">' +
-      '&lt;div>' +
       '<div class="hover2" data-elem="elem4">' +
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
@@ -313,7 +313,6 @@ const dataLevel: Data[] = [
       '</div>' +
       '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "plate">' +
-      '&lt;div>' +
       '<div class="hover2" data-elem="elem5">' +
       '&lt;div class = "watermelon">' +
       '&lt;/div>' +
@@ -322,7 +321,6 @@ const dataLevel: Data[] = [
       '</div>' +
       '<div class="hover1" data-elem="elem3">' +
       '&lt;div class = "plate">' +
-      '&lt;div>' +
       '<div class="hover2" data-elem="elem6">' +
       '&lt;div class = "pineapple">' +
       '&lt;/div>' +
@@ -383,7 +381,6 @@ const dataLevel: Data[] = [
     markup:
       '<div class="hover1" data-elem="elem1">' +
       '&lt;div class = "plate" style="width: 90px;"> &lt;/div>' +
-      '&lt;/div>' +
       '</div>' +
       '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "plate" style="width: 70px;"> &lt;/div>' +

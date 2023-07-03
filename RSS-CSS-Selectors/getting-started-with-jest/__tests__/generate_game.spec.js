@@ -40,7 +40,7 @@ describe('generateLevel', () => {
     expect(mockNumberLevel.innerHTML).toBe('1');
     expect(mockHelpTitle.innerHTML).toBe('Выбери селекторы по их атрибуту class');
     expect(mockHelpText.innerHTML).toBe(
-      'Атрибут class часто используется для указания на имя класса в стилях. А стили нужны для отрисовки тарелок например )'
+        'Атрибут class часто используется для указания на имя класса в стилях. А стили нужны для отрисовки тарелок например )'
     );
   });
 });

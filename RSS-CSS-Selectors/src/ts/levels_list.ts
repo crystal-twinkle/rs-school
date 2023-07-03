@@ -2,7 +2,7 @@ import dataLevel from './data_levels';
 import { allLevelsWrap } from './hamburger';
 
 class LevelsList {
-  generate() {
+  public generate() {
     for (let i = 1; i <= 11; i += 1) {
       const innerP = document.createElement('p');
       const innerStrong = document.createElement('strong');
