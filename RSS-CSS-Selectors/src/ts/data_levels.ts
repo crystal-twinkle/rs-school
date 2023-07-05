@@ -288,39 +288,35 @@ const dataLevel: Data[] = [
   {
     taskDesc: 'Выбери тарелки без огурцов',
     helpTitle: 'Псевдокласс :not()',
-    helpDesc: 'Псевдокласс :not задаёт правила стилей для элементов, которые не содержат указанный селектор',
+    helpDesc: 'Псевдокласс :not задаёт правила стилей для элементов, которые не содержат указанный класс',
     examples: [
-      'h2:not(p) - выберет h2 которые не содержат p',
+      'h2:not(.title) - выберет h2 которые не содержат класс .title',
       'p:not(.irrelevant) - выберет p которые не содержат класс .irrelevant',
     ],
-    answer: ['.plate:not(.cucumber)', 'div.plate:not(.cucumber)'],
+    answer: ['div:not(.pineapple)', 'div > :not(.pineapple)', 'div > :not(div.pineapple)'],
     markup:
       '<div class="hover1" data-elem="elem1">' +
-      '&lt;div class = "plate">' +
-      '<div class="hover2" data-elem="elem4">' +
-      '&lt;div class = "cucumber">' +
-      '&lt;/div>' +
-      '</div>' +
-      '</div>' +
-      '<div class="hover1" data-elem="elem2">' +
-      '&lt;div class = "plate">' +
-      '<div class="hover2" data-elem="elem5">' +
-      '&lt;div class = "watermelon">' +
-      '&lt;/div>' +
-      '</div>' +
-      '</div>' +
-      '<div class="hover1" data-elem="elem3">' +
-      '&lt;div class = "plate">' +
-      '<div class="hover2" data-elem="elem6">' +
       '&lt;div class = "pineapple">' +
       '&lt;/div>' +
       '</div>' +
+      '<div class="hover1" data-elem="elem2">' +
+      '&lt;div class = "watermelon">' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1" data-elem="elem3">' +
+      '&lt;div class = "pineapple">' +
+      '&lt;/div>' +
+      '</div>' +
+      '<div class="hover1" data-elem="elem4">' +
+      '&lt;div class = "watermelon">' +
+      '&lt;/div>' +
       '</div>',
     levelName: ':not()',
     tableFill:
-      '<div class = "plate" data-elem="elem1"> <div class="cucumber" data-elem="elem4"></div> </div>' +
-      '<div class = "plate move-norm" data-elem="elem2"> <div class="watermelon" data-elem="elem5"></div>' +
-      '</div> <div class = "plate move-norm" data-elem="elem3"> <div class="pineapple" data-elem="elem6"></div> </div> ',
+      '<div class="pineapple" data-elem="elem1"></div>' +
+      '<div class="watermelon move-norm" data-elem="elem2"></div>' +
+      '<div class="pineapple" data-elem="elem3"></div>' +
+      '<div class="watermelon move-norm" data-elem="elem4"></div>',
   },
   {
     taskDesc: 'Выбери зелёную тарелку',

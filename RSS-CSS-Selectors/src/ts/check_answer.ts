@@ -1,7 +1,8 @@
 import dataLevel from './data_levels';
-import { generateLevel, inputText } from './generate';
+import { inputText } from './generate';
 import { getOfBuild, getOfQuery } from './check_elem';
 import saveContLevels from './save_levels_list';
+import greenCounter from './game_over';
 
 const numberLevel = getOfBuild('level-now');
 const inputButton = getOfBuild('input-button');
@@ -22,26 +23,25 @@ function addFlyOut() {
 }
 
 function inputAnswer() {
+  let rightAnswer = false;
   const numIn: number = Number(numberLevel.innerHTML) - 1;
   for (let i = 0; i < dataLevel[numIn].answer.length; i += 1) {
     const e = dataLevel[numIn].answer[i];
     if (inputText instanceof HTMLInputElement) {
       if (inputText.value === e) {
+        rightAnswer = true;
         addFlyOut();
-        if (!checkmarks[numIn].classList.contains('yellow')) {
-          checkmarks[numIn].classList.add('green');
-        }
-        setTimeout(() => saveContLevels(), 0);
-        setTimeout(() => {
-          generateLevel(numIn + 1);
-        }, 1000);
-      } else {
-        actionContainer.classList.add('shake');
-        setTimeout(() => {
-          actionContainer.classList.remove('shake');
-        }, 400);
+        checkmarks[numIn].classList.add('green');
+        greenCounter();
+        saveContLevels();
       }
     }
+  }
+  if (!rightAnswer) {
+    actionContainer.classList.add('shake');
+    setTimeout(() => {
+      actionContainer.classList.remove('shake');
+    }, 400);
   }
 }
 

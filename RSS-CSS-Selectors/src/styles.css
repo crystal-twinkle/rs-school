@@ -409,6 +409,7 @@ footer .year {
 }
 
 .container__all-levels p {
+  position: relative;
   cursor: pointer;
   opacity: 0.5;
   white-space: pre;
@@ -428,18 +429,27 @@ footer .year {
 }
 
 .green {
-  opacity: 0.5;
+  opacity: 1;
   border-color: #4cbb4a;
   border-style: solid;
   border-width: 0 3px 3px 0;
 }
 
+.span-help {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2rem;
+  background-image: url("picture/bulb.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+}
+
 .yellow {
-  opacity: 1;
-  border-color: #ffea00;
-  border-style: solid;
-  border-width: 0 3px 3px 0;
-  filter: brightness(10);
+  display: block;
 }
 
 .number-level {
@@ -546,14 +556,36 @@ div.small {
 }
 
 .backlight-img {
-  filter: invert(100%) opacity(1) sepia(100%) saturate(100%) hue-rotate(30deg);;
-
+  filter: invert(100%) opacity(1) sepia(100%) saturate(100%) hue-rotate(30deg);
 }
 
 .checked {
   font-weight: 700;
   color: #fffdfd;
   background: rgba(185, 121, 91, 0.71);
+}
+
+.move-norm {
+  transform-origin: bottom;
+  animation: caper-norm 1s ease-out 0s infinite;
+}
+
+@keyframes caper-norm {
+  0% {
+    transform: skew(4deg, 0deg) scaleX(1);
+  }
+  10% {
+    transform: skew(1deg, 0deg) scaleY(.9);
+  }
+  50% {
+    transform: skew(-4deg, 0deg) scaleX(1);
+  }
+  60% {
+    transform: skew(-1deg, 0deg) scaleY(.9);
+  }
+  100% {
+    transform: skew(4deg, 0deg) scaleX(1);
+  }
 }
 
 .move-small {
@@ -580,32 +612,10 @@ div.small {
 
 }
 
-.move-norm {
-  transform-origin: bottom;
-  animation: caper-norm 1s ease-out 1s infinite;
-}
-
-@keyframes caper-norm {
-  0% {
-    transform: skew(4deg, 0deg) scaleX(1);
-  }
-  10% {
-    transform: skew(1deg, 0deg) scaleY(.9);
-  }
-  50% {
-    transform: skew(-4deg, 0deg) scaleX(1);
-  }
-  60% {
-    transform: skew(-1deg, 0deg) scaleY(.9);
-  }
-  100% {
-    transform: skew(4deg, 0deg) scaleX(1);
-  }
-}
-
 .flyOut {
   animation: flyUp 0.3s ease-in-out;
   transform: translateY(-400px);
+  animation-fill-mode: forwards;
 }
 
 @keyframes flyUp {
@@ -681,6 +691,10 @@ div.small {
 
   .viewer__content div {
     font-size: 10px;
+  }
+
+  .span-help {
+    right: -10px;
   }
 
 }

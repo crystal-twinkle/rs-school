@@ -6,12 +6,13 @@ class LevelsList {
     for (let i = 1; i <= 11; i += 1) {
       const innerP = document.createElement('p');
       const innerStrong = document.createElement('strong');
-      const innerSpan = document.createElement('span');
-      innerSpan.classList.add('checkmark');
+      const innerSpan1 = document.createElement('span');
+      const innerSpan2 = document.createElement('span');
+      innerSpan1.classList.add('checkmark');
+      innerSpan2.classList.add('span-help');
       innerStrong.append(`${i}\u00A0\u00A0`);
 
-      innerP.append(innerSpan, innerStrong);
-
+      innerP.append(innerSpan1, innerStrong, innerSpan2);
       allLevelsWrap.append(innerP);
     }
 

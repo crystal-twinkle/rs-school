@@ -2,11 +2,8 @@ import { getOfBuild } from './check_elem';
 import dataLevel from './data_levels';
 import highlight from './highlight_level';
 import hoverMarkup from './hovers';
-import yellowAndGreenCounter from './game_over';
 import highlightCode from './highlight_code';
 
-const btnLeft = getOfBuild('but-left');
-const btnRight = getOfBuild('but-right');
 export const numberLevel = getOfBuild('level-now');
 export const inputText = getOfBuild('cssEditor');
 const table = getOfBuild('table');
@@ -20,7 +17,6 @@ function saveLevelGame() {
 
 export function generateLevel(num: number): void {
   if (num > 10) {
-    yellowAndGreenCounter();
     return;
   }
 
@@ -52,24 +48,7 @@ export function generateLevel(num: number): void {
     hoverMarkup();
   }, 0);
   saveLevelGame();
-  yellowAndGreenCounter();
 }
-
-btnLeft.addEventListener('click', () => {
-  let count: number = Number(numberLevel.innerHTML) - 1;
-  if (count > 0 && count <= 10) {
-    count -= 1;
-  }
-  generateLevel(count);
-});
-
-btnRight.addEventListener('click', () => {
-  let count: number = Number(numberLevel.innerHTML) - 1;
-  if (count >= 0 && count < 10) {
-    count += 1;
-  }
-  generateLevel(count);
-});
 
 function loadLevelGame() {
   const local = localStorage.getItem('level');
