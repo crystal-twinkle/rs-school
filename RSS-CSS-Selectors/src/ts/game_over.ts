@@ -1,7 +1,5 @@
 function gameOver(greenCount: number, yellowCount: number) {
-  console.log('2');
   if (greenCount + yellowCount === 11) {
-    console.log('1');
     const table = document.querySelector('.table');
     const gameDesc = document.querySelector('.game__desc');
     gameDesc.innerHTML = 'Поздравляю! Теперь вы сильны в CSS';

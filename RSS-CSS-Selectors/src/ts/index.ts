@@ -12,3 +12,4 @@ import './save_levels_list';
 import './reset';
 import './hovers';
 import './game_over';
+import './highlight_code';

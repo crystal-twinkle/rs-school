@@ -32,8 +32,8 @@ const dataLevel: Data[] = [
     ],
     answer: ['.plate', 'div.plate'],
     markup:
-      '<div class="hover1" data-elem="elem1"> &lt;div class = "plate"> <div class="hover2" data-elem="elem3"> &lt;div class = "pineapple"> &lt;/div> </div> &lt;/div> </div>' +
-      '<div class="hover1" data-elem="elem2"> &lt;div class = "plate"> <div class="hover2" data-elem="elem4"> &lt;div class = "pineapple"> &lt;/div> </div> &lt;/div> </div>',
+      '<div class="hover1" data-elem="elem1"> &lt;div class = "plate"> <div class="hover2" data-elem="elem3"> &lt;div class = "pineapple"> &lt;/div> </div></div>' +
+      '<div class="hover1" data-elem="elem2"> &lt;div class = "plate"> <div class="hover2" data-elem="elem4"> &lt;div class = "pineapple"> &lt;/div> </div></div>',
     levelName: 'Теги - родители',
     tableFill:
       '<div class = "plate move-norm" data-elem="elem1"> <div class = "pineapple" data-elem="elem3"> </div> </div> <div class = "plate move-norm" data-elem="elem2"> <div class = "pineapple" data-elem="elem4"> </div> </div>',
@@ -52,7 +52,7 @@ const dataLevel: Data[] = [
     ],
     answer: ['.cucumber', 'div.cucumber'],
     markup:
-      '<div class="hover1" data-elem="elem1"> &lt;div class = "bento"> <div class="hover2" data-elem="elem2"> &lt;div class = "cucumber"> &lt;/div> </div> <div class="hover2" data-elem="elem3"> &lt;div class = "cucumber"> &lt;/div>  </div>  &lt;/div> </div>',
+      '<div class="hover1" data-elem="elem1"> &lt;div class = "bento"> <div class="hover2" data-elem="elem2"> &lt;div class = "cucumber"> &lt;/div> </div> <div class="hover2" data-elem="elem3"> &lt;div class = "cucumber"> &lt;/div>  </div> </div>',
     levelName: 'Теги - потомки',
     tableFill:
       '<div class = "bento" data-elem="elem1"> <div class = "cucumber move-norm" data-elem="elem2" style="left: -6px"> </div> <div class = "cucumber move-norm" data-elem="elem3" style="left: 25px; top: -55px"> </div> </div>',
@@ -79,7 +79,6 @@ const dataLevel: Data[] = [
       '&lt;div class = "pineapple small"> ' +
       '&lt;/div>' +
       '</div>' +
-      '&lt;/div>' +
       '</div>' +
       '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "bento">' +
@@ -91,7 +90,6 @@ const dataLevel: Data[] = [
       '&lt;div class = "pineapple small"> ' +
       '&lt;/div>' +
       '</div>' +
-      '&lt;/div>' +
       '</div>' +
       '<div class="hover1" data-elem="elem3">' +
       '&lt;div class ="plate">' +
@@ -99,7 +97,6 @@ const dataLevel: Data[] = [
       '&lt;div class = "pineapple small"> ' +
       '&lt;/div>' +
       '</div>' +
-      '&lt;/div>' +
       '</div>',
     levelName: 'Дочерний селектор',
     tableFill:
@@ -168,7 +165,6 @@ const dataLevel: Data[] = [
       '<div class="hover2" data-elem="elem4">' +
       '&lt;div class = "pineapple"> &lt;/div>' +
       '</div>' +
-      '&lt;/div>' +
       '</div>' +
       '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "plate">' +
@@ -180,7 +176,6 @@ const dataLevel: Data[] = [
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
-      '&lt;/div>' +
       '</div>',
 
     levelName: ':is()',
@@ -257,7 +252,6 @@ const dataLevel: Data[] = [
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
-      '&lt;/div>' +
       '</div>' +
       '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "bento">' +
@@ -269,7 +263,6 @@ const dataLevel: Data[] = [
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
-      '&lt;/div>' +
       '</div>' +
       '<div class="hover1" data-elem="elem3">' +
       '&lt;div class = "bento">' +
@@ -281,7 +274,6 @@ const dataLevel: Data[] = [
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
-      '&lt;/div>' +
       '</div>',
     levelName: ':has(условие)',
     tableFill:
@@ -309,7 +301,6 @@ const dataLevel: Data[] = [
       '&lt;div class = "cucumber">' +
       '&lt;/div>' +
       '</div>' +
-      '&lt;div>' +
       '</div>' +
       '<div class="hover1" data-elem="elem2">' +
       '&lt;div class = "plate">' +
@@ -317,7 +308,6 @@ const dataLevel: Data[] = [
       '&lt;div class = "watermelon">' +
       '&lt;/div>' +
       '</div>' +
-      '&lt;div>' +
       '</div>' +
       '<div class="hover1" data-elem="elem3">' +
       '&lt;div class = "plate">' +
@@ -325,7 +315,6 @@ const dataLevel: Data[] = [
       '&lt;div class = "pineapple">' +
       '&lt;/div>' +
       '</div>' +
-      '&lt;div>' +
       '</div>',
     levelName: ':not()',
     tableFill:

@@ -16,6 +16,7 @@ const baseConfig = {
       {
         test: /\.ts$/i,
         use: ['ts-loader'],
+        exclude: /node_modules/,
       },
       {
         test: /\.(png|jpe?g|gif)$/,
@@ -24,7 +25,17 @@ const baseConfig = {
       {
         test: /\.svg$/,
         use: ['raw-loader'],
-      }
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
     ]
   },
   resolve: {
@@ -52,9 +63,11 @@ const baseConfig = {
 };
 
 
-module.exports = ({mode}) => {
+module.exports = ({ mode }) => {
   const isProductionMode = mode === 'prod';
-  const envConfig = isProductionMode ? require('./webpack.prod.config') : require('./webpack.dev.config');
+  const envConfig = isProductionMode
+      ? require('./webpack.prod.config')
+      : require('./webpack.dev.config');
 
   return merge(baseConfig, envConfig);
 };

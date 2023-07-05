@@ -3,6 +3,7 @@ import dataLevel from './data_levels';
 import highlight from './highlight_level';
 import hoverMarkup from './hovers';
 import yellowAndGreenCounter from './game_over';
+import highlightCode from './highlight_code';
 
 const btnLeft = getOfBuild('but-left');
 const btnRight = getOfBuild('but-right');
@@ -47,6 +48,7 @@ export function generateLevel(num: number): void {
   }
   setTimeout(() => {
     highlight()(Number(numberLevel.textContent) - 1);
+    highlightCode();
     hoverMarkup();
   }, 0);
   saveLevelGame();

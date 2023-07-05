@@ -219,7 +219,7 @@ footer .year {
   color: rgba(255, 255, 255, 0.27);
 }
 
-.hover1 {
+.hover1, .hover2 {
   cursor: default;
   line-height: 150%;
   color: rgba(255, 255, 255, 0.4);
@@ -230,13 +230,11 @@ footer .year {
 }
 
 .hover1.highlight {
-  background-color: transparent;
-  color: #ffab25;
+  background-color: rgba(248, 134, 64, 0.91);
 }
 
 .hover2.highlight {
-  background-color: transparent;
-  color: #aaff00;
+  background-color: rgba(229, 140, 88, 0.87);
 }
 
 .helper {
@@ -249,10 +247,6 @@ footer .year {
   border-bottom: solid 2px #BBB;
   box-shadow: 0 5px 0 rgba(0, 0, 0, .2);
   display: none;
-}
-
-.action__viewer span {
-  display: block;
 }
 
 .game-wrapper {
