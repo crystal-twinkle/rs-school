@@ -5,7 +5,7 @@ import yellowAndGreenCounter from './game_over';
 const allLevel = getOfQuery('.all-levels-wrap');
 
 export default function saveContLevels() {
-  setTimeout(() => localStorage.setItem('containerLevel', allLevel.innerHTML), 0);
+  localStorage.setItem('containerLevel', allLevel.innerHTML);
 }
 
 function loadContLevels() {

@@ -2,6 +2,7 @@ import { getOfBuild } from './check_elem';
 import dataLevel from './data_levels';
 import highlight from './highlight_level';
 import hoverMarkup from './hovers';
+import yellowAndGreenCounter from './game_over';
 
 const btnLeft = getOfBuild('but-left');
 const btnRight = getOfBuild('but-right');
@@ -17,9 +18,11 @@ function saveLevelGame() {
 }
 
 export function generateLevel(num: number): void {
-  if (num > 11) {
+  if (num > 10) {
+    yellowAndGreenCounter();
     return;
   }
+
   const helpTitle = getOfBuild('help-title');
   const helpText = getOfBuild('help-text');
   const helpExamples = getOfBuild('help-examples');
@@ -47,6 +50,7 @@ export function generateLevel(num: number): void {
     hoverMarkup();
   }, 0);
   saveLevelGame();
+  yellowAndGreenCounter();
 }
 
 btnLeft.addEventListener('click', () => {

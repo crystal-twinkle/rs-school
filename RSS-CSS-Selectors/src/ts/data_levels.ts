@@ -156,7 +156,7 @@ const dataLevel: Data[] = [
     ],
     answer: [
       ':is(.bento, .plate) .small',
-      ':is(.bento, .plate) cucumber .small',
+      ':is(.bento, .plate) .cucumber .small',
       ':is(div) :is(.bento, .plate) .small',
     ],
     markup:
@@ -342,7 +342,11 @@ const dataLevel: Data[] = [
       '.element[style="color: blue"] выберет все элементы с синим цветом',
       '.element[data-state: ready] выберет все элементы у которых готовое состояние',
     ],
-    answer: ['.plate[style="color: green"]', 'div[style="color: green"]', 'div > .plate[style="color: green"]'],
+    answer: [
+      '.plate[style="background: green"]',
+      'div[style="background: green"]',
+      'div > .plate[style="background: green"]',
+    ],
     markup:
       '<div class="hover1" data-elem="elem1">' +
       '&lt;div class = "plate" style="background: green;>' +

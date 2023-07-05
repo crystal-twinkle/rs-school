@@ -1,7 +1,11 @@
 function gameOver(greenCount: number, yellowCount: number) {
+  console.log('2');
   if (greenCount + yellowCount === 11) {
-    const gameWrap = document.querySelector('.game-wrapper');
-    gameWrap.innerHTML = 'Поздравляю! Теперь вы сильны в CSS';
+    console.log('1');
+    const table = document.querySelector('.table');
+    const gameDesc = document.querySelector('.game__desc');
+    gameDesc.innerHTML = 'Поздравляю! Теперь вы сильны в CSS';
+    table.innerHTML = ' ';
   }
 }
 

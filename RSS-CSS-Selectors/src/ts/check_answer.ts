@@ -28,10 +28,10 @@ function inputAnswer() {
     if (inputText instanceof HTMLInputElement) {
       if (inputText.value === e) {
         addFlyOut();
-        saveContLevels();
         if (!checkmarks[numIn].classList.contains('yellow')) {
           checkmarks[numIn].classList.add('green');
         }
+        setTimeout(() => saveContLevels(), 0);
         setTimeout(() => {
           generateLevel(numIn + 1);
         }, 1000);
