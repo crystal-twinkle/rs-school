@@ -141,9 +141,9 @@ const dataLevel: Data[] = [
     levelName: 'Соседний селектор',
     tableFill:
       '<div class="pineapple" data-elem="elem1"></div>' +
-      '<div class = "cucumber" data-elem="elem2"></div>' +
+      '<div class = "cucumber move-norm" data-elem="elem2"></div>' +
       '<div class="watermelon" data-elem="elem3"> </div>' +
-      '<div class = "cucumber move-norm" data-elem="elem4"></div>',
+      '<div class = "cucumber" data-elem="elem4"></div>',
   },
   {
     taskDesc: 'Выбери маленькие огурцы',
