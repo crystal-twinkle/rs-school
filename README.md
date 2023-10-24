@@ -5,7 +5,7 @@
 
 The CSS Selector Trainer is a web-based application designed to help users practice and learn CSS selectors in a fun and interactive way. This trainer includes multiple game levels, each presenting a layout with HTML code. Users are challenged to write CSS selectors that target specific elements within the layout. 
 
-***Link:https://crystal-twinkle.github.io/css-selectors/***
+***Link: https://crystal-twinkle.github.io/css-selectors/***
 
 ## Functionality
 
