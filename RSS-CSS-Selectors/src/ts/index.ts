@@ -1,4 +1,9 @@
-import '../styles.css';
+import '../styles/styles.css';
+import '../styles/index.css';
+import '../styles/footer.css';
+import '../styles/container-game.css';
+import '../styles/container-action.css';
+import '../styles/container-level.css';
 import './levels_list';
 import './hamburger';
 import './choose_level';

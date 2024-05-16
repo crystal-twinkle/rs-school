@@ -7,116 +7,119 @@
   <title>RS Селекторы</title>
   <link rel="icon" type="image/x-icon" href="picture/delicious.png">
 </head>
+
 <body>
 
+<div class="wrapper">
   <div class="container">
-  <div class="container__game game">
-    <div class="game__header">
-      <img src="picture/delicious.png" class="game__logo-img" alt="game logo">
-      <h1 class="game__logo">
-        CSS Game
-      </h1>
-    </div>
-    <h2 class="game__desc" id="task-desc">
-    </h2>
-
-    <div class="game-wrapper">
-      <div class="table-wrapper">
-        <div class="table-surface"></div>
-        <div class="table" id="table">
-        </div>
+    <div class="container__game game">
+      <div class="game__header">
+        <img src="picture/delicious.png" class="game__logo-img" alt="game logo">
+        <h1 class="game__logo">
+          CSS Game
+        </h1>
       </div>
-      <div class="table-edge">
-        <div class="table-leg"></div>
-        <div class="table-leg"></div>
-      </div>
-    </div>
+      <h2 class="game__desc" id="task-desc">
+      </h2>
 
-    <div class="container__action action">
-      <div class="action__header">
-        <div>
-          <h4 class="action__title">CSS editor</h4>
-          <button class="btn help__button" id="help-button">Help</button>
-        </div>
-        <h4 class="action__title">HTML Viewer</h4>
-      </div>
-      <div class="action__border"></div>
-
-      <div class="action-wrap">
-        <div class="action__editor">
-          <label for="cssEditor"></label>
-          <div class="action__input-wrap">
-            <input class="input__text blink-effect" id="cssEditor" type="text" placeholder="Type here">
-            <button class="btn input__button" id="input-button">Enter</button>
-          </div>
-          <div class="action-panel__desc">
-            <p> { </p> /*&ensp;Styles would be here&ensp;*/ <p> } </p>
+      <div class="game-wrapper">
+        <div class="table-wrapper">
+          <div class="table-surface"></div>
+          <div class="table" id="table">
           </div>
         </div>
-
-        <div class="action__viewer viewer">
-          <div class="viewer__content">
-            <div class="just language-javascript">  &lt;div class="table"&gt; </div>
-            <div class="viewer__span" id="viewer-span_generate"></div>
-            <div class="just language-javascript">  &lt;/div&gt; </div>
-          </div>
+        <div class="table-edge">
+          <div class="table-leg"></div>
+          <div class="table-leg"></div>
         </div>
-
       </div>
+
+      <div class="container__action action">
+        <div class="action__header">
+          <div>
+            <h4 class="action__title">CSS editor</h4>
+            <button class="btn help__button" id="help-button">Help</button>
+          </div>
+          <h4 class="action__title">HTML Viewer</h4>
+        </div>
+        <div class="action__border"></div>
+
+        <div class="action-wrap">
+          <div class="action__editor">
+            <label for="cssEditor"></label>
+            <div class="action__input-wrap">
+              <input class="input__text blink-effect" id="cssEditor" type="text" placeholder="Type here">
+              <button class="btn input__button" id="input-button">Enter</button>
+            </div>
+            <div class="action-panel__desc">
+              <p> { </p> /*&ensp;Styles would be here&ensp;*/ <p> } </p>
+            </div>
+          </div>
+
+          <div class="action__viewer viewer">
+            <div class="viewer__content">
+              <div class="just language-javascript"> &lt;div class="table"&gt;</div>
+              <div class="viewer__span" id="viewer-span_generate"></div>
+              <div class="just language-javascript"> &lt;/div&gt;</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="helper"></div>
     </div>
 
 
-    <div class="helper"></div>
-  </div>
+    <div class="container__level level">
 
-
-  <div class="container__level level">
-
-    <div class="container__all-levels">
+      <div class="container__all-levels">
         <h3>Выбери уровень</h3>
         <div class="all-levels-wrap">
-      </div>
-      <button class="reset-progress" id="reset">RESET</button>
-    </div>
-
-    <div class="level-wrap">
-
-      <div class="level__header">
-        <h2 class="level__title">Уровень <span id="level-now">1</span> из 11</h2>
-        <div class="level__knob-wrap">
-          <span class="knob" id="but-left">🠼</span>
-          <span class="knob" id="but-right">🠾</span>
         </div>
-        <span class="hamburger">
+        <button class="reset-progress" id="reset">RESET</button>
+      </div>
+
+      <div class="level-wrap">
+
+        <div class="level__header">
+          <h2 class="level__title">Уровень <span id="level-now">1</span> из 11</h2>
+          <div class="level__knob-wrap">
+            <span class="knob" id="but-left">🠼</span>
+            <span class="knob" id="but-right">🠾</span>
+          </div>
+          <span class="hamburger">
           <span class="hamburger__line"></span>
           <span class="hamburger__line"></span>
           <span class="hamburger__line"></span>
         </span>
+        </div>
+
+        <h4 id="help-title"></h4>
+        <div class="help__desc">
+          <p id="help-text"></p>
+          <h4>Пояснения:</h4>
+          <div class="help__examples" id="help-examples"></div>
+        </div>
       </div>
 
-      <h4 id="help-title"></h4>
-      <div class="help__desc">
-        <p id="help-text"></p>
-        <h4>Пояснения:</h4>
-        <div class="help__examples" id="help-examples"></div>
-      </div>
     </div>
 
   </div>
 
+  <footer>
+    <a class="github-link" href="https://github.com/Kristalik8" target="blank">
+      gitHub: Kristalik8
+    </a>
+    <p class="year">2023</p>
+
+    <a class="rsSchool-logo" href="https://rs.school/js/" target="blank"></a>
+
+  </footer>
 </div>
 
-<footer>
-  <a class="github-link" href="https://github.com/Kristalik8" target="blank">
-    gitHub: Kristalik8
-  </a>
-  <p class="year">2023</p>
-
-  <a class="rsSchool-logo" href="https://rs.school/js/" target="blank"></a>
-
-</footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 
 </body>
 </html>
