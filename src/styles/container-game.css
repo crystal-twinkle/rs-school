@@ -20,6 +20,9 @@
 }
 
 .game__logo-img {
+  background-image: url('../picture/delicious.png');
+  background-repeat: no-repeat;
+  background-size: contain;
   height: 40px;
   width: 40px;;
   margin: auto 5px;
