@@ -5,6 +5,7 @@ body {
 }
 
 .wrapper {
+  background-image: linear-gradient(70deg, rgba(79, 185, 88, 0.83), rgba(120, 225, 141, 0.83) 30%);
   min-height: 100vh;
 }
 
@@ -13,7 +14,7 @@ body {
   display: flex;
   margin: auto;
   max-width: 1500px;
-  background-image: linear-gradient(130deg, #bd8968, #e3ac82 30%);
+
   border: black 10px solid;
 }
 
