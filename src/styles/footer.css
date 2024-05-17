@@ -1,0 +1,28 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 30px auto;
+}
+
+footer .year {
+  font-weight: 900;
+  color: #e83939;
+}
+
+.github-link {
+  font-family: 'Arial', sans-serif;
+  color: #7e1d1d;
+  font-weight: 700;
+  text-decoration: underline solid 2px #b65902;
+  text-underline-offset: 0.4rem;
+}
+
+.rsSchool-logo {
+  background-image: url('../picture/logo_rs_text.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 80px;
+  height: 40px;
+}
