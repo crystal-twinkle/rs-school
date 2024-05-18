@@ -1,55 +1,41 @@
 
 .container__action {
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
   border: 5px solid #000000;
   border-radius: 5px;
-  background-color: #5e5e5e;
   margin: 30px auto 20px;
-  width: 500px;
+  width: 70%;
   position: relative;
   height: auto;
 }
 
-.action__header {
+.action__editor {
+  border-right: 7px solid #000000;
+  background-color: white;
+  color: black;
+  width: 40%;
+}
+
+.action__editor_head {
   display: flex;
-  background-color: #00000026;
+  align-items: center;
+  justify-content: space-evenly;
   border: solid 1px #98909070;
   column-gap: 30px;
 }
 
-.action__header div {
-  display: flex;
-  width: 45%;
-  justify-content: space-between;
-  align-items: center;
+.action__content {
+  padding: 10px;
 }
 
-.action__border {
-  background-color: black;
-  position: absolute;
-  left: calc(50% - 4px);
-  width: 8px;
-  top: 0;
-  bottom: 0;
-}
-
-.action-wrap {
+.action ._header {
   display: flex;
-  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
 }
 
 .action__input-wrap {
   display: flex;
   flex-direction: column;
-}
-
-.action__editor {
-  background-color: white;
-  color: black;
-  padding: 10px;
-  width: 50%;
 }
 
 .input__text {
@@ -68,6 +54,32 @@
   background: rgb(255, 255, 255);
 }
 
+.action__title {
+  font-size: 15px;
+  margin-left: 10px;
+  letter-spacing: 0.05rem;
+}
+
+.action__viewer {
+  background-color: #575757;
+  width: 60%;
+}
+
+.action-panel__desc {
+  display: flex;
+  flex-direction: column;
+  opacity: 0.5;
+}
+
+.viewer__content, .viewer__span {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  cursor: default;
+  color: rgba(255, 255, 255, 0.27);
+}
+
+
 @keyframes input-blink {
   50% {
     background: none;
@@ -83,4 +95,41 @@
   from {
     width: 0;
   }
+}
+
+
+@media (max-width: 800px) {
+
+  .container__action {
+    width: 350px;
+  }
+
+}
+
+@media (max-width: 635px) {
+
+  .container__action {
+    width: 280px;
+  }
+
+  .action__editor {
+    font-size: 12px;
+  }
+
+  .action__header div {
+    width: 45%;
+  }
+
+  .action__title {
+    font-size: 12px;
+  }
+
+  .action__border {
+    left: calc(50% - 8px);
+  }
+
+  .input__text {
+    width: 125px;
+  }
+
 }

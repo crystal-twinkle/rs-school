@@ -35,17 +35,13 @@
       </div>
 
       <div class="container__action action">
-        <div class="action__header">
-          <div>
+
+        <div class="action__editor">
+          <div class="action__editor_head _header">
             <h4 class="action__title">CSS editor</h4>
             <button class="btn help__button" id="help-button">Help</button>
           </div>
-          <h4 class="action__title">HTML Viewer</h4>
-        </div>
-        <div class="action__border"></div>
-
-        <div class="action-wrap">
-          <div class="action__editor">
+          <div class="action__content">
             <label for="cssEditor"></label>
             <div class="action__input-wrap">
               <input class="input__text blink-effect" id="cssEditor" type="text" placeholder="Type here">
@@ -55,8 +51,14 @@
               <p> { </p> /*&ensp;Styles would be here&ensp;*/ <p> } </p>
             </div>
           </div>
+        </div>
 
-          <div class="action__viewer viewer">
+        <div class="action__viewer">
+        <div class="action _header">
+          <h4 class="action__title">HTML Viewer</h4>
+        </div>
+
+          <div class="action__content">
             <div class="viewer__content">
               <div class="just language-javascript"> &lt;div class="table"&gt;</div>
               <div class="viewer__span" id="viewer-span_generate"></div>

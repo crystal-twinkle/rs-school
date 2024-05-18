@@ -52,33 +52,6 @@ body {
   transform: scale(0.9);
 }
 
-.action__title {
-  font-size: 15px;
-  margin-left: 10px;
-  letter-spacing: 0.05rem;
-}
-
-.action__viewer {
-  background-color: #575757;
-  padding: 7px 5px 5px 10px;
-  width: 50%;
-  border-right: solid 1px #98909070;
-}
-
-.action-panel__desc {
-  display: flex;
-  flex-direction: column;
-  opacity: 0.5;
-}
-
-.viewer__content, .viewer__span {
-  display: flex;
-  flex-direction: column;
-  row-gap: 5px;
-  cursor: default;
-  color: rgba(255, 255, 255, 0.27);
-}
-
 .hover1, .hover2 {
   cursor: default;
   line-height: 150%;
@@ -385,10 +358,6 @@ div.small {
 
 @media (max-width: 800px) {
 
-  .container__action {
-    width: 350px;
-  }
-
   .game__desc {
     font-size: 22px;
   }
@@ -474,27 +443,6 @@ div.small {
 
   .level-wrap {
     width: 172px;
-  }
-
-  .container__action {
-    width: 280px;
-  }
-
-  .action__editor {
-    padding: 10px 3px;
-    font-size: 12px;
-  }
-
-  .action__header div {
-    width: 45%;
-  }
-
-  .action__title {
-    font-size: 12px;
-  }
-
-  .action__border {
-    left: calc(50% - 8px);
   }
 
   .input__text {
